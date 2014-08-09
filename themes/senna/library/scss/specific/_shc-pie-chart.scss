@@ -1,0 +1,24 @@
+//NEW** Knob Plugin
+input.dial {
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 500;
+  color: #484848;
+  line-height: 1.18509;
+  font-size: 57px;
+  font-size: 3.8rem;
+  opacity:0;
+
+}
+
+.dial_knob {
+  position:relative;
+  @include border-radius(999px);
+  overflow:hidden;
+  margin:0 auto;
+
+  canvas {
+    background:white;
+  }
+}

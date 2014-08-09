@@ -1,0 +1,835 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AutoFocus 2.1.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-04 18:53-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: THEME SUPPLY Co. <desk@themesupply.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:11
+#: ../content.php:22
+msgid "Not Found"
+msgstr ""
+
+#: ../404.php:13
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr ""
+
+#: ../archive-page.php:22
+#: ../fullwidth-page.php:22
+msgid "Pages:"
+msgstr ""
+
+#: ../archive-page.php:26
+msgid "Archives by Category"
+msgstr ""
+
+#: ../archive-page.php:33
+msgid "Archives by Month"
+msgstr ""
+
+#: ../archive-page.php:40
+#: ../attachment.php:81
+#: ../content-autofocus.php:34
+#: ../content-autofocus.php:66
+#: ../content-blog.php:25
+#: ../content-featured-slider.php:66
+#: ../content-featured-slider.php:107
+#: ../content.php:49
+#: ../fullwidth-page.php:23
+msgid "Edit"
+msgstr ""
+
+#: ../archive.php:31
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#: ../archive.php:33
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr ""
+
+#: ../archive.php:35
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#: ../archive.php:37
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../archive.php:39
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: ../archive.php:41
+msgid "Archives"
+msgstr ""
+
+#: ../attachment.php:59
+#: ../content-blog.php:16
+msgid "Continue reading"
+msgstr ""
+
+#: ../attachment.php:60
+#: ../content-blog.php:17
+msgid "Pages: "
+msgstr ""
+
+#: ../attachment.php:71
+#, php-format
+msgid "<span class=\"dimensions\">Full size: %s</span>"
+msgstr ""
+
+#: ../attachment.php:74
+msgid "Link to full-size image"
+msgstr ""
+
+#: ../attachment.php:87
+#, php-format
+msgid "Return to %s"
+msgstr ""
+
+#: ../attachment.php:87
+msgid "Back to article"
+msgstr ""
+
+#: ../author.php:32
+#: ../author.php:55
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../author.php:46
+msgid "Email "
+msgstr ""
+
+#: ../blog-page.php:28
+msgid "Subscribe"
+msgstr ""
+
+#: ../blog-page.php:46
+#: ../content-autofocus.php:77
+#: ../content.php:63
+msgid "Older posts"
+msgstr ""
+
+#: ../blog-page.php:47
+#: ../content-autofocus.php:78
+#: ../content.php:64
+msgid "Newer posts"
+msgstr ""
+
+#: ../comments.php:10
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:31
+#, php-format
+msgid "%d Comments"
+msgstr ""
+
+#: ../comments.php:31
+msgid "One Comment"
+msgstr ""
+
+#: ../comments.php:39
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:40
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:48
+#, php-format
+msgid "%d Trackbacks"
+msgstr ""
+
+#: ../comments.php:48
+msgid "One Trackback"
+msgstr ""
+
+#: ../comments.php:64
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:72
+msgid "Your email address will not be published."
+msgstr ""
+
+#: ../comments.php:72
+msgid "<br>Required fields are marked:<span class=\"required\">*</span>"
+msgstr ""
+
+#: ../content-blog.php:23
+#: ../content.php:47
+msgid "Leave a comment"
+msgstr ""
+
+#: ../content-blog.php:23
+#: ../content.php:47
+msgid "1 Comment"
+msgstr ""
+
+#: ../content-blog.php:23
+#: ../content.php:47
+msgid "% Comments"
+msgstr ""
+
+#: ../content.php:26
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#: ../functions.php:180
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../functions.php:198
+msgid "First Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:200
+msgid "The first footer widget area"
+msgstr ""
+
+#: ../functions.php:209
+msgid "Second Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:211
+msgid "The second footer widget area"
+msgstr ""
+
+#: ../functions.php:220
+msgid "Third Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:222
+msgid "The third footer widget area"
+msgstr ""
+
+#: ../functions.php:231
+msgid "Fourth Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:233
+msgid "The fourth footer widget area"
+msgstr ""
+
+#: ../functions.php:242
+msgid "Singular Widget Area"
+msgstr ""
+
+#: ../functions.php:244
+msgid "The singular post/page widget area"
+msgstr ""
+
+#: ../functions.php:253
+msgid "Leaderboard Widget Area"
+msgstr ""
+
+#: ../functions.php:255
+msgid "Displays a widget area above the header to be used as ad space."
+msgstr ""
+
+#: ../functions.php:264
+msgid "Intro Widget Area"
+msgstr ""
+
+#: ../functions.php:266
+msgid "Displays a widget area below the header to be used as ad space."
+msgstr ""
+
+#: ../header.php:32
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../header.php:89
+msgid "Skip to content"
+msgstr ""
+
+#: ../search.php:14
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../search.php:30
+msgid "Nothing Found"
+msgstr ""
+
+#: ../search.php:32
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#: ../single.php:53
+msgid "View EXIF Data"
+msgstr ""
+
+#: ../single.php:57
+msgid "View "
+msgstr ""
+
+#: ../single.php:57
+msgid "Flickr set"
+msgstr ""
+
+#: ../inc/autofocus-help.php:18
+msgid ""
+"<h3>How to use AutoFocus Shortcodes</h3> \n"
+"\t<h4>[flickrgallery] </h4>\n"
+"\t<p>Adds a flickr gallery to your post content.<br/> \n"
+"\t<p><strong>Usage:</strong> [flickrgallery setid=&quot;52157624866504110&quot; limit=&quot;10&quot;]</p> \n"
+"\t<p><strong>Parameters:</strong><br/>\n"
+"\tsetid=&quot;Your-Flickr-Set-Id&quot; (Your Flickr Set ID should look like something this: 52157624866504110).<br/> \n"
+"\tlimit= &quot;#&quot; Replace # with the number of images you wish to show in the gallery (Default =&quot;10&quot;).</p> \n"
+"\t<h4>[pullquote]</h4><p>Adds a pull quote about the project.<br/> \n"
+"\t<p><strong>Usage:</strong> [pullquote foo=&quot;bar&quot;]%quoted text%[/pullquote]</p> \n"
+"\t<p><strong>Parameters:</strong><br/>\n"
+"\tauthor=&quot;The Author&#39;s Name&quot;</p> \n"
+"\t<h4>[largeimage]</h4><p>Adds a larger post image with a hovering description. Requires an image at least 800px wide.<br/> \n"
+"\t<p><strong>Usage:</strong> [largeimage foo=&quot;bar&quot;]%large size image%[/largeimage]</p> \n"
+"\t<p><strong>Parameters:</strong><br/>\n"
+"\tdescription=&quot;This is your description.&quot;</p> \n"
+"\t<h4>[narrowcolumn]</h4><p>Adds a narrow paragraph area. Use 2 narrow columns together with left and right parameters to create a 2 column area.<br/> \n"
+"\t<p><strong>Usage:</strong> [narrowcolumn foo=&quot;bar&quot; ]%content%[/narrowcolumn]</p> \n"
+"\t<p><strong>Parameters:</strong><br/>\n"
+"\tside=&quot;left&quot;<br/> \n"
+"\tside=&quot;right&quot;</p>\n"
+"\t<p>Visit the <a href=\"http://fthrwght.com/autofocus/#documentation\" target=\"_blank\">full documentation</a>."
+msgstr ""
+
+#: ../inc/autofocus-help.php:42
+msgid "Autofocus Shortcodes"
+msgstr ""
+
+#: ../inc/autofocus-images.php:82
+msgid "This post does not have an image attachment :-/"
+msgstr ""
+
+#: ../inc/autofocus-images.php:135
+#: ../inc/autofocus-images.php:137
+msgid "All rights reserved."
+msgstr ""
+
+#: ../inc/autofocus-images.php:233
+msgid "Exif Data"
+msgstr ""
+
+#: ../inc/autofocus-images.php:235
+msgid "Date Taken:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:236
+msgid "Copyright:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:237
+msgid "Credit:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:238
+msgid "Title:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:239
+msgid "Caption:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:240
+msgid "Camera:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:241
+msgid "Focal Length:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:242
+msgid "Aperture:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:243
+msgid "ISO:"
+msgstr ""
+
+#: ../inc/autofocus-images.php:244
+msgid "Shutter Speed:"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:20
+msgid "You currently have no publicly viewable Flickr sets."
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:26
+msgid "Enable Flickr:"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:30
+msgid "Choose Flickr set:"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:38
+msgid "Add a link to the Flickr Gallery?:"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:46
+msgid "You must provide your Flickr user ID and API Key under Appearance &rarr; Theme Options &rarr; Flickr Settings"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes-flickr.php:62
+msgid "Flickr Settings"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:19
+msgid "Embed URL"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:20
+msgid "Paste your oEmbed URL here. (Examples: http://vimeo.com/7757262 or http://www.youtube.com/watch?v=xwnJ5Bl4kLI)"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:25
+msgid "Photo Credit"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:26
+msgid "Text entered here will replace the default Photo credit. (Example: &copy; 2011 Photographer Name. All rights reserved.)"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:31
+msgid "Show Sliding Image Gallery?"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:32
+msgid "Show a sliding Gallery of attached images above the post title? (Limited to 10 images. IMPORTANT: All images must be at least 800px wide or 600px tall.)"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:38
+msgid "Slider Image Count"
+msgstr ""
+
+#: ../inc/autofocus-metaboxes.php:39
+msgid "This determines how many images are displayed in the image slider. (Recommended Maximum: <strong>20</strong>)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:44
+msgid "Post Title &rarr; Post Date"
+msgstr ""
+
+#: ../inc/autofocus-options.php:45
+msgid "Post Date &rarr; Post Title"
+msgstr ""
+
+#: ../inc/autofocus-options.php:46
+msgid "Post Title only"
+msgstr ""
+
+#: ../inc/autofocus-options.php:47
+msgid "Post Date only"
+msgstr ""
+
+#: ../inc/autofocus-options.php:58
+msgid "Numbered"
+msgstr ""
+
+#: ../inc/autofocus-options.php:59
+msgid "Previous & Next"
+msgstr ""
+
+#: ../inc/autofocus-options.php:93
+msgid "Layout Options"
+msgstr ""
+
+#: ../inc/autofocus-options.php:96
+msgid "Home Page Layout"
+msgstr ""
+
+#: ../inc/autofocus-options.php:97
+msgid "<strong>Grid (Portfolio) Layout</strong> Shows a square grid of images on the home page.  <strong>Staggered (Default) Layout</strong> Shows a staggered grid of images on the home page with excerpts."
+msgstr ""
+
+#: ../inc/autofocus-options.php:103
+msgid "Post Title Position"
+msgstr ""
+
+#: ../inc/autofocus-options.php:104
+msgid "<strong>Inline</strong> Display the Post Title just below the Entry Image. <strong>Sidebar</strong> Display the Post Title to the right of the Entry Content."
+msgstr ""
+
+#: ../inc/autofocus-options.php:110
+msgid "Image Display"
+msgstr ""
+
+#: ../inc/autofocus-options.php:111
+msgid "Choose how to display images and galleries on single posts. <strong>Full</strong> Shows images on single posts at 800 pixels wide with a flexible height. (IMPORTANT: When using the slider option, slides do not rotate automatically). <strong>Fixed</strong> Constrains images on single posts to fit in a 800px &times; 600px display area."
+msgstr ""
+
+#: ../inc/autofocus-options.php:117
+msgid "Archive Layout"
+msgstr ""
+
+#: ../inc/autofocus-options.php:118
+msgid "<strong>Default</strong> Uses the default archive layout on archive pages. <strong>Images</strong> Uses the AutoFocus Home Page Layout (See settings above) on archives pages."
+msgstr ""
+
+#: ../inc/autofocus-options.php:124
+msgid "General Options"
+msgstr ""
+
+#: ../inc/autofocus-options.php:127
+msgid "Post Title & Date Display"
+msgstr ""
+
+#: ../inc/autofocus-options.php:128
+msgid "<strong>Post Title &rarr; Post Date *</strong> Shows the Post Title initially. <strong>Post Date &rarr; Title *</strong> Shows the Post Date initially. Shows the Post Title on mouse-overs. <strong>Post Title only *</strong> Shows the Post Title on mouse-overs. <strong>Post Date only</strong>Shows the Post Date on mouse-overs. <strong> </strong> *Also displays Post Excerpts in Staggered Layout."
+msgstr ""
+
+#: ../inc/autofocus-options.php:134
+msgid "Sliding Feature Area"
+msgstr ""
+
+#: ../inc/autofocus-options.php:135
+msgid "Show a sliding featured content area of <a href=\"http://www.nathanrice.net/blog/definitive-sticky-posts-guide-for-wordpress-27/\" target=\"_blank\">Sticky Posts</a> on the front page?"
+msgstr ""
+
+#: ../inc/autofocus-options.php:140
+msgid "Slider Navigation"
+msgstr ""
+
+#: ../inc/autofocus-options.php:141
+msgid "<strong>Numbered</strong> Uses a numbered list to slide between images (ie: 1, 2, 3, etc). <strong>Previous & Next</strong> Uses Previous / Next links and an image count to slide between images (ie: &lsaquo;Prev 1/10 Next&rsaquo;). "
+msgstr ""
+
+#: ../inc/autofocus-options.php:147
+msgid "Blog Category"
+msgstr ""
+
+#: ../inc/autofocus-options.php:148
+msgid "Select a post category to be shown in the Blog Template and excluded from the Front Page."
+msgstr ""
+
+#: ../inc/autofocus-options.php:154
+msgid "Add Fancybox (Lightbox)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:155
+msgid "Add a check here to use Fancybox within the [gallery] on single pages. (http://fancybox.net/)."
+msgstr ""
+
+#: ../inc/autofocus-options.php:160
+msgid "Show Exif data"
+msgstr ""
+
+#: ../inc/autofocus-options.php:161
+msgid "Add a check here to show the Exif data for your images on attachment pages (WP Gallery Images only)."
+msgstr ""
+
+#: ../inc/autofocus-options.php:166
+msgid "Hide Navigation Arrows"
+msgstr ""
+
+#: ../inc/autofocus-options.php:167
+msgid "Add a check here to remove the left and right navigation arrows."
+msgstr ""
+
+#: ../inc/autofocus-options.php:172
+msgid "Info on Author Page"
+msgstr ""
+
+#: ../inc/autofocus-options.php:173
+msgid "Display a <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">microformatted vCard</a> with the author&rsquo;s avatar, bio and email on the author page."
+msgstr ""
+
+#: ../inc/autofocus-options.php:179
+msgid "Branding & Color Options"
+msgstr ""
+
+#: ../inc/autofocus-options.php:182
+msgid "Custom Logo"
+msgstr ""
+
+#: ../inc/autofocus-options.php:183
+msgid "Upload a logo for your theme, or specify the image address of your online logo. (Example: http://yoursite.com/logo.png)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:188
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../inc/autofocus-options.php:189
+msgid "Upload a 16px x 16px Png/Gif image that will represent your website&rsquo;s favicon."
+msgstr ""
+
+#: ../inc/autofocus-options.php:195
+msgid "Change the color of text, borders and link hover states by entering a HEX color number. (ie: <span style=\"font-family:Monaco,Lucida Console,Courier,monospace;\">#999999</span>)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:200
+msgid "Link Color"
+msgstr ""
+
+#: ../inc/autofocus-options.php:201
+msgid "Change the color of anchor links by entering a HEX color number. (ie: <span style=\"font-family:Monaco,Lucida Console,Courier,monospace;\">#00CCFF</span>)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:206
+msgid "Background Color"
+msgstr ""
+
+#: ../inc/autofocus-options.php:207
+msgid "Change the background color by entering a HEX color number. (ie: <span style=\"font-family:Monaco,Lucida Console,Courier,monospace;\">#FFFFFF</span>)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:212
+msgid "Photo Background Color"
+msgstr ""
+
+#: ../inc/autofocus-options.php:213
+msgid "Change the background color of Portrait (narrow) images on Single Pages by entering a HEX color number. (ie: <span style=\"font-family:Monaco,Lucida Console,Courier,monospace;\">#F0F0F0</span>)"
+msgstr ""
+
+#: ../inc/autofocus-options.php:218
+msgid "Text in Footer"
+msgstr ""
+
+#: ../inc/autofocus-options.php:219
+msgid "Edit the text that shows up in the footer."
+msgstr ""
+
+#: ../inc/autofocus-options.php:226
+msgid "Custom CSS"
+msgstr ""
+
+#: ../inc/autofocus-options.php:227
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: ../inc/autofocus-options.php:238
+msgid "Connect to your Flickr account using the settings below. A working Flickr account is required and all fields below must be filled. <br />Follow <a href=\"http://fthrwght.com/autofocus/#flickrapi\" target=\"_blank\">these instructions</a> to get your Flickr API and Secret Keys."
+msgstr ""
+
+#: ../inc/autofocus-options.php:241
+msgid "Flickr Username"
+msgstr ""
+
+#: ../inc/autofocus-options.php:247
+msgid "Flickr API Key"
+msgstr ""
+
+#: ../inc/autofocus-options.php:253
+msgid "Flickr Secret Key"
+msgstr ""
+
+#: ../inc/autofocus-shortcodes.php:15
+msgid "Author&#8217;s Name (Default)"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:120
+#: ../inc/autofocus-template-tags.php:146
+msgid "Browse"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:125
+#: ../inc/autofocus-template-tags.php:151
+msgid "Older: %link"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:135
+#: ../inc/autofocus-template-tags.php:161
+msgid "Newer: %link"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:196
+#, php-format
+msgid "<span class=\"%1$s\">By: %2$s</span>"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:208
+#, php-format
+msgid "<span class=\"entry-cats\">Filed under %1$s.</span> <span class=\"entry-tags\">Tagged %2$s.</span> <span class=\"entry-permalink\">Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>.</span>"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:210
+#, php-format
+msgid "<span class=\"entry-cats\">Filed under %1$s.</span> <span class=\"entry-permalink\">Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>.</span>"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:212
+#, php-format
+msgid "<span class=\"entry-permalink\">Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>.</span>"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:243
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:246
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:253
+#: ../inc/autofocus-template-tags.php:273
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:271
+msgid "By "
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:294
+msgid "Name"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:297
+msgid "Email"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:300
+msgid "Website"
+msgstr ""
+
+#: ../inc/autofocus-template-tags.php:307
+msgid "Comment"
+msgstr ""
+
+#: ../inc/options/options-framework.php:164
+#: ../inc/options/options-framework.php:381
+msgid "Theme Options"
+msgstr ""
+
+#: ../inc/options/options-framework.php:197
+msgid "Clear"
+msgstr ""
+
+#: ../inc/options/options-framework.php:198
+msgid "Default"
+msgstr ""
+
+#: ../inc/options/options-framework.php:199
+msgid "Select Color"
+msgstr ""
+
+#: ../inc/options/options-framework.php:245
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../inc/options/options-framework.php:277
+msgid "Default options restored."
+msgstr ""
+
+#: ../inc/options/options-framework.php:331
+msgid "Options saved."
+msgstr ""
+
+#: ../inc/options/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: ../inc/options/options-medialibrary-uploader.php:126
+msgid "Upload"
+msgstr ""
+
+#: ../inc/options/options-medialibrary-uploader.php:149
+msgid "View File"
+msgstr ""
+
+#: ../inc/options/options-medialibrary-uploader.php:282
+msgid "Gallery"
+msgstr ""
+
+#: ../inc/options/options-medialibrary-uploader.php:282
+msgid "Previously Uploaded"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: ../inc/options/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+

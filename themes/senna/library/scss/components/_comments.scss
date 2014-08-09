@@ -1,0 +1,173 @@
+
+// ========== COMMENTS
+#comments {
+	padding-left: 0;
+	border-right: 0;
+	margin-left: 0;
+
+	ul, ol {
+		@extend %unstyled;
+	}
+
+	ol li:before {
+		display: none;
+	}
+
+	.children {
+		@include rem(padding-top, $unit);
+		@include rem(padding-left, 70px + $unit);
+
+		.comment {
+			border-bottom: 0;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+#reply-title {
+	//border-bottom: 3px solid #ddd;
+	@include rem(margin-bottom, 15px);
+}
+
+.commentlist {
+	margin-top: 0;
+	list-style: none;
+	padding-left: 0;
+}
+
+.comment {
+	position: relative;
+	@include rem(padding-bottom, $unit);
+	@include rem(padding-top, $unit);
+	border-bottom: 1px solid #ddd;
+	@include fs(15px);
+
+	&:hover .comment-reply-link {
+		text-decoration: none;
+	}
+}
+
+.reply {
+	position: absolute;
+	top: 25px; top: rem(25px);
+	right: 0;
+}
+
+.comment-reply-link {
+	display: block;
+	color: $grayLight;
+	@include fs(13px);
+	float: right;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.comment-author {
+	@include fs(16px);
+	margin-bottom: 10px;
+	margin-bottom: rem(10px);
+	color: $black;
+	font-size: 19px;
+	font-size: rem(19px);
+	font-weight: bold;
+	line-height: 1;
+
+	.fn {
+		font-style: normal;
+
+		a {
+			color: $grayDarker;
+		}
+	}
+
+	time { 
+		text-transform: uppercase;
+		font-weight: normal;
+		@include fs(13px);
+		@include rem(margin, 0 $unit/2);
+
+		a {
+			color: $grayDark;
+		}
+	}
+}
+
+.comment-edit-link {
+	display: none;
+	@include fs(13px);
+
+	.comment article:hover & {
+		display: inline;
+	}
+}
+
+.comment_content {
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.comment-author-avatar {
+	float: left;
+
+	.avatar {
+		@include square(70px);
+		@include border-radius(2px);
+	}
+}
+
+.comment-date {
+	color: $gray;
+	font-size: 14px;
+	font-size: rem(14px);
+
+	&:hover {
+		color: $gray;
+	}
+}
+#commentform {
+
+}
+#author, #email, #comment {
+	max-width: 100%;
+	width: 100%;
+}
+.comment-form-author {
+	border-right: $gutter/2 solid transparent;
+}
+.comment-form-email {
+	border-left: $gutter/2 solid transparent;
+	margin-top:0;
+}
+#commentform p.comment-form-email {
+	margin-top:0;
+}
+.form-submit {
+	text-align: right;
+}
+.comment-form-author, .comment-form-email {
+	width: 50%;
+	float: left;
+	display: inline-block;
+}
+.bypostauthor {
+	background:$white;
+}
+#respond {
+	font-size: 16px;
+	font-size: rem(16px);
+	@extend %cf;
+	@include rem(margin-top, $unit);
+}
+#comment {
+	height: 150px;
+	max-width: 100%;
+}
+
+#cancel-comment-reply-link {
+	@include rem(margin-left, $unit);
+	color: $grayLight;
+}

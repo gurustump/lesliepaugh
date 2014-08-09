@@ -1,0 +1,132 @@
+$headerHeight: 90px;
+$headerSmall: 65px;
+
+
+.l-header-fixed {
+	.admin-bar {
+		#header {
+			// margin-top:28px;
+		}
+
+	}
+
+	#content {
+		@include rem(top, $headerHeight);
+		@include rem(margin-bottom, $headerHeight);
+
+		.header-small & {
+			@include rem(top, $headerSmall);
+			@include rem(margin-bottom, $headerSmall);
+		}
+
+		.page-header-wrapper {
+			@include rem(top, -$headerHeight);
+			@include rem(margin-bottom, -$headerHeight);
+			@include rem(height, 470px);
+
+			&.wrapper-small {
+				&, .featured-image {
+					@include rem(height, 325px);
+				}
+			}
+
+			.container {
+				@include rem(top, $headerHeight);
+				position:relative;
+			}
+		}
+	}
+	.site-header-wrapper {
+		position:fixed;
+		width:100%;
+		background:#fff;
+		@include rem(height, $headerHeight+5);
+
+		.container {
+			height:100%;
+		}
+
+	}
+
+	.site-header-wrapper, .site-logo-container, nav.site-navigation .site-mainmenu, nav.site-navigation .site-mainmenu > li > a,
+	nav.site-navigation .site-mainmenu > li > a:after, .site-logo {
+		@extend %transition;
+		// Debug
+		// @include transition(all 15s);
+	}
+} 
+
+//Condensed Header
+.l-header-small  {
+
+	.site-title {
+		@include rem(margin-top, 10px);
+	}
+
+	#header {
+		&.site-header-wrapper {
+			@include rem(height, $headerSmall !important);	
+			border-top-width:0;
+		}
+
+		nav.site-navigation  {
+			.site-mainmenu {
+				&, & > li {
+					@include rem(height, $headerSmall);
+				}
+				& > li > ul.sub-menu {
+					@include rem(top, 62px);
+				}
+
+				& > li > a {
+					@include rem(height, $headerSmall);
+					@include rem(padding-top, $unit);
+					// background-position: 0 (-1 * $headerSmall);
+					&:hover {
+						background-position: 0 0;
+					}
+				}
+			}
+			.search-toggle {
+				@include rem(height, $headerSmall);
+				@include rem(padding-top, $unit);
+			}
+			.search-form {
+				button, input, .fancyInput > div span {
+					@include fs(40px);
+					@include rem(line-height, $headerSmall+6);
+				}
+				.search-remove {
+					@include rem(padding-top, 20px);
+					// @include rem(line-height, $headerSmall+(-5));
+				}
+			}
+		}
+		.site-branding  {
+			.site-logo-container {
+				height:auto;
+				overflow:hidden;
+				@include rem(padding-top, 9px);
+				// vertical-align:top;
+			}
+			a, .site-logo {
+				@include rem(max-height, $headerSmall - 20px);
+			}
+			.full-sized {
+				padding-top:0;
+				a, .site-logo {
+					max-height:$headerSmall;
+				}
+			}
+		}
+		.menu-toggle .nav-btn {
+			@include rem(margin-top, 8px);
+		}
+	}
+
+	#content {
+		@include rem(top, 60px);
+	}
+
+
+}

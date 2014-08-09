@@ -1,0 +1,198 @@
+/*
+ *
+ * Don't forget to set $args['admin_stylesheet'] to 'custom' in options.php!
+ *
+ */
+
+@import url('options.css');
+
+#redux-opts-form-wrapper {
+    position: relative;
+}
+
+#redux-opts-save-warn, #redux-opts-save {
+    position: absolute;
+    width: 100%;
+    padding: 5px 0;
+    margin: 0;
+    top: 45px;
+    left: 0;
+    text-indent: 15px;
+}
+#redux-opts-header {
+	border:none;
+	background:#292e2d;
+	padding:0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+}
+#redux-opts-footer {
+		border:none;
+	background:#292e2d;
+	padding:20px;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
+}
+
+#redux-opts-form-wrapper {
+	background-image:none;
+}
+
+#redux-opts-sidebar #redux-opts-group-menu li {
+}
+
+#redux-opts-sidebar #redux-opts-group-menu li.divide {
+	height: 2px;
+	background: #f0f0f0;
+}
+#redux-opts-sidebar #redux-opts-group-menu li.divide.big {
+	height:250px;
+}
+
+#redux-opts-header .button-primary {
+	padding: 10px 30px;
+	height: auto;
+	margin: 50px;
+	font-size: 14px;
+
+	background-color: #0698ce;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
+	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
+	border: 1px solid #0698ce;
+	
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 1);
+	color: #ffffff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+}
+.wp-core-ui #redux-opts-footer {
+	padding: 30px;
+}
+
+.wp-core-ui #redux-opts-footer .button-primary {
+	margin:0px 0 0 20px;
+}
+
+.wp-core-ui #redux-opts-header  .button-primary:hover {
+	background-color: #1dbaf4;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#1dbaf4),to(#19b5ef));
+	background-image: -webkit-linear-gradient(top,#1dbaf4,#19b5ef);
+	background-image: -moz-linear-gradient(top,#1dbaf4,#19b5ef);
+	background-image: -ms-linear-gradient(top,#1dbaf4,#19b5ef);
+	background-image: -o-linear-gradient(top,#1dbaf4,#19b5ef);
+	background-image: linear-gradient(to bottom,#1dbaf4,#19b5ef);
+	border: 1px solid #1dbaf4;
+	
+}
+
+div.pixelgrade_logo {
+	background-repeat: no-repeat;
+	height: 145px;
+	width: 635px;
+	float: left;
+	background-image: url('../img/pixelgrade_logo.png');
+}
+
+#redux-opts-form-wrapper .switch_wrap input[type="checkbox"]:checked + .switch {
+	background-color: #19b5ef;
+}
+
+#redux-opts-save-warn, #redux-opts-save {
+	position:relative;
+	width:100%;
+	text-indent:0;
+	top:0;
+	left:0;
+	padding:0 50px;
+	text-align:right;
+	color:#fff;
+	text-shadow: none;
+	display:block;
+	max-height:0;
+	opacity:0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	background-color: #0698ce;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#19b5ef),to(#0698ce));
+	background-image: -webkit-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -moz-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -ms-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: -o-linear-gradient(top,#19b5ef,#0698ce);
+	background-image: linear-gradient(to bottom,#19b5ef,#0698ce);
+	border: 0px solid #0698ce;
+
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+}
+
+#redux-opts-save-warn.active, #redux-opts-save.active {
+	max-height:100%;
+	padding:13px 50px;
+	opacity:1;
+	border-width: 1px;
+}
+
+#redux-opts-save-warn:after, #redux-opts-save:after {
+	position: absolute;
+	top: -14px;
+	right: 112px;
+	display: inline-block;
+	border-right: 13px solid transparent;
+	border-bottom: 15px solid #19b4ee;
+	border-left: 13px solid transparent;
+	content: '';
+}
+
+#redux-opts-save-warn:before, #redux-opts-save:before {
+	position: absolute;
+	top: -16px;
+	right: 111px;
+	display: inline-block;
+	border-right: 14px solid transparent;
+	border-bottom: 16px solid #bae8f9;
+	border-left: 14px solid transparent;
+	content: '';
+}
+#redux-opts-sidebar i {
+	font-size: 14px;
+	margin-right: 5px;
+	text-align: left;
+}
+
+.redux-opts-group-tab .form-table td:hover .reset_google_font {
+    display: inline-block;
+}
+
+.reset_google_font {
+    cursor: pointer;
+    margin-left: 7px;
+    display: none;
+}
+
+.reset_google_font i {
+    font-size: 21px;
+    color: #c1272d;
+    font-weight: normal;
+}

@@ -1,0 +1,228 @@
+//Main Menu Styling
+#nav-open-btn {
+	display:block;
+}
+
+nav.site-navigation {
+	&.desktop {
+		display:none;		
+	}
+	border-left-width:0;
+	display:block;
+	// top:0;
+	height: 100%;
+	width: 70%;
+	z-index:9999;
+
+	position:absolute;
+	left:0;
+	top:0;
+
+	background: #333333;
+	-webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+	box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.25);
+
+
+	.site-mainmenu {
+		& {
+			float:left;
+			width:100%;
+			top:6rem;
+			position:relative;
+			height:100%;
+		}
+		li {
+			float:left;
+			width:100%;
+			height:auto;
+			border-top:1px solid #000;
+			a {
+				background: $grayDark;
+				background-image:none !important;
+				@include fs(22px);
+				@include transition(none);
+				float:left;
+				width:100%;
+				height:auto;
+				padding:1rem 1rem 1rem 2rem;
+				color:#fff;
+				text-align:left;
+				border-top:none;
+			}
+
+			&:hover {
+				border-color:#000;
+
+				ul.sub-menu {
+					display:none;
+				}
+			}
+
+			&.menu-parent-item {
+				position: relative;
+				a {
+
+					&:after {
+						width:10px;
+						height:10px;
+						position: absolute;
+						@include rem(top, 18px);
+						@include rem(right, 20px);
+						border-color: $grayLighter;
+						left: auto;
+					}
+				}
+			}
+
+			&.active {
+				ul.sub-menu li.menu-parent-item a:after {
+					
+				}
+				a {
+					background: $accentColor;
+
+					&:after {
+						@include rem(top, 24px);
+						@include rotate(315deg); 	
+					}
+				}
+				ul.sub-menu {
+					display:block;
+				}
+			}
+
+			ul.sub-menu {
+				top:0;
+				left:0 !important;
+				width:100%;
+				margin:0;
+				float:left;
+				position:relative;
+				display:none;
+				height:auto;
+				opacity:1;
+				li {
+					background:#282828;
+					&:hover {
+						background:black;
+					}
+					&.menu-parent-item {
+						a {
+							&:after {
+								@include rotate(135deg); 
+								top:1.2rem;
+								right:2rem;
+
+							}
+						}
+					}
+				}
+				a {
+					background: $grayDarker;
+					color:#fff;
+					padding-left:3rem;
+				}
+
+				//3rd level menu
+				ul.sub-menu {
+					a {
+						padding-left:4rem;
+					}
+					li:hover a {
+						background:black !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Open & Close Buttons
+.nav-btn {
+	z-index:100;
+    display: block;
+    @include size(60px, 50px);
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: $accentColor url("../images/nav-icon.svg") center center no-repeat;
+    background-size: 30px 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    @include opacity(1);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    position:absolute;
+    top: 0; right: 1rem;
+
+    .no-svg & {
+        background-image: url("../images/nav-icon.png");
+    }
+
+    &:hover,
+    &:focus {
+        @include opacity(1);
+    }
+
+    .menu-toggle & {
+	    @include rem(margin-top, ($headerHeight - 50px)/2);
+
+	    @include mq(0 hand) {
+	    	@include rem(margin-top, 19px);
+	    }
+    }
+}
+
+#nav-close-btn {
+
+    background: #333 url("../images/close-btn.svg") center center no-repeat;
+	left:1.5rem;
+	top:1.5rem;
+
+    .no-svg & {
+        background-image: url("../images/close-btn.png");
+    }
+}
+
+
+//Page and menu transitions
+
+$nav-off-canvas-width: 70%;
+
+.csstransforms3d.csstransitions {
+
+		#page {
+	        left: 0 !important;
+	        @include transform(translate3d(0,0,0));
+	        @include transition(transform 500ms ease);
+	        @include backface-visibility(hidden);
+    	}
+
+        .site-navigation {
+            & {
+            	left: 0;
+            	margin-left:0;
+
+                @include opacity(0.7);
+                @include transition(opacity 300ms 100ms ease, transform 500ms ease);
+                @include transform(translate3d(-100%,0,0));
+                @include transform-origin(50%, 0%);
+            }
+        }
+    }
+
+.csstransforms3d.csstransitions.js-nav {
+    	#page {
+        	@include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
+    	}
+        .site-navigation {
+
+            & {
+                @include opacity(1);
+                //@include transform(translate3d(0,0,0));
+            }
+        }
+}

@@ -1,0 +1,243 @@
+/* =WordPress Core ... these bitches are required
+-------------------------------------------------------------- */
+.hidden, [hidden] {display: none !important}
+
+.alignnone {
+	// margin: 5px 20px 20px 0;
+}
+
+.small {
+	@include fs(14px);
+	line-height:1.5;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	@include rem(margin, $unit/2 auto);
+}
+
+.alignright {
+	float:right;
+	@include rem(margin, 0 0 $unit $unit);
+}
+
+.alignleft {
+	float: left;
+	@include rem(margin, 0 $unit $unit 0);
+}
+
+.aligncenter {
+	display: block;
+	@include rem(margin, $unit/2 auto);
+}
+
+img {
+	height:auto;
+}
+.icon {
+	& {
+		margin-right:15px;
+	}
+	&.circle {
+		float: left;
+		display: block;
+		padding: $unit*2/3 $unit/2;
+		@include border-radius(1000px);
+		background-color:rgb(0, 0, 0);
+		background-color:rgba(0, 0, 0, 0.15);
+		@include box-shadow(rgba(0,0,0,0.25) 0 1px 2px inset);
+
+		img {
+			margin:0;
+			padding:0;
+		}
+	}
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	// margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+	// margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 4px 15px 20px 0;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 4px 5px;
+}
+
+.archive .post.sticky {
+	background-color: #f5f5f5;
+	@include rem(padding, 10px 20px);
+}
+
+.gallery-caption {
+	background-color: #006505;
+}
+
+.bypostauthor {
+	background-color: #009cee;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.inline {
+	display:inline-block;
+}
+
+//Margins hacks
+//Top
+.mt1 {
+	margin-top:1rem !important;
+}
+.mt2 {
+	margin-top:2rem !important;
+}
+.mt3 {
+	margin-top:3rem !important;
+}
+.mt4 {
+	margin-top:4rem !important;
+}
+
+//Top Negative
+.mt-1 {
+	margin-top:-1rem !important;
+}
+.mt-2 {
+	margin-top:-2rem !important;
+}
+.mt-3 {
+	margin-top:-3rem !important;
+}
+.mt-4 {
+	margin-top:-4rem !important;
+}
+
+//Bottom
+.mb1 {
+	margin-bottom:1rem !important;
+}
+.mb2 {
+	margin-bottom:2rem !important;
+}
+.mb3 {
+	margin-bottom:3rem !important;
+}
+//Bottom Negative
+.mb-1 {
+	margin-bottom:-1rem !important;
+}
+.mb-2 {
+	margin-bottom:-2.25rem !important;
+}
+.mb-3 {
+	margin-bottom:-3rem !important;
+}
+.mb-50 {
+	margin-bottom:-50px !important;
+}
+
+//Paddings
+.well-small {
+	padding:15px;
+}
+
+//Forms
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	background-color: #fff;
+	border: 0;
+	border: 1px solid #ededed;
+	border-bottom-color:#ccc;
+	display: inline-block;
+	@include rem(padding, 6px 0 6px 10px);
+	@include rem(margin-bottom, 10px);
+	@include fs(18px);
+	color: #555;
+	vertical-align: middle;
+	width:100%;
+	@include border-radius(0px);
+}
+input[type="submit"] {
+	float: right;
+	background: $accentColor;
+	color: #fff;
+	border: none;
+	@include rem(padding, $unit/2 $unit);
+	&:hover {
+		background:$accentColor;
+	}
+}
+
+
+//Colors
+.white {
+
+	&, a, a:hover {
+		color:#fff !important;
+		text-decoration:none;
+		border:none;
+	}
+}
+.clean {
+	&, a, a:hover {
+		color:$grayDark !important;
+		text-decoration:none;
+		border:none;
+	}
+	a:hover {
+		opacity:0.7;
+	}
+}

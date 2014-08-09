@@ -1,0 +1,34 @@
+.btn {
+	display: inline-block;
+	// @include rem('margin', $baseFontSize*$baseLineHeight/4 0);
+	@include rem('padding', $baseFontSize*$baseLineHeight/4 $baseFontSize*$baseLineHeight/2);
+	@include border-radius($defaultBorderRadius);
+	background-color: whiteSmoke;
+	border: 0;
+	line-height: $baseLineHeight;
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+.btn-primary {
+	background-color: $primaryColor;
+	color: white;
+	// font-weight: bold;
+}
+
+.btn-success {
+	background: $green;
+	color: white;
+}
+
+.btn-link {
+	color: SteelBlue;
+	background: none;
+	text-decoration: underline;
+
+	&:hover {
+		color: RoyalBlue;
+	}
+}

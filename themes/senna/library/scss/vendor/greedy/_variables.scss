@@ -1,0 +1,30 @@
+//				: more colors
+$blue			: #428bca;
+$success		: #5cb85c;
+$warning		: #f0ad4e;
+$error			: #d9534f;
+$info			: #5bc0de;
+
+$rust			: hsl(10, 70%, 50%);
+$cobalt			: hsl(210, 100%, 16%);
+$cobalt-fade	: hsl(213, 14%, 73%);
+$cobalt-deep	: darken($cobalt, 38%);
+
+$accentColor	: #01a279;
+
+
+$black          : #000;
+$grayDarkest	: #202020;
+$grayDarker		: #373737;
+$grayDark		: #484848;
+$gray			: #a0a0a0;
+$grayLight		: #d9d9d9;
+$grayLighter	: #fafafa;
+$grayLightest 	: #f0f0f0;
+$white          : #fff;
+
+
+//				: sizes;
+$large			: 1.25;
+$small			: .85;
+$mini			: .75;

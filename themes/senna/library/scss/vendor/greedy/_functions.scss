@@ -1,0 +1,29 @@
+@function baseEm($px) {
+	@if $px == 0  {
+		@return 0;
+	}
+	@return $px/$fontSizeBase + em;
+}
+
+@function rem($px) {
+	$rem: $fontSizeBase;
+	@return $px/$rem + rem;
+}
+
+@function reverseList($list) {
+	$newList: ();
+	@for $i from 1 through length($list) {
+		$idx: length($list) - $i + 1;
+		$newList: append($newList, nth($list, $idx));
+	}
+	@return $newList;
+}
+
+@function calcSize($size) {
+	@return ceil($size / $unit) * $unit;
+}
+
+@function getSize($bp) {
+	$bpSize: nth($bpSizes, index($bpNames, $bp));
+	@return $bpSize;
+}

@@ -1,0 +1,229 @@
+
+.wrapper.page-contact {
+	padding: 0;
+	border-top:1px solid rgba(0,0,0,0.15);
+
+	.row {
+		position: relative;
+	} 
+}
+.wrapper.the-content-contact {
+	padding: 0;
+}
+
+.contact-info {
+	// @include rem(margin-top, 95px);
+	position: relative;
+	z-index: 100;
+	color: $white;
+
+	
+	a {
+		color:#fff;
+		@extend %link_dotted;
+	}
+
+	&:after {
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-bottom-color: $accentColor;
+		@include rem(border-width, $unit);
+		@include rem(margin-left, -1*$unit);
+	}	
+
+	@include mq(from lap) {
+		&:after {
+			right: 100%;
+			top: 50%;
+			bottom: auto;
+			left: auto;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(136, 183, 213, 0);
+			border-right-color: $accentColor;
+			@include rem(border-width, $unit);
+			@include rem(margin-top, -1*$unit);
+		}
+	}
+}
+
+.contact-details {
+	@extend %unstyled;
+	margin-bottom: 0;
+	@include rem(padding, 3/2*$unit $unit);
+	@include fs(17px);
+	line-height:1.5;
+}
+
+.contact-details-item {
+	@extend %cf;
+	@include rem(margin-bottom, $unit/2);
+
+	.contact-detail-text {
+		@include rem(margin-left, 40px + $unit/2);
+	}
+
+	.contact-detail-icon {
+		@include square(35px);
+		text-align: center;
+		@include rem(font-size, 32px);
+		position: relative;
+		@include rem(top, 6px);
+		left: 0;
+		float: left;
+
+		i {
+			position: relative;
+			@include rem(top, -17px); left: 0;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.contact-content {
+	@include rem(padding-bottom, $unit);
+	@include rem(padding-top, 2*$unit);
+}
+
+.contact-form-container {
+	min-height: 100%;
+	@include rem(margin-bottom, -1 * $unit);
+	
+
+	@include mq(from lap) {
+		background-color: #efefef;
+		@include rem(padding, 3*$unit 0 3*$unit 2*$unit);
+
+		&:after {
+			content: "";
+			display: block;
+			background-color: #efefef;
+			position: absolute;
+			width: 9999px;
+			top: 0; left: 100%;
+			bottom: 0;
+		}
+	}
+
+	h3 {
+		@include fs(36px);
+		@include rem(margin-top, -9px);
+		@include rem(margin-bottom, 7px);
+	}
+
+	br {
+		display:none;
+	}
+
+	p {
+		margin:0;
+		float:left;
+		width:100%;
+	}
+
+	label {
+		float:left;
+		// width:30%;
+		text-align:left;
+		@extend .span2;
+	}
+
+	span.wpcf7-form-control-wrap  {
+		float:left;
+		@extend .span10;
+
+		input, textarea {
+			@include fs(15px);
+			@include background-image(linear-gradient(transparent 98%, #b6b6b6 98%, #b6b6b6));
+			@include background-size(37px 37px);
+
+			background-color:transparent;
+			border:none;
+			@include border_radius(0);
+
+
+
+			// Not working in FF
+			// line-height:37px;
+			padding:11px 0;
+			margin:0;
+			outline:none;
+		}
+		textarea {
+			padding:0;
+			line-height:37px;
+		}
+	}
+
+	input[type="submit"] {
+		@include rem(margin-top, 3/2*$unit);
+		text-transform:uppercase;
+		background:$grayDarker;
+		@include transition(all 0.3s);
+
+		&:hover {
+			background:$accentColor;
+		}
+	}
+}
+
+.wpcf7-form {
+	@extend %row;
+}
+
+.wpcf7-form-control-wrap {
+	width:100%;
+}
+
+
+#gmap {
+	iframe {
+		display: block;
+		@include rem(height, 470px);
+		@include rem(margin-bottom, -470px);
+	}
+}
+@include mq(to lap) {
+	#content {
+		#gmap {
+			@include rem(height, 675px);
+			iframe {
+				@include rem(margin-bottom, -185px);
+			}
+			.container {
+				padding:0;
+			}
+		}
+		.page-contact {
+			.contact-content {
+				height: auto !important;
+			}
+			.contact-form-container {
+				input, textarea {
+					border:1px solid #ccc;
+					padding:5px 10px; 
+					background-image:none;
+					@include rem(margin-bottom, $unit !important); 
+				}
+				input[type="submit"] { 
+					position:relative;
+					top:-$unit;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,248 @@
+$sliderHeight: calcSize(570px);
+$sliderHeightSmall: calcSize(370px);
+$sliderHeightMedium: calcSize(550px);
+$sliderBreakpoint: 735px;
+$sliderBreakpointSmall: 450px;
+
+.slider-front-page {
+	@include rem(height, $sliderHeight);
+	@include rem(top, -30px);
+	@include rem(margin-bottom, -30px);
+
+	background:#222;
+	
+	.slides {
+
+		li {
+			// display:none;
+			// Not needed anymore (fadecss)
+		}
+	}
+
+	.slide, .flex-viewport {
+		@include rem(height, $sliderHeight);
+	}
+
+	.slide {
+		@include transition(all 1s cubic-bezier(0.770,0.000,0.175,1.000));
+	}
+
+	//Arrows Navigation
+	.flex-direction-nav {
+		@include rem(height, $sliderHeight);
+		@include rem(top, -1 * $sliderHeight);
+		left: 0;
+		margin-bottom: 0;
+		.flex-prev, .flex-next {
+			position: absolute;
+			@include square(2 * $unit);
+			border: 1px solid transparent;
+			@include transition(all 0.2s);
+
+			&:hover {
+				border-width:2px;
+			}
+
+			.lt-ie8 & {
+				background-color: $grayDark;
+			}
+			@include media($sliderBreakpoint, 9999px) {
+				background: transparent;
+			}
+		}
+
+		.flex-prev {
+			@include rem(bottom, 5 * $unit);
+			@include rem(right, 2 * $unit);
+			border-bottom-color: white;
+			border-left-color: white;
+
+			@include icons-sprite(arrow_left_s);
+
+			&:hover {
+				margin-bottom:-5px;
+				margin-right:5px;
+			}
+		}
+
+		.flex-next {
+			@include rem(top, 4 * $unit);
+			@include rem(right, 2 * $unit);
+			border-top-color: white;
+			border-right-color: white;
+			@include icons-sprite(arrow_right_s);
+
+			&:hover {
+				margin-top:-5px;
+				margin-right:-5px; 
+			}
+		}
+
+		//Responsive .flex-direction-nav
+		@include media(0, $sliderBreakpoint) {
+			width:auto;
+			float:right;
+
+			@include rem(height, 2*$unit);
+			@include rem(bottom, 3*$unit);
+			top:auto;
+			li {
+				float:left;
+				@include rem(margin-left, 1/3*$unit);
+			}
+
+			.flex-prev, .flex-next {
+				position:relative;
+				bottom:0; 
+				top:0;
+				right:0;
+				display:block;
+				width:46px;
+				height:46px;
+				border:none;
+				// @include rem(padding, 0 1*$unit);
+				background-color:#222;
+
+				&:hover {
+					margin:0;
+					background-color:#515151;
+				}
+			}
+			.flex-prev {
+			}
+			.flex-next {
+			}
+		}
+	}
+
+	//Responsive .slider-front-page
+	@include media($sliderBreakpointSmall, $sliderBreakpoint) {
+		&, .slide, .flex-viewport { 
+			@include rem(height, $sliderHeightMedium);
+		}
+		.featured-image {
+			@include rem(height, $sliderHeightMedium);
+		}
+	}
+	@include media(0, $sliderBreakpointSmall) {
+		&, .slide, .flex-viewport { 
+			@include rem(height, $sliderHeightSmall);
+		}
+		.featured-image {
+			@include rem(height, $sliderHeightSmall);
+		}
+	}
+
+	
+
+	.slide-content {
+		@include rem(margin-top, 110px);
+		color: white;
+
+		@include translateY(-100px);
+		@include transition(all 0.8s cubic-bezier(0.770,0.000,0.175,0.800));
+
+		// .btn-slider {
+		// 	@include rem(margin-top, 2.5*$unit);
+		// 	@include translateY(60px);
+		// 	opacity:0;
+		// 	@include transition(background 0.3s,
+		// 						border-color 0.3s, 
+		// 						transform 0.5s 0.6s cubic-bezier(0.770,0.000,0.175,1), 
+		// 						opacity 0.7s 0.6s cubic-bezier(0.770,0.000,0.175,1)
+		// 						);
+		// }
+
+		//Slide with video
+		&.s-video {
+			& {
+
+			}
+			.slide-video {
+				width:55%;
+				float:left;
+				&, .mesj-video {
+					// @include rem(max-width, 660px);
+				}
+			}
+
+			.slide-content-wrapper {
+				width:40%;
+				margin-left:3%;
+				float:left;
+			}
+
+			//Responsive .s-video.slide-content
+			@include media($sliderBreakpointSmall, $sliderBreakpoint) {
+
+			}
+			@include media(0, $sliderBreakpoint) {
+				.slide-video, .slide-content-wrapper {
+					width:100%;
+					margin:0;
+				}
+
+				//Hide all the content (but not the buttons)
+				.slide-content-wrapper *:not(.btn){
+					display:none;
+				}
+				.slide-content-wrapper {
+					.btn {
+						margin-top:0;
+					}
+				}
+			}
+		}
+
+		//Responsive .slide-content
+		@include media(0, $sliderBreakpoint) {
+			@include rem(height, $sliderHeightSmall);
+			@include rem(margin-top, 50px);
+			width:100%;
+			.btn-slider {
+				@include rem(margin-top, $unit);
+				@include rem(padding, 12px 20px);
+				position:absolute;
+				@include rem(bottom, 72px);
+				background:#222;
+				border-color:#222;
+				font-size:13px;
+			}
+		}
+		@include media($sliderBreakpointSmall, $sliderBreakpoint) {
+			@include rem(height, $sliderHeightMedium);
+			.btn-slider {
+				
+			}
+		}
+	}
+
+	%heading {
+		color: white;
+	}
+
+
+	//Active state
+	.flex-active-slide {
+		& {
+
+		}
+		.slide-content {
+				@include translateY(0px);
+		}
+	}
+
+
+	.slider-pattern {
+		background:url('../images/slider_pattern.png');
+		width:100%;
+		height:13px;
+		position:absolute;
+		left:0;
+		@include rem(bottom, 40px);
+		z-index:50;
+		@include media(0, $sliderBreakpoint) {
+			display:none;
+		}
+	}
+}

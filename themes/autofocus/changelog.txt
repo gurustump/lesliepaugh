@@ -1,0 +1,86 @@
+*** AutoFocus Changelog ***
+
+Last edited on 2-07-2013 by Allan Cole
+
+Versions 
+2.1.02	Date: 02-07-2013
+		- Code cleanup
+		- Fixed Flickr Meta Boxes issue 
+		- Fixed tiny_mce issue with wp_editor
+		- Fixed hidden headers in mobile grid CSS
+		- Moved /inc/options/options-functions.php to /inc/autofocus-options-functions.php 
+		- Updated screenshot.png
+
+2.1.01	Date: 01-27-2013
+		- Fixed max-width image CSS so large images do not interupt the sidebar title area 
+		- Fixed <hr> display (removed background color)
+		- Fixed HTML5 caption bug with WP3.5
+		- Fixed floats of archive page template lists
+		- Fixed image posts that do not have a Featured Image selected but still have attachments 
+		- Fixed Full Page template vertical margins
+		- Removed 'comments are closed' from pages (and page templates) 
+		- Updated meta boxes class
+		- Updated RTL styles
+
+2.1.00	Date: 01-18-2013
+		- Added to THEME SUPPLY Co.
+
+2.0.10	Date: 01-10-2013
+		- Added iPhone & iPad styles
+		- Update jQuery Cycle Plugin
+		- Uses get_template_part for featured slider ( See: content-featured-slider.php ) 
+		- Code cleanup
+
+2.0.9	Date: 01-08-2013
+		- Oodles of code clean up
+		- Restructured include (/inc) filenames and functions
+		- Updated Theme Options Framework
+		- Remove front-page image editing 
+
+2.0.8	Date: 12-14-2012
+		- Fixed Options issue where some users could not save options 
+
+2.0.7	Date: 12-11-2012
+		- Fixed Front Page Image Editing Issue 
+		- Fixed Singular Typo: http://gsfn.us/t/2zegn 
+
+2.0.6	Date: 3-20-2012
+		- Went back to the AutoFocus PRO naming convention (Sorry for the confusion :-/ ). 
+
+2.0.5	Date: 3-15-2012
+		- Fixed options name space issue: http://gsfn.us/t/2pnie
+
+2.0.4	Date: 3-06-2012
+		- Fix translations iDs and updated .po/.pot files: http://gsfn.us/t/2dlkg
+		- Fixed sticky slider excerpts in Grid Layout: http://gsfn.us/t/2h8yd
+		- Fixed video embed URLs: http://gsfn.us/t/2hnol
+		- Fixed comments from not showing on attachment pages: http://gsfn.us/t/2gsx8
+		- Fixed footer text to remove II and replace it with 2.0
+		- Fix post meta options saving issue: http://gsfn.us/t/2dlki
+
+2.0.3	Date: 1-11-2012
+		- Added tag description text to Tag archives: http://gsfn.us/t/2lbv8
+		- Fixed help screen display issue: http://gsfn.us/t/2l67j
+		- Fixed pinch zoom bug for iOS browsers: http://gsfn.us/t/2ebn3
+		- Removed 'thematic' localization IDs from archive-page.php 
+
+2.0.2	Date: 7-15-2011
+		- Fixed input text color: http://gsfn.us/t/2cmui 
+		- Fixed Post Title Option "Post Title only" so it displays the Excerpt in the default view.
+		- Added Fixes for IE9 jQueri UI issue: http://gsfn.us/t/2cn40
+		- Added the Archives Page Template 
+		- Changes set_post_thumbnail_size to 188px x 188px
+		- Fixed Archive Image Layout CSS
+		- Fixed issue where some logged in admins couldnt edit posts on Front Page
+		- Fixed oEmbed display area size 
+		- Fixed <object> CSS on style.css to remove padding-bottom
+		- Removed some old references to Thematic
+
+2.0.1	Date: 7-14-2011
+		- Change default settings for Footer to include Blog Title
+		- Fixed reset image position button
+		- Fixed font-size for Comments, Reply and Browse
+
+2.0		Date: 7-13-2011
+		- Initial Release
+

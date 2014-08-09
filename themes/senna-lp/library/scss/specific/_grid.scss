@@ -1,0 +1,40 @@
+
+/* Grid adjustments */
+.vc_span3 {
+  width: 22.792340426000003%;
+}
+.vc_span4 {
+  width: 31.12567375933334%;
+}
+.vc_span6 {
+  width: 47.822340426000004%;
+}
+.vc_span12 {
+  width: 97.872340426%;
+}
+
+[class*="vc_span"] {
+	display: block;
+	width: 100%;
+	min-height: 28px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	margin-left: 2.127659574%;
+}
+
+/* Teaser grid
+---------------------------------------------------------- */
+.wpb_teaser_grid .entry-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.grid_layout-thumbnail .post-thumb {
+  margin-bottom: 0;
+}
+.grid_layout-thumbnail .post-thumb img {
+  max-width: 100%;
+}

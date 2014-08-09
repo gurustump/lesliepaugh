@@ -1,0 +1,12 @@
+/*
+Theme Name: Senna-lesliepaugh
+Theme URI: http://pixelgrade.com/demos/senna/
+Author: Matthew Stumphy
+Author URI: http://www.gurustump.comTemplate: senna
+Description:  A child theme based on Senna 
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: clean, colors, corporate, creative, flexible, ipad, iphone, isotope, light, modern, page builder, responsive, retina ready, shortcodes, slider
+Text Domain: senna_txtd
+*/@import url("../senna/style.css");.site-header-wrapper {	box-shadow:none;}nav.site-navigation .site-mainmenu {	height: 90px;	height: 6rem;	margin: 0;	padding: 0;	float: none !important;}nav.site-navigation .search-toggle, nav.site-navigation .site-mainmenu > li > a {	background:none;}nav.site-navigation .site-mainmenu > li:hover > a {	background:none;	color:#555;}.slider-front-page .slider-pattern {	display:none !important;}.wrapper.site-footer-wrapper {	background: #FFFFFF !important;	width: 100%;}.site-info.wrapper {	background: #ffffff;	color: #a3a3a3;}.site-info .copyright p {	width: 100%;	text-align: center;	float:none;}.copyright {	width:100%;}.slider-front-page .slide, .slider-front-page .flex-viewport, . flexslider {	background:#cccccc;}.portfolio_items article li a .title div {	padding: 0 0%;}.portfolio_items article li a .title {}

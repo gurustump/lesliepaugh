@@ -1,0 +1,145 @@
+* {@include box-sizing(border-box !important);}
+
+// IE10 snap mode
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+@if $debug == true {
+	html {
+		@include verticalGrid($lineHeightBase);
+	}
+}
+
+@if $responsive == true {
+	img {
+		max-width: 100%;
+	}
+}
+
+%grid {
+	@extend %cf;
+	margin-left: auto;
+	margin-right: auto;
+	width: $gridWidth;
+
+	@if $responsive == true {
+		@media only screen {
+			@if $margin != auto {
+				max-width: percentage(100% / (100% + (2 * $margin)));
+			} @else {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+%row {
+	@extend %cf;
+	@if $padding != 0 or $gutter != 0 {
+		@include rem(margin-left, -1 * $gutter);
+
+		.lt-ie8 & {
+			margin-left: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+@if $defaultClasses == true {
+	.row {
+		@extend %row;
+	}
+}
+
+%column {
+	@if $padding != 0 {
+		@include rem(padding-left, $padding);
+		@include rem(padding-right, $padding);
+
+		.lt-ie8 & {
+			padding: $padding 0;
+		}
+	}
+	@if $gutter != 0 {
+		border: 0 solid transparent;
+		@include rem(border-left-width, $gutter);
+		@include background-clip(padding-box !important);
+		@include background-origin(padding-box !important);
+
+		.lt-ie8 & {
+			border-left-width: 0;
+		}
+	}
+
+	@if $margin != 0 {
+
+		@if $margin == auto {
+			.lt-ie8 & {
+				margin-left: percentage($gutter/$gridWidth);
+			}
+		} @else {
+			margin-left: $margin;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	@if $debug == true {
+		border-color: rgba($accentColor, .15);
+		background-color: rgba($accentColor, .05);
+
+		&:first-child {
+			border-color: transparent;
+		}
+	}
+}
+
+.lt-ie8 .last {
+	margin-right: $columns * -2px;
+}
+
+// digest breakpoints set by user and prepare for other mixins
+@include processBreakpoints();
+
+%span { 
+	@extend %column;
+	float: left;
+
+	@include mq(0 lap) {
+		margin-left: 0;
+		@include rem(margin-bottom, $unit);
+
+		// &:last-child {
+		// 	margin-bottom: 0;
+		// }
+	}
+}
+
+// generate .visible-* and .hidden-* classes
+@if $visibilityClasses == true {
+	// @include visibilityClasses();
+}
+
+// add remux media queries
+@if $remux == true {
+	@include remuxQueries();
+}
+
+// add needed classes to buffer
+@if $defaultClasses == true {
+	@for $i from 1 through $columns {
+		@include newClass(span#{$i}, $i / $columns);
+		@include newClass(offset#{$i}, $i / $columns, offset);
+		@include newClass(push#{$i}, $i / $columns, push);
+		@include newClass(pull#{$i}, $i / $columns, pull);
+	}
+}
+
+// proccess needed classes from buffer
+@include generateClasses();

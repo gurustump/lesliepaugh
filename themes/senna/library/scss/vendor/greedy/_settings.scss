@@ -1,0 +1,64 @@
+//						: SETTINGS
+//						: Typography
+$debug 					: false;
+// Typography 
+
+$fontFamilySansSerif	: 'Open Sans', sans-serif;
+$fontFamilySansSerif-alt: 'BebasNeue', sans-serif;
+$fontFamilySansSerif-alt2: 'Oswald', sans-serif;
+$fontFamilySansSerif-alt3: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$fontFamilySerif		: Georgia, "Times New Roman", Times, serif;
+$fontFamilyMonospace	: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+$textColor				: $grayDark;
+$fontSizeBase			: 15px;
+$fontSizeLarge			: $fontSizeBase*$large;
+$fontSizeSmall			: $fontSizeBase*$small;
+$fontSizeMini			: $fontSizeBase*$mini;
+$lineHeightBase			: 1.5;
+
+$fontFamilyBase			: $fontFamilySansSerif;
+$heading-fontFamily		: $fontFamilySansSerif-alt;
+$heading-fontWeight		: 500;
+$heading-color			: $grayDark;
+
+//						: Modular scale
+$modularScale			: true;		// not even an option :)
+$ratio					: 1.25;
+$base-size				: $fontSizeBase	;
+
+//						: Headings
+$alpha-size				: ms(6); 	// h1
+$beta-size				: ms(5); 	// h2
+$gama-size				: ms(3); 	// h3
+$delta-size				: ms(2); 	// h4
+$epsylon-size			: ms(1); 	// h5
+$zeta-size				: ms(0); 	// h6
+
+//						: Grid
+$responsive				: true;
+$visibilityClasses		: true;
+$gridWidth				: 1240px;
+$gutter					: 35px;
+$padding				: 0;
+$margin					: auto;
+$breakpoints			: small 435px hand 900px lap 2000px desk;
+$defaultBreakpoint		: lap;
+
+//						: regular grid system options
+$columns				: 12;
+$defaultClasses 		: true;
+$offsetClasses			: true;
+$pullClasses			: true;
+$pushClasses			: true;
+
+//						: Remux
+$remux					: false;
+$stepSize				: 1px;
+$minFontSize			: 12px;
+$maxFontSize			: 16px;
+
+$bgColor				: white;
+
+$link-color				: $accentColor;
+$link-colorHover		: darken($accentColor,10%);

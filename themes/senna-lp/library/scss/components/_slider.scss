@@ -1,0 +1,150 @@
+$sliderHeight: calcSize(570px);
+
+.slider-front-page {
+	width: 100%;
+	@include rem(height, $sliderHeight);
+	overflow: hidden;
+	position: relative;
+
+	.flex-slider {
+		position:relative;
+	}
+	
+	.slides {
+		width:100%;
+		height:100%;
+		position: relative;
+		overflow: hidden;
+		@extend %unstyled;
+		margin-bottom: 0;
+
+		li {
+			// display:none;
+			// Not needed anymore (fadecss)
+		}
+	}
+
+	.slide, .flex-viewport {
+		display: block;
+		width: 100%;
+		opacity:0;
+		z-index:1;
+		position:relative;
+		overflow:hidden; //IE
+		@include rem(height, $sliderHeight);
+	}
+
+	.slide {		
+		@include transition(all 1s cubic-bezier(0.770,0.000,0.175,1.000));
+		&.s-hidden {
+			.slide-content > div {
+				visibility:hidden;
+			}
+		}
+	}
+
+	.flex-control-nav {
+		// display: none;
+	}
+
+	.flex-direction-nav {
+		@extend %unstyled;
+		@extend .container;
+		pointer-events: none;
+		position: relative;
+		z-index: 50;
+	}
+
+	.flex-prev, .flex-next {
+		text-indent: -9999em;
+		pointer-events: auto;
+
+		.lt-ie8 & {
+			background-color: $grayDark;
+		}
+	}
+
+	.flex-prev {
+
+	}
+
+	.flex-next {
+
+	}
+
+	.slide-content {
+		@extend %span;
+		@include backface-visibility(hidden); 
+		@include perspective(1000);
+		& > div {
+			// display:none;
+		}
+
+		.btn-slider {
+
+		}
+
+		//Slide with video
+		&.s-video {
+			& {
+				float:left;
+				width:100%;
+				position:relative;
+			}
+			.slide-video {
+
+				&, .mesj-video {
+					
+				}
+			}
+
+			.slide-content-wrapper {
+
+			}
+		}
+	}
+
+
+
+	%heading {
+		color: white;
+	}
+
+	.alpha 		{@include fs(ms(9))};
+	.beta 		{@include fs(ms(8))};
+	.gama 		{@include fs(ms(6))};
+	.delta 		{@include fs(ms(6))};
+	.epsylon 	{@include fs(ms(5))};
+	.zeta 		{@include fs(ms(4))};
+
+	@include mq(0 lap) {
+		.alpha 		{@include fs(ms(7))};
+		.beta 		{@include fs(ms(6))};
+		.gama 		{@include fs(ms(5))};
+		.delta 		{@include fs(ms(3))};
+		.epsylon 	{@include fs(ms(3))};
+		.zeta 		{@include fs(ms(2))};
+	}
+
+	//Active Slide State
+	.flex-active-slide {
+		& {
+			opacity:1;
+			z-index:2;
+			// display:block;
+		}
+		.slide-content {
+			& {
+				
+			}
+			& > div {
+				visibility:visible;
+			}
+			&.s-video {
+				.slide-video {
+
+				}
+			}
+		}
+	}
+}

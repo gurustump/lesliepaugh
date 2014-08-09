@@ -1,0 +1,159 @@
+//Font1 
+@include fontFace('NewCicleGordita', 'fonts/font1/New_Cicle_Gordita-webfont', normal, normal);
+@include fontFace('NewCicleGordita', 'fonts/font1/New_Cicle_Gordita_Italic-webfont', normal, italic);
+@include fontFace('NewCicleGordita', 'fonts/font1/New_Cicle_Fina-webfont', lighter, normal);
+@font-face {
+  font-family: "NewCicleGordita";
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/ptsans/v4/0XxGQsSc1g4rdRdjJKZrNBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+
+.font1 {
+	$heading_fontFamily	: 'NewCicleGordita', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$body_fontFamily	: 'NewCicleGordita', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$ampersand			: Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+		font-weight:lighter; 
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}
+
+//Font2 
+@include fontFace('Bodoni', 'fonts/font2/bodonixt-webfont');
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+
+.font2 {
+	$heading_fontFamily	: 'Bodoni', Georgia, serif;
+	$body_fontFamily	: 'PT Sans', Arial, sans-serif;
+	$ampersand			: Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}
+
+//Font3 
+@include fontFace('BebasNeue', 'fonts/font3/bebasneue-webfont');
+
+.font3 {
+	$heading_fontFamily	: 'BebasNeue', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$body_fontFamily	: 'NewCicleGordita', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$ampersand			: 'BebasNeue', Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+		font-weight:lighter; 
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+		text-transform:uppercase;
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}
+
+//Font4 
+@include fontFace('ChunkFive', 'fonts/font4/chunkfive-webfont');
+
+.font4 {
+	$heading_fontFamily	: 'ChunkFive', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$body_fontFamily	: Georgia, 'Constantia', serif;
+	$ampersand			: Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+		font-weight:lighter; 
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+		
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}
+
+//Font5
+@include fontFace('Oswald', 'fonts/font5/oswald-regular-webfont');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+.font5 {
+	$heading_fontFamily	: 'Oswald', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$body_fontFamily	: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$ampersand			: Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+		text-transform:uppercase;
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}
+
+//Font6
+@include fontFace('Pacifico', 'fonts/font6/pacifico-webfont');
+
+.font6 {
+	$heading_fontFamily	: 'Pacifico', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	$body_fontFamily	: 'PT Sans', Arial, sans-serif;
+	$ampersand			: Georgia, 'Constantia', serif;
+
+	body, .wpb_teaser_grid_portfolio h2.post-title a {
+		font-family: $body_fontFamily;
+	}
+
+	body hgroup, body h1, body h2, body h3, body h4, body h5, body h6, body h2.wpb_heading,
+	.testimonial-title, .testimonial-author-name,
+	blockquote, .charset  {
+		font-family: $heading_fontFamily;
+	}
+
+	.ampersand {
+		font-family: $ampersand;
+		line-height: 1;
+	}
+}

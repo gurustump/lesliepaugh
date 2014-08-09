@@ -1,0 +1,262 @@
+body {
+  &:after {
+    content:"bigger";
+    display:none;
+  }
+}
+
+@mixin portfolio-grid($col_number, $col_height) {
+   /* 9Col */
+  
+    $article_width: 99.9%/$col_number;
+    $col_width: 99.9%/9;
+
+    & {
+      width:$article_width;
+    }
+    & .small {
+      width:3*$col_width;
+    }
+    & .small a {
+      width:100%;
+      height:$col_height;
+    }
+    & .tall {
+     width:3*$col_width;
+    }
+    & .tall a {
+       height:2*$col_height;
+    }
+    & .long {
+     width:6*$col_width;
+    }
+    & .long a {
+       height:$col_height;
+    }
+
+    & .big {
+      width:6*$col_width;
+    }
+    & .big a {
+        width:100%;
+        height:2*$col_height;
+    }
+    & .xbig {
+      width:9*$col_width;
+    }
+    & .xbig a {
+        width:100%;
+        height:3*$col_height;
+    }
+}
+
+.portfolio_items {
+  & {
+    width:100%;
+    margin-left:0px;
+  }
+  article {
+    // width:33.3%;
+    opacity:0;
+    ul {
+      list-style:none;
+      float:left;
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+
+    li {
+      float:left;
+      margin: 0; padding:0; 
+      position:relative; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-color:$accentColor;
+
+      a {
+        overflow:hidden;
+        display:block;
+        position:relative;
+
+        width:100%;
+        height:auto;
+        color:#fff;
+        display:block;
+        border:4px solid #fff;
+        padding:0px;
+        @extend %transition;
+
+        .title {
+          float:left;
+          width:100%;
+          height:100%;
+         
+          margin:0;
+          display:table;
+
+          font-family: "BebasNeue", sans-serif;
+          font-weight: 500;
+          text-align:center;
+          @include fs(48px);
+          opacity:0;
+          @extend %transition;
+
+          div {
+            display:table-cell;
+            vertical-align:middle;
+            padding:0 10%;
+          }
+
+          hr {
+            border-color:white;
+            @include rem(margin-bottom, 20px);
+          }
+        }
+        .video_icon {
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin: -50px 0 0 -50px;
+            background: url("../images/mediaelement/bigplay.png") no-repeat;
+            @extend %transition;
+          }
+        }
+        .border {
+            position:absolute;
+            top:0;
+            left:0;
+            padding:4px;
+            width:100%;
+            height:100%;
+            display:block; 
+            opacity:0;
+            @extend %transition;
+           
+            span {
+              border:1px solid #fff;
+              width:100%;
+              height:100%;
+              display:block; 
+            }
+        }
+
+
+      }
+      &.text {
+        a {
+          font-family: "BebasNeue", sans-serif;
+          font-weight: 500;
+          text-align:center;
+          @include fs(48px);
+          line-height:3.5;
+          vertical-align:middle;
+          &:hover {
+            text-decoration:none;
+          }
+        }
+        .title {
+          opacity:1;
+        }
+      }
+
+
+
+      &:hover {
+        a {
+          .title {
+            opacity:1;
+          } 
+          .border {
+            padding:8px;
+            opacity:1;
+            // background:rgba(0,0,0,0.1);
+          }
+          .video_icon span {
+            opacity:0;
+          }
+        }
+        &.text {
+          .title {
+
+          }
+        }
+      }
+    }
+    & {
+        /* 3 Cols default */
+        @include portfolio-grid(3, 150px);
+    }
+    @include mq(0 hand) {
+      @include portfolio-grid(1, 120px);
+    }
+    @include mq(hand lap) {
+      @include portfolio-grid(2, 120px);
+    }
+    @include mq(lap 1100px) {
+        @include portfolio-grid(3, 120px);
+    }
+    @include mq(1100px to 1500px) {
+        @include portfolio-grid(3, 145px);
+    }
+
+    @include mq(1500px to desk) {
+        @include portfolio-grid(3, 170px);
+    }
+  }
+}
+
+.portfolio_single_gallery li {
+  opacity:0; 
+}
+//Isotope Stuff
+
+.isotope {
+  padding: 0 !important;
+}
+
+.isotope-item {
+  z-index: 2;
+}
+.isotope-hidden.isotope-item {
+  pointer-events: none; 
+  z-index: 1;
+}
+.isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  @include transition-delay(0.3s);
+  opacity:1 !important;
+}
+
+.isotope-item {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.portfolio_archive .isotope-item {
+   -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+}
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope-item.no-transition {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}

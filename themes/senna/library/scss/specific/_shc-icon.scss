@@ -1,0 +1,39 @@
+i.shc {
+	display:inline-block;
+
+	&.small {
+		@include rem(font-size, 40px);
+	}
+
+	&.medium {
+		@include rem(font-size, 40px);
+	}
+
+	&.big {
+		@include rem(font-size, 70px);
+	}
+
+	&.square, &.circle {
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		background: rgba(0,0,0,0.2);
+	}
+
+	&.circle {
+		@include border-radius(999px);
+	}
+}
+
+a > i.shc {
+	@include transition(all 0.3s);
+}
+
+a:hover > i.shc {
+	text-decoration:none;
+	color:white;
+	
+	&.circle {
+		background-color:$grayDarker;
+	}
+}

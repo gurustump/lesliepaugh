@@ -1,0 +1,48 @@
+//Team Member Shortcode
+
+.team-member-name {
+	margin-bottom: 0;
+}
+
+.team-member-position {
+	font-family: $fontFamilySansSerif;
+	text-transform: uppercase;
+	@include fs(13px);
+	@include rem(margin-top, -10px);
+}
+
+.team-member-header {
+	margin-top:$unit/4;
+}
+
+.team-member-footer {
+	margin-top:$unit/2;
+}
+
+.team-member-social-links {
+	@extend %unstyled;
+	@extend %list-inline;
+}
+
+.team-member-social-link {
+	@extend %list-item-inline;
+
+	a {
+		color: $grayDarker;
+		font-size:16px;
+		width:26px;
+		display:inline-block;			
+		padding:5px 3px;
+		i {
+			@include transition(all 0.3s);
+			@include translate(0, 0); 
+		}
+
+		&:hover {
+			text-decoration:none;
+			i {
+				// @include translate(0, -3px);	
+			}
+		}
+	}
+}

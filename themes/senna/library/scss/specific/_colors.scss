@@ -1,0 +1,28 @@
+$list: #01a279, #f6385c, #26a9e0, #008ce5, #b32323, #f7c720, #5b4490, #1fbba6, #40484a, #f63c38, #bfd71b, #72bd5d, #019875;
+$i: 0;
+
+@each $color in $list {
+	$i: $i+1;
+	//BACKGROUND
+    .color#{$i} {
+      .accent-background,
+	 {
+		background-color:$color !important;
+	}
+
+	//BORDER
+	.site-header-wrapper 
+	{
+		border-color:$color;
+	}
+	
+	//COLOR
+	.accent-color, .team-member-social-link a:hover 
+	{
+		color:$color;
+	}
+		body .ui-state-active a {
+			color:#fff;
+		}
+    }
+}

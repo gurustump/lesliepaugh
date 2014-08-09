@@ -1,0 +1,34 @@
+@import "social/*.png";
+
+@each $icon in delicious, digg, dribbble, ember, facebook, flickr, forrst, gplus, lastfm, linkedin, myspace, quora, rss, sharethis, skype, stumbleupon, tumblr, twitter, vimeo, youtube, pinterest, instagram {
+	.social-link-#{$icon} a {
+		@include social-sprite(#{$icon}-muted); 
+
+		&:hover {
+			@include social-sprite(#{$icon});
+		}
+	}
+}
+
+//Social Links widget
+.widget_senna_social_links {
+	.social-links {
+		margin: 0;
+		padding-left: 0;
+		list-style: none; 
+		border:none;
+		li {
+			float:left;
+			border-bottom:0;
+		}
+		a {
+			display: inline-block;
+			float: left;
+			width: 48px;
+			height: 48px;
+			margin-right: 15px;
+			margin-bottom: 12px;
+			@include border-radius(100px);
+		}
+	}
+}

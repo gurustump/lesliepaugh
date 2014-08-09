@@ -1,0 +1,166 @@
+/******************************************************************
+This stylesheet is loaded (if admin.php is setup in your
+functions file) on the login page. This way you can style
+the login page. It won't affect any other page, admin or front-end.
+******************************************************************/
+@import "compass";
+@import "vendor/greedy/variables";
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+ 
+%cf {
+	display: inline-block;
+
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	html[xmlns] & {
+		display: block;
+	}
+	 
+	* html & {
+		height: 1%;
+	}
+}
+
+html {
+	background: white;
+}
+
+body.login {
+	background: white;
+	font-family: "Open Sans", sans-serif;
+	@include box-shadow($accentColor 0 5px inset);
+
+	#login {
+		width: auto;
+			
+		h1 {
+			font-family: "Lato", sans-serif;
+			font-size: 36px;
+			font-weight: 300;
+			width: 326px;
+			margin: 0 auto;
+			color: $accentColor;
+		}
+		
+		h1 a {
+			background: none;
+			line-height:1.1;
+			height:auto;
+			text-indent: 0;
+			overflow: hidden;
+			margin-bottom:0;
+			display: block;
+			text-align: center;
+			padding: 10px 0 0;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: $accentColor;
+		}
+
+		#loginform {
+			width: 326px;
+			margin: 0 auto;
+			padding: 26px 24px 66px;
+			font-weight: normal;
+			background: none;
+			border: 0;
+			@include border-radius(0);
+			@include box-shadow(none); 
+
+			.input {
+				font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+				font-weight: 200;
+				font-size: 24px;
+				width: 100%;
+				padding: 3px;
+				margin-top: 2px;
+				margin-right: 6px;
+				margin-bottom: 16px;
+				border: 1px solid #ddd;
+				background: #fff;
+				outline: none;
+				box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2); 
+				@include border-radius(0);
+			}
+
+			.forgetmenot label {
+				font-size: 14px;
+				line-height: 37px;
+
+				input {
+					margin-top: 3px;
+				}
+			}
+
+			#wp-submit {
+				width: auto;
+				height: auto;
+				background: $accentColor;
+				border-color: $accentColor;
+				@include box-shadow(none);
+				color: #fff;
+				@include text-shadow(none);
+				@include border-radius(0);
+				text-transform: uppercase;
+				font-size: 14px;
+				padding: 7px 21px;
+				line-height: 1.5;
+			}
+		}
+
+		#nav, #backtoblog {
+			@extend %cf;
+			height: 14px;
+			width: 326px;
+			margin: 0 auto;
+			padding: 0;
+			font-size: 14px;
+
+			a {
+				color: $accentColor !important;
+				text-decoration: none !important;
+
+				&:hover {
+					text-decoration: underline !important;
+				}
+			}
+		}
+
+		#nav a {
+			float: right;
+		}
+
+		#backtoblog {
+			margin-top: -14px;
+		}
+
+		#backtoblog a {
+			float: left;
+		}
+	}
+
+	.message {
+		width: 306px;
+		margin: 0 auto;			
+	}
+}  

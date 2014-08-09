@@ -1,0 +1,18 @@
+
+@mixin arrow($direction, $color, $size){
+    display: block;
+    border-left: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+    border-top: $size solid $color;
+    border-right: $size solid $color;
+
+    @if $direction == 'top' {
+       @include rotate(-45deg);   
+    } @else if $direction == 'right' {
+       @include rotate(45deg);    
+    } @else if $direction == 'bottom' {
+        @include rotate(135deg);   
+    } @else if $direction == 'left' {
+       @include rotate(225deg);   
+    }
+}

@@ -1,0 +1,10 @@
+.btn {
+	&.btn-small {
+		@include rem(padding, 8px 16px);
+		@include fs(12px);
+	}
+	&.btn-large {
+		@include rem(padding, 24px 48px);
+		@include fs(18px);
+	}
+}

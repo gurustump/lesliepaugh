@@ -1,0 +1,108 @@
+// ========== FOOTER
+
+.sidebar-footer {
+	@extend .row;
+
+  hr {
+    border-color: $grayLight;
+  }
+}
+
+.wrapper.site-footer-wrapper {
+	background: $grayDarker;
+	color: $grayLighter;
+	width: 100%;
+
+	&.wrapper {
+		// padding-top:0;		
+	}
+
+	.widget-area {
+		padding: 0;
+		color: $grayLightest;
+
+		.widget-title {
+			@include fs(15px);
+			font-weight: bold;
+			font-family: $fontFamilySansSerif;
+			@include rem(margin, $unit/2 0 0);
+            border-top: 0;
+			@include rem(padding, 0 0 $unit/2);
+			line-height: 1.5;
+			text-transform: uppercase;
+			color: $grayLightest;
+		}
+
+		.widget {
+
+			li {
+				border:none;
+			}
+		}
+
+		a {
+			color: $accentColor;
+		}
+
+		form {
+			position: relative;
+		}
+
+		input {
+			margin-bottom:0;
+			border: 0;
+			@include fs(16px);
+			@include rem(padding, 8px 11px);
+
+			&.email {
+				width: 100%;
+			}
+
+			&[type="submit"] {
+				position:absolute;
+				top:0; right:0;
+				@include rem(padding, 8px 11px);
+			}
+		}
+	}
+}
+
+.site-info {
+	&.wrapper {
+		background: $grayDarkest;	
+		color: white;
+	}	
+}
+
+.copyright {
+	@extend .span6;
+	@include fs(14px);
+
+	a {
+		color: $white;
+	}
+
+	p {
+		float:left;
+		margin: 0;
+	}
+}
+
+.footer-menu {
+	text-align:right;
+
+	ul {
+		float:right;
+	}
+}
+.site-info {
+	@media only screen and (max-width: getSize(lap)) {
+		.copyright p {
+			width:100%;
+			text-align:center;
+		}
+		.footer-menu ul {
+			width:100%;
+		}
+	}
+}

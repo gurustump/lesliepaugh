@@ -1,0 +1,190 @@
+#sidebar1 {
+
+}
+
+
+// ========== MAIN SIDEBAR
+
+%sidebar-list {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;	
+}
+
+%sidebar-list-item {
+	@include rem(padding, 6px 0);
+	border-bottom: 1px solid $grayLightest;
+
+	&:last-child {
+		border-bottom: none;
+	}	
+}
+
+.sidebar {
+
+	ul {
+		@extend %sidebar-list;
+	} 
+		
+	li {
+		@extend %sidebar-list-item;
+	}
+}
+
+.sidebar-footer {
+
+	.quote {
+		padding-bottom: 0;
+	}
+
+}
+
+.widget-area {
+	@include rem(padding, 0 0 35px 40px);
+	color: $grayDarker;
+	@extend %cf;
+
+	&.sidebar-left {
+		@include rem(padding, 0 40px 35px 0);
+	}
+
+	@include mq(to lap) {
+		padding: 0 !important;
+	}
+}
+
+.widget {
+	@include rem(padding, 0 0 $unit);
+	float:left;
+	width:100%;
+	
+	span {
+		&.small, &.post-date {
+			font-size: 15px;
+			font-size: rem(15px);
+			line-height: 25px;
+			line-height: rem(25px);
+			color: $grayLightest;
+		}
+	}
+
+	a {
+		color:$grayDarker;
+		&:hover {
+			color:$accentColor;
+			text-decoration:none;
+		}
+	}
+	select {
+		width:100%;
+		margin:1rem 0;
+		padding:3px;
+		line-height:1.5;
+		height:auto;
+		-webkit-appearance:none;
+	    -moz-appearance:none;
+	    appearance:none;
+	    cursor:pointer;
+	    background:url(../images/arrow_down.png) top right no-repeat;;
+	}
+	&.widget_archive {
+		
+	}
+	&.widget_nav_menu {
+		ul.sub-menu {
+			li {
+
+			}
+			padding-left:20px;
+			border-bottom:none;
+		}
+	}
+	&.widget_recent_comments {
+		color:$gray;
+	}
+	&.widget_recent_entries {
+		.post-date {
+			
+		}
+	}
+	//Tag Cloud widget
+	&.widget_tag_cloud {
+		ul {
+			float:left;
+			width:100%;
+			padding-bottom:5px;
+			li {
+				width:50%;
+				float:left;
+				margin:0;
+				text-transform:capitalize;
+				&:nth-last-child(2) {
+					border-bottom:none;
+				}
+				a:hover {
+					color:$accentColor;
+				}
+			}
+		}
+	}
+	
+	//Social Links widget
+	&.widget_wpgrade_social_links {
+		.social-links {
+			margin: 0;
+			padding-left: 0;
+			list-style: none;
+			border:none;
+			li {
+				float:left;
+				border-bottom:0;
+			}
+			a {
+				display: inline-block;
+				float: left;
+				width: 48px;
+				height: 48px;
+				margin-right: 12px;
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	//Calendar widget
+	&.widget_calendar {
+		table {
+			width:100%;
+			text-align:left;
+		}
+	}
+
+	//Contact Sidebar
+	&.contact {
+		& {
+			//@include rem(margin-top, 80px);
+		}
+		.alignleft {
+			margin-right:7px;
+		}
+		.block {
+			display:block;
+			padding-left:30px;
+		}
+	}
+
+}
+
+.widget-title {
+	margin: 0;
+	@include rem(padding-top, $unit/2 - 1px);
+	border-top: 1px solid $grayLight;
+
+	color: $black;
+	@include fs(30px);
+	text-transform: uppercase;
+
+	small {
+		text-transform:capitalize;
+		color: $grayLight;
+	}
+}
