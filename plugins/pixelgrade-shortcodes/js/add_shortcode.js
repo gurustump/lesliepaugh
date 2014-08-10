@@ -24,10 +24,13 @@ editor = '';
                 $(document).on('reveal:close', '#pixelgrade_shortcodes_modal', function(){
 //					disable_details(); //we will do this before the open click
 					clean_details();
-					$('button.back').hide().removeClass('active'); //we will show it on the open click
+//					$('.l_modal_header button .back').hide(); //we will show it on the open click
                     toggle_submit_btn();
                     change_title(default_title);
                     window.send_to_editor = window.send_to_editor_clone;
+                    $('.l_pxg_modal .btn_primary').removeClass('disabled');
+                    var this_btn = $('.btn.back');
+                    this_btn.removeClass('active')
                 });
 
                 //Back Button Click
@@ -42,6 +45,9 @@ editor = '';
                 //Choose an item
                 $(document).on('click', '.l_three_col li.shortcode a.details', function() {
 
+                    if ( $(this).hasClass('insert-direct-shortcode') ) {
+                        return false;
+                    }
                     // get the current selection and set it as content
                     var current_editor = get_current_editor_selected_content(),
                         content_field = $(this).next().find('.is_shortcode_content');
@@ -50,7 +56,7 @@ editor = '';
                         content_field.attr('value', current_editor.selection.getContent());
                     } else if ( content_field.attr('type') === 'textarea' ) {
                         content_field.text( current_editor.selection.getContent() );
-                    };
+                    }
 
                     var html_container = $(this).next().html(),
                         item_title = $(this).find('.title').html();
@@ -65,6 +71,56 @@ editor = '';
 
                     details.trigger($(this).data('trigger-open'));
 
+                    /*
+                     * Each colorpicker needs to be processed.
+                     * Until wordpress will give us an update method on wpcolorpicker i'll keep removing and adding elements like in high school.
+                     */
+                    $('.wpgrade-colorpicker').each(function(){
+                        // if the colorpicker is already called is probably ruined already. We will remove it and create another one.
+                        if ( $(this).hasClass('wp-color-picker') ) {
+
+                            var $root = $(this).parents('.wp-picker-container'), // get the root of the colorpicker
+                                this_el = $(this).removeClass('wp-color-picker').detach(); // save our element
+                            var this_span = $root.parent('span');
+                            $root.remove(); // remove the root
+                            this_span.append(this_el); // get back our element
+                            // create the colorpicker ... again
+                            this_span.children('.wpgrade-colorpicker').wpColorPicker({
+                                palettes: ['#46bcb7', '#fafafa', '#373737', '#01a279', '#45d59c', '#7abd58'],
+                                change: function(event, ui) {
+                                    $('.full_width_bg').addClass('s-visible');
+                                }
+                            });
+
+                        } else {
+                            $(this).wpColorPicker({
+                                 palettes: ['#46bcb7', '#fafafa', '#373737', '#01a279', '#45d59c', '#7abd58'],
+                                change: function(event, ui) {
+                                    $('.full_width_bg').addClass('s-visible');
+                                }
+                            });
+                        }
+                    });
+
+//                    $('.details_container select').each( function(){
+//                        if ( $(this).hasClass('select2-offscreen' ) ) {
+//                            $(this).select2("destroy");
+//                            $(this).select2();
+//                        } else {
+//                            $(this).select2();
+//                        }
+//                    });
+
+                    $('.details_container .input-tags input').each( function(){
+
+                        var options = $(this).data('options');
+                        if ( $(this).hasClass('select2-offscreen' ) ) {
+                            $(this).select2("destroy");
+                            $(this).select2({tags:options});
+                        } else {
+                            $(this).select2({tags:options});
+                        }
+                    });
                 });
 
                 //Trigger Submit Button (need few improvements :)
@@ -123,12 +179,11 @@ editor = '';
                 plugin_url = url;
                 ed.addButton('wpgrade', {
                     title : 'Add a shortcode',
-                    class: 'pixelgrade_shortcodes',
+	                classes: 'btn pixelgrade_shortcodes',
                     onclick: function(){
+                        $('.l_pxg_modal .btn_primary').addClass('disabled');
 						//let's clean up some more first
 						$('.l_pxg_modal').removeClass('s_active');
-						$('button.back').show();
-						
                         modal_selector.reveal({
                             animation: 'fadeAndPop',                   //fade, fadeAndPop, none
                             animationspeed: 400,                       //how fast animtions are
@@ -141,6 +196,7 @@ editor = '';
                         };
 						
                         window.send_to_editor_clone = window.send_to_editor;
+
                     }
                 });
             }
@@ -154,7 +210,7 @@ editor = '';
             if ( params.self_closed ) {
                 editor.selection.setContent('['+params.code+']');
             } else {
-                editor.selection.setContent('['+params.code+' ]'+ editor.selection.getContent() +'[/'+params.code+']');
+                editor.selection.setContent('<p>['+params.code+' ]</p><p>'+ editor.selection.getContent() +'</p><p>[/'+params.code+']</p>');
             }
             // close the modal whenever a shortcode is inserted
             modal_selector.trigger('reveal:close');
@@ -181,13 +237,16 @@ editor = '';
                     user_params_string += ' '+ e.name + '="'+ e.value+'"';
                     user_params[e.name] = e.value;
                 }
+
             });
 
             if ( params.self_closed ) {
                 editor.selection.setContent('['+params.code+user_params_string+']');
+            } else if ( params.one_line ) {
+                editor.selection.setContent('['+params.code+user_params_string+']'+ shortcode_content +'[/'+params.code+']');
             } else {
-                editor.selection.setContent('['+params.code+user_params_string+']<br class="pxg_removable" />'+ shortcode_content +'<br class="pxg_removable" />[/'+params.code+']');
-            }
+		        editor.selection.setContent('<p>['+params.code+user_params_string+']</p><p>'+ shortcode_content +'</p><p>[/'+params.code+']</p>');
+	        }
 
             modal_selector.trigger('reveal:close');
         }); // end of submit form
@@ -203,7 +262,7 @@ editor = '';
                 $self.find('.media_image_input').val(imgurl);
                 $self.find('.upload_preview').attr('src',imgurl).show().next().toggleClass('active');
                 tb_remove();
-            }
+            };
 
             return false;
         });
@@ -217,11 +276,26 @@ editor = '';
         $.each(elements, function(i,el){
             return_els[i] = {};
             return_els[i].name = this.name;
-            return_els[i].value = $(this).val();
+
+	        if ( $(this).attr('type') === 'checkbox' ) {
+
+		        if ($(this).is(':checked') ) {
+			        return_els[i].value = 'on';
+		        } else {
+			        return_els[i].value = ''; // keep it empty to not show in params string
+		        }
+
+	        } else {
+		        return_els[i].value = $(this).val();
+	        }
 
             // init the class as false
             return_els[i].class = false;
             if ( $(this).attr('class') ) return_els[i].class = $(this).attr('class');
+
+	        // init type as text
+	        return_els[i].type = 'text';
+	        if ( $(this).attr('type') ) return_els[i].type = $(this).attr('type');
         });
 
         return return_els;

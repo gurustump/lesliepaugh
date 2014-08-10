@@ -202,7 +202,36 @@
 				right:-8px;
 				left:auto;
 			}
+
+			.wp-picker-container {
+				bottom: -29px;
+				position: absolute;
+				left: 0;
+				.wp-color-result {
+					padding-left: 0;
+					border-left: 0;
+					width: 67px;
+					&:after{
+						font-size: 9px;
+					}
+				}
+				.wp-picker-holder {
+					left: -46px;
+					top: -50px;
+				}
+			}
 		}
 	}
+}
 
+//Full width background checkbox
+.full_width_bg {
+	position: absolute;
+	top: -27px;
+	right: 10px;
+	opacity:0;
+	@include transition(all 0.3s);
+	&.s-visible {
+		opacity:1;
+	}
 }
