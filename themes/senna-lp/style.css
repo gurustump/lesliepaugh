@@ -1,12 +1,139 @@
-/*
-Theme Name: Senna-lesliepaugh
-Theme URI: http://pixelgrade.com/demos/senna/
-Author: Matthew Stumphy
-Author URI: http://www.gurustump.comTemplate: senna
-Description:  A child theme based on Senna 
-Version: 1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: clean, colors, corporate, creative, flexible, ipad, iphone, isotope, light, modern, page builder, responsive, retina ready, shortcodes, slider
-Text Domain: senna_txtd
-*/@import url("../senna/style.css");.site-header-wrapper {	box-shadow:none;}nav.site-navigation .site-mainmenu {	height: 90px;	height: 6rem;	margin: 0;	padding: 0;	float: none !important;}nav.site-navigation .site-mainmenu > li ul.sub-menu li:hover a {	transition:all 0.3s ease-in-out 0s;}nav.site-navigation .search-toggle, nav.site-navigation .site-mainmenu > li > a {	background:none;}nav.site-navigation .site-mainmenu > li:hover > a {	background:none;	color:#555;}.slider-front-page .slider-pattern {	display:none !important;}.wrapper.site-footer-wrapper {	background: #FFFFFF !important;	width: 100%;}.site-info.wrapper {	background: #ffffff;	color: #a3a3a3;}.site-info .copyright p {	width: 100%;	text-align: center;	float:none;}.nav-btn {	background-image:url(library/images/mobile-menu.png);}.copyright {	width:100%;}.slider-front-page .slide, .slider-front-page .flex-viewport, . flexslider {	background:#cccccc;}.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {	height:750px;}.slider-front-page {	margin-bottom:-4em;}.slider-front-page .slide .featured-image {	top:92px;}.slider-front-page .flex-direction-nav .flex-prev,.slider-front-page .flex-direction-nav .flex-next {	width:43px;	height:43px;	outline:none;	border:0;}.slider-front-page .flex-direction-nav .flex-prev:hover,.slider-front-page .flex-direction-nav .flex-next:hover {	background-color:#515151;}.slider-front-page .flex-direction-nav .flex-prev {	background-position:-3px -29px;}.slider-front-page .flex-direction-nav .flex-next {	background-position:-1px -75px;}.slider-front-page .flex-direction-nav .flex-prev:hover,.slider-front-page .flex-direction-nav .flex-next:hover {	margin:0;	border-width:1px;}.portfolio_items article li a .title div {	padding: 0 0%;}.portfolio_items article li a .title {}@media only screen and (max-width: 900px) {	.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {		height:565px;	}	.slider-front-page .slide .featured-image {		top:30px;	}}@media only screen and (max-width: 480px) {	.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {		height:430px;	}	.slider-front-page .slide .featured-image {		top:30px;	}}
+/*
+
+Theme Name: Senna-lesliepaugh 
+
+Theme URI: http://pixelgrade.com/demos/senna/ 
+
+Author: Matthew Stumphy 
+
+Author URI: http://www.gurustump.com 
+
+
+Template: senna
+
+Description:  A child theme based on Senna  
+
+Version: 1 
+
+License: GNU General Public License v2 or later 
+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html 
+
+Tags: clean, colors, corporate, creative, flexible, ipad, iphone, isotope, light, modern, page builder, responsive, retina ready, shortcodes, slider 
+
+Text Domain: senna_txtd 
+
+*/
+
+@import url("../senna/style.css");
+
+.site-header-wrapper {
+	box-shadow:none;
+}
+
+nav.site-navigation .site-mainmenu {
+	height: 90px;
+	height: 6rem;
+	margin: 0;
+	padding: 0;
+	float: none !important;
+}
+nav.site-navigation .site-mainmenu > li ul.sub-menu li:hover a {
+	transition:all 0.3s ease-in-out 0s;
+}
+nav.site-navigation .search-toggle, nav.site-navigation .site-mainmenu > li > a {
+	background:none;
+}
+nav.site-navigation .site-mainmenu > li:hover > a {
+	background:none;
+	color:#555;
+}
+
+.slider-front-page .slider-pattern {
+	display:none !important;
+}
+
+.wrapper.site-footer-wrapper {
+	background: #FFFFFF !important;
+	width: 100%;
+}
+
+.site-info.wrapper {
+	background: #ffffff;
+	color: #a3a3a3;
+}
+
+.site-info .copyright p {
+	width: 100%;
+	text-align: center;
+	float:none;
+}
+.nav-btn {
+	background-image:url(library/images/mobile-menu.png);
+}
+
+.copyright {
+	width:100%;
+}
+
+.slider-front-page .slide, .slider-front-page .flex-viewport, . flexslider {
+	background:#cccccc;
+}
+.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {
+	height:750px;
+}
+.slider-front-page {
+	margin-bottom:-4em;
+}
+.slider-front-page .slide .featured-image {
+	top:92px;
+}
+.slider-front-page .flex-direction-nav .flex-prev,
+.slider-front-page .flex-direction-nav .flex-next {
+	width:43px;
+	height:43px;
+	outline:none;
+	border:0;
+}
+.slider-front-page .flex-direction-nav .flex-prev:hover,
+.slider-front-page .flex-direction-nav .flex-next:hover {
+	background-color:#515151;
+}
+.slider-front-page .flex-direction-nav .flex-prev {
+	background-position:-3px -29px;
+}
+.slider-front-page .flex-direction-nav .flex-next {
+	background-position:-1px -75px;
+}
+.slider-front-page .flex-direction-nav .flex-prev:hover,
+.slider-front-page .flex-direction-nav .flex-next:hover {
+	margin:0;
+	border-width:1px;
+}
+
+.portfolio_items article li a .title div {
+	padding: 0 0%;
+}
+
+.portfolio_items article li a .title {
+}
+
+
+@media only screen and (max-width: 900px) {
+	.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {
+		height:565px;
+	}
+	.slider-front-page .slide .featured-image {
+		top:30px;
+	}
+}
+
+
+@media only screen and (max-width: 480px) {
+	.slider-front-page, .slider-front-page .slide, .slider-front-page .flexport, .slider-front-page .slide .featured-image {
+		height:430px;
+	}
+	.slider-front-page .slide .featured-image {
+		top:30px;
+	}
+}
