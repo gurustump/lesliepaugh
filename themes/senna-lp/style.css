@@ -26,7 +26,33 @@ Text Domain: senna_txtd
 */
 
 @import url("../senna/style.css");
+/*
+html.lp-color-1 {
+	background:url(library/images/backgrounds/Cerulean-Epilogue.jpg);
+}
+html.lp-color-2 {
+	background:url(library/images/backgrounds/Dreamsicle.jpg);
+}
+html.lp-color-3 {
+	background:url(library/images/backgrounds/green.jpg);
+}
+html.lp-color-4 {
+	background:url(library/images/backgrounds/pink.jpg);
+}
+html.lp-color-5 {
+	background:url(library/images/backgrounds/Salt-Water-Taffeta.jpg);
+}
+html.lp-color-6 {
+	background:url(library/images/backgrounds/Spirit-Lobby.jpg);
+}
 
+#wrap #content {
+	top:0;
+}
+#wrap .wrapper, #wrap .site-header-wrapper {
+	background:none;
+}
+*/
 .site-header-wrapper {
 	box-shadow:none;
 }
@@ -83,7 +109,9 @@ nav.site-navigation .site-mainmenu > li:hover > a {
 	height:750px;
 }
 .slider-front-page {
+	/*margin-bottom:0;*/
 	margin-bottom:-4em;
+	background:none;
 }
 .slider-front-page .slide .featured-image {
 	top:92px;

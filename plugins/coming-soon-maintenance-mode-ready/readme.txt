@@ -3,7 +3,7 @@ Contributors: coming soon
 Donate link: http://readyshoppingcart.com/product/coming-soon-plugin-pro-version/
 Tags: coming soon, coming soon page, construction, landing page, launch, launch page, maintenance, maintenance mode, newsletter, offline, unavailable, under construction, underconstruction, site offline, landing page, launch page, wordpress maintenance mode, wordpress under construction
 Tested up to: 3.9
-Stable tag: 0.4.9
+Stable tag: 0.5.0
 
 Coming Soon or Under Construction page for your Website while maintenance mode on. Get E-mails, Likes and tweets from the visitors. 
 
@@ -70,12 +70,20 @@ Please [contact us](http://readyshoppingcart.com/product/coming-soon-plugin-pro-
 3. <a href="http://readyshoppingcart.com/product/coming-soon-plugin-pro-version/#templates" title="Coming Soon WordPress Plugin Template">Coming Soon Template</a>
 
 == Changelog ==
+= 0.5.0 =
+ * Small fix for center and tile types of background of Klif template - http://readyshoppingcart.com/product/coming-soon-plugin-pro-version/
+ * Correct thickbox add - only on wp_enqueue_scripts, not before
+ * Small issues fix after test in debug mode (small warnings)
+ * Remove session start - it will not be used in plugin
+ * Add notice in admin area if PRO version is activated without Free (Base) version - http://readyshoppingcart.com/product/coming-soon-plugin-pro-version/
+ * Remove unused constant from code
+
 = 0.4.9 =
  * Added Name column to subscribers list if name field is enabled
  * Added export subscribers to CSV functionality
  * Small spelling issues
  * Code review
- * Improve the security for admin requests
+ * Improve the security for admin requests (thanks to David Alon)
 
 = 0.4.8 =
  * Rename common function name "import" - fix conflicts with many other plugins

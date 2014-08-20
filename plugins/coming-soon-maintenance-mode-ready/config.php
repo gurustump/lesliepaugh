@@ -26,7 +26,6 @@
     define('CSP_IMG_PATH', WP_PLUGIN_URL.'/'.basename(dirname(__FILE__)).'/img/');
     define('CSP_MODULES_PATH', WP_PLUGIN_URL.'/'.basename(dirname(__FILE__)).'/modules/');
     define('CSP_TEMPLATES_PATH', WP_PLUGIN_URL.'/'.basename(dirname(__FILE__)).'/templates/');
-    define('S_IMG_POSTS_PATH', CSP_IMG_PATH. 'posts/');
     define('CSP_JS_DIR', CSP_DIR. 'js/');
 
     define('CSP_URL', CSP_SITE_URL);
@@ -47,7 +46,7 @@
     
     
     define('CSP_PLUGIN_INSTALLED', true);
-    define('CSP_VERSION', '0.4.9');
+    define('CSP_VERSION', '0.5.0');
     define('CSP_USER', 'user');
     
     

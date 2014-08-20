@@ -32,7 +32,7 @@ class templatesCsp extends moduleCsp {
 				frameCsp::_()->addScript('adminOptionsCsp', CSP_JS_PATH. 'admin.options.js');
 				frameCsp::_()->addScript('ajaxupload', CSP_JS_PATH. 'ajaxupload.js');
 				frameCsp::_()->addScript('postbox', get_bloginfo('wpurl'). '/wp-admin/js/postbox.js');
-				add_thickbox();
+				add_action('wp_enqueue_scripts', array($this, 'addThickbox'));
 				
 				$ajaxurl = admin_url('admin-ajax.php');
 				if(frameCsp::_()->getModule('options')->get('ssl_on_ajax')) {
@@ -99,4 +99,7 @@ class templatesCsp extends moduleCsp {
 		}
         parent::init();
     }
+	public function addThickbox() {
+		add_thickbox();
+	}
 }

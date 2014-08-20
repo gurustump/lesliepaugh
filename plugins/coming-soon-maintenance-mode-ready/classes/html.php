@@ -196,6 +196,7 @@ class htmlCsp {
 			$params['labeled'] = isset($params['labeled']) ? $params['labeled'] : false;
 			$params['attrs'] = isset($params['attrs']) ? $params['attrs'] : '';
 			$params['mo_br'] = isset($params['mo_br']) ? $params['mo_br'] : false;
+			$params['value'] = isset($params['value']) ? $params['value'] : '';
 			foreach($params['options'] as $key => $val) {
 				$id = self::nameToClassId($key). '_'. mt_rand(1, 999999);
 				$attrs = $params['attrs'];

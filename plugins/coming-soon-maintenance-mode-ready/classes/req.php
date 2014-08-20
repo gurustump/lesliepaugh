@@ -6,7 +6,7 @@ class reqCsp {
 
     }
     static public function init() {
-        session_start();
+        //session_start();
     }
 /**
  * @param string $name key in variables array
