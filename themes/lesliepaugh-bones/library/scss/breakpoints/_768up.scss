@@ -17,7 +17,34 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
+html {
+	background-repeat:repeat-x;
+	&.lp-color-1 {
+		background-image:url(../images/backgrounds/blue-1030.jpg);
+	}
+	&.lp-color-2 {
+		background-image:url(../images/backgrounds/orange-1030.jpg);
+	}
+	&.lp-color-3 {
+		background-image:url(../images/backgrounds/green-1030.jpg);
+	}
+	&.lp-color-4 {
+		background-image:url(../images/backgrounds/pink-1030.jpg);
+	}
+	&.lp-color-5 {
+		background-image:url(../images/backgrounds/yellow-1030.jpg);
+	}
+	&.lp-color-6 {
+		background-image:url(../images/backgrounds/grey-1030.jpg);
+	}
+}
 body {}
+.responsive-mobile {
+	display:none;
+}
+.responsive-standard {
+	display:block;
+}
 
 /*********************
 LAYOUT & GRID STYLES

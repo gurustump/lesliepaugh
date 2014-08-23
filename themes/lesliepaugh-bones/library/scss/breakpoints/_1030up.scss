@@ -9,6 +9,32 @@ be seen on the Desktop.
 
 ******************************************************************/
 
+/*********************
+GENERAL STYLES
+*********************/
+
+html {
+	background-repeat:repeat-x;
+	&.lp-color-1 {
+		background-image:url(../images/backgrounds/blue-2560.jpg);
+	}
+	&.lp-color-2 {
+		background-image:url(../images/backgrounds/orange-2560.jpg);
+	}
+	&.lp-color-3 {
+		background-image:url(../images/backgrounds/green-2560.jpg);
+	}
+	&.lp-color-4 {
+		background-image:url(../images/backgrounds/pink-2560.jpg);
+	}
+	&.lp-color-5 {
+		background-image:url(../images/backgrounds/yellow-2560.jpg);
+	}
+	&.lp-color-6 {
+		background-image:url(../images/backgrounds/grey-2560.jpg);
+	}
+}
+
 .wrap {
   width: 1040px;
 }

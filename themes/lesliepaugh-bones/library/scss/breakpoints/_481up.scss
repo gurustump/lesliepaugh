@@ -29,49 +29,49 @@ NAVIGATION STYLES
 
 .nav {}
 
-	/* .menu is clearfixed inside mixins.scss */
-	.menu {
-		ul {
-			li {
-				a {
-
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-					&:hover, &:focus {
-
-					}
-				}
-
-				&:first-child {}
-				&:last-child {}
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+	ul {
+		li {
+			a {
 
 				/*
-				plan your menus and drop-downs wisely.
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
 				*/
-				ul.sub-menu,
-				ul.children {
-					li {
-						a {
-							&:hover,
-							&:focus {}
-							&:link {}
-						}
-						&:first-child {}
-						&:last-child {}
-					}
-				}
-			} /* end .menu ul li */
+				&:hover, &:focus {
 
-			/* highlight current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}  /* end current highlighters */
-		} /* end .menu ul */
-	} /* end .menu */
+				}
+			}
+
+			&:first-child {}
+			&:last-child {}
+
+			/*
+			plan your menus and drop-downs wisely.
+			*/
+			ul.sub-menu,
+			ul.children {
+				li {
+					a {
+						&:hover,
+						&:focus {}
+						&:link {}
+					}
+					&:first-child {}
+					&:last-child {}
+				}
+			}
+		} /* end .menu ul li */
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {}
+		}  /* end current highlighters */
+	} /* end .menu ul */
+} /* end .menu */
 
 /*********************
 POSTS & CONTENT STYLES

@@ -16,31 +16,71 @@ GENERAL STYLES
 *********************/
 
 html {
+	background-repeat:repeat-x;
 	&.lp-color-1 {
-		background-image:url(../images/backgrounds/Cerulean-Epilogue.jpg);
+		background-image:url(../images/backgrounds/blue-768.jpg);
+		background-color:#95edfb;
 	}
 	&.lp-color-2 {
-		background-image:url(../images/backgrounds/Dreamsicle.jpg);
+		background-image:url(../images/backgrounds/orange-768.jpg);
+		background-color:#fff3dd;
 	}
 	&.lp-color-3 {
-		background-image:url(../images/backgrounds/green.jpg);
+		background-image:url(../images/backgrounds/green-768.jpg);
+		background-color:#c8e3ba;
 	}
 	&.lp-color-4 {
-		background-image:url(../images/backgrounds/pink.jpg);
+		background-image:url(../images/backgrounds/pink-768.jpg);
+		background-color:#f3e1f7;
 	}
 	&.lp-color-5 {
-		background-image:url(../images/backgrounds/Salt-Water-Taffeta.jpg);
+		background-image:url(../images/backgrounds/yellow-768.jpg);
+		background-color:#fffdea;
+		#logo, .nav-show {
+			background-color:rgba(0,0,0,.1);
+		}
 	}
 	&.lp-color-6 {
-		background-image:url(../images/backgrounds/Spirit-Lobby.jpg);
+		background-image:url(../images/backgrounds/grey-768.jpg);
+		background-color:#edf3f3;
+		#logo, .nav-show {
+			background-color:rgba(0,0,0,.15);
+		}
+	}
+	&.lesliepaugh {
+		margin-top:0 !important;
+		#wpadminbar {
+			@include transform(translateY(-45px));
+			&:hover {
+				@include transform(translateY(0));
+			}
+			&:after {
+				content:"admin";
+				color:#fff;
+				font-size:8px;
+				text-transform:uppercase;
+				text-align:center;
+				width:40px;
+				height:20px;
+				line-height:20px;
+				background:#222;
+				position:absolute;
+				bottom:-20px;
+				right:0;
+				@include border-radius(0 0 5px 5px);
+			}
+		}
 	}
 }
 body {
-	font-family: $standard;
-	font-size: 100%;
-	line-height: 1.5;
-	color: $text-color;
-  -webkit-font-smoothing: antialiased;
+	font-family:$standard;
+	font-size:100%;
+	line-height:1.5;
+	color:$text-color;
+  -webkit-font-smoothing:antialiased;
+}
+.responsive-standard {
+	display:none;
 }
 
 /********************
@@ -48,48 +88,53 @@ WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+body.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
+body.home {}                          /* home page */
+body.blog {}                          /* blog template page */
+body.archive {}                       /* archive page */
+body.date {}                          /* date archive page */
+	body.date-paged-1 {}                /* replace the number to the corresponding page number */
+body.search {}                        /* search page */
+	body.search-results {}              /* search result page */
+	body.search-no-results {}           /* no results search page */
+	body.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+body.error404 {}                      /* 404 page */
+body.single {}                        /* single post page */
+	body.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+	body.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+body.attachment {}                    /* attatchment page */
+	body.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+	body.attachment-mime-type {}        /* style mime type pages */
+body.author {}                        /* author page */
+	body.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+	body.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+body.category {}                      /* category page */
+	body.category-1 {}                  /* individual category page (i.e. body.category-6) */
+	body.category-paged-1 {}            /* replace the number to the corresponding page number */
+body.tag {}                           /* tag page */
+	body.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+	body.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+body.page-template {}                 /* custom page template page */
+	body.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+	body.page-paged-1 {}                /* replace the number to the corresponding page number */
+	body.page-parent {}                 /* parent page template */
+	body.page-child {}                  /* child page template */
+	body.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+body.logged-in {}                     /* if user is logged in */
+body.paged {}                         /* paged items like search results or archives */
+	body.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
+#container {
+		@include transition(transform .5s);
+	&.nav-active {
+			@include transform(translateX(70%));
+	}
+}
 .wrap {
-	width: 96%;
 	margin: 0 auto;
 }
 
@@ -125,45 +170,43 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1,h2,h3,h4, h5,h6 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-
-	/* removing text decoration from all headline links */
+	font-weight:400;
+	margin:0;
 	a {
 		text-decoration: none;
 	}
 }
 
-h1, .h1 {
-	font-size: 2.5em;
+h1 {
+	font-size:40px;
 	line-height: 1.333em;
+	margin-bottom:20px;
+	@include box-sizing;
 }
-
-h2, .h2 {
-	font-size: 1.75em;
+h2 {
+	font-size:28px;
 	line-height: 1.4em;
-	margin-bottom: 0.375em;
+	margin-bottom:12px;
 }
-
-h3, .h3 {
-	font-size: 1.125em;
+h3 {
+	font-size:18px;
+	margin-bottom:12px;
 }
-
-h4, .h4 {
-	font-size: 1.1em;
-	font-weight: 700;
+h4{
+	font-size:16px;
+	font-weight:700;
+	margin-bottom:12px;
 }
-
-h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+h5 {
+	font-size:14px;
+	line-height:2em;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+h6 {
+	font-weight:700;
 }
 
 /*********************
@@ -172,14 +215,14 @@ HEADER STYLES
 
 .header {
 }
-
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
-		}
-	}
+#logo {
+	width:130px;
+	height:130px;
+	background-image:url(../images/logo.png);
+	background-repeat:no-repeat;
+	text-indent:-9999px;
+	margin:0;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -193,74 +236,77 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
-.nav {
-	border-bottom: 0;
-	margin: 0;
 
-	li {
-
-		a {
-			display: block;
-			color: $white;
-			text-decoration: none;
-			padding: 0.75em;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
+#main_nav {
+	position:absolute;
+	width:100%;
+	top:0;
+	left:0;
+	.nav-show {
+		position:absolute;
+		top:43px;
+		right:30px;
+		display:block;
+		width:50px;
+		height:44px;
+		text-indent:-9999px;
+		background:url(../images/sprite.png) no-repeat 0 -200px;
+		&:focus {
+			outline:none;
 		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
+	}
+	/* highlight current page 
 	li.current-menu-item,
 	li.current_page_item,
 	li.current_page_ancestor {
 
 		a {}
 
-	}  /* end current highlighters */
-
+	}   end current highlighters */
+	.top-nav {
+		width:70%;
+		opacity:.7;
+		height:100%;
+		background:#222;
+		@include box-shadow(-24px 0 24px -12px rgba(0, 0, 0, 0.25) inset);
+		@include transform(translateX(-100%));
+		@include transition(opacity .5s, transform .5s);
+		li {
+			a {
+				display:block;
+				color:$white;
+				text-decoration:none;
+				padding:8px 20px;
+				border-top:1px solid #555;
+				background:#222;
+				@include box-shadow(-24px 0 24px -12px rgba(0, 0, 0, 0.5) inset);
+			}
+			> &:first-child a {
+				border-top:0;
+			}
+			ul.sub-menu, ul.children {
+				li {
+					a {
+						background:#292929;
+						padding-left:40px;
+					}
+				}
+			}
+		}
+	}
+	&.active {
+		height:100%;
+		.nav-show {
+			background-position:0 -300px;
+		}
+		.top-nav {
+			opacity:1;
+			@include transform(translateX(0));
+		}
+	}
+	&.trans-complete {
+		height:100%;
+	}
 } /* end .nav */
 
 
@@ -330,7 +376,7 @@ POSTS & CONTENT STYLES
 			padding: 1.5em 1.5em 0;
 
 			p {
-				margin: 0 0 1.5em;
+				margin:0 0 1.5em;
 			}
 
 

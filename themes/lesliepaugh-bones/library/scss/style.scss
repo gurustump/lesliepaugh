@@ -95,6 +95,18 @@ you can add resource intensive styles.
 } // end of media query
 
 /*********************
+JUST FOR WORDPRESS ADMIN BAR
+This is the breakpoint where the Wordpress admin bar goes from
+mobile to normal.
+*********************/
+@media only screen and (min-width: 783px) {
+
+	// styles in 783up.scss
+	@import "breakpoints/783up";
+
+} // end of media query
+
+/*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where

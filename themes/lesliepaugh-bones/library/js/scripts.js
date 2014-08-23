@@ -107,11 +107,20 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+	/*
+	* Let's fire off the gravatar function
+	* You can remove this if you don't need it
+	*/
+	loadGravatars();
+	
+	$('.NAV_SHOW').click(function(e) {
+		e.preventDefault();
+		$('#main_nav').toggleClass('active');
+		$('#container').toggleClass('nav-active');
+		setTimeout(function() {
+			$('#main_nav').toggleClass('trans-complete');
+		}, 500);
+	});
 
 
 }); /* end of as page load scripts */

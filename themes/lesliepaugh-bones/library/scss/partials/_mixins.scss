@@ -25,19 +25,35 @@ http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 TRANSITION
 *********************/
 
-/*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
-*/
+/* defining prefixes so we can use them in mixins below */
+$prefixes:      ("-webkit-", "-moz-", "-ms-", "-o-", "" );
 
+@mixin border-radius ($radius: 5px) {
+	@each $prefix in $prefixes {
+		#{$prefix}border-radius:$radius;
+	}
+}
+@mixin box-shadow($arguments) {
+	@each $prefix in $prefixes {
+		#{$prefix}box-shadow:$arguments;
+	}
+}
 @mixin transition($transition...) {
-  // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
-  @each $prefix in $prefixes {
-    #{$prefix}transition: $transition;
-  }
+	@each $prefix in $prefixes {
+		#{$prefix}transition:$transition;
+	}
+}
+/* @include transition(all 0.2s ease-in-out); */
+@mixin transform($transform...) {
+	@each $prefix in $prefixes {
+		#{$prefix}transform:$transform;
+	}
+}
+/* @include box-sizing(border-box); */
+@mixin box-sizing($type: border-box) {
+	@each $prefix in $prefixes {
+		#{$prefix}box-sizing: $type;
+	}
 }
 
 /*********************
@@ -55,19 +71,3 @@ really slow down your CSS. Don't overdo it.
 	background-image: -o-linear-gradient(top, $from, $to);
 	background-image: linear-gradient(to bottom, $from, $to);
 }
-
-/*********************
-BOX SIZING
-*********************/
-
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
-@mixin box-sizing($type: border-box) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:     $type;
-	-ms-box-sizing:       $type;
-	box-sizing:              $type;
-}
-
-

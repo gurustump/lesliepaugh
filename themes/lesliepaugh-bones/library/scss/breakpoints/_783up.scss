@@ -1,0 +1,21 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Wordpress Admin Breakpoint
+
+This is the breakpoint where the Wordpress admin bar goes from
+mobile to normal.
+
+******************************************************************/
+
+html {
+	&.lesliepaugh {
+		#wpadminbar {
+			@include transform(translateY(-31px));
+			&:hover {
+				@include transform(translateY(0));
+			}
+		}
+	}
+}
