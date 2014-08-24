@@ -44,7 +44,7 @@
 			<div id="inner-header" class="wrap cf">
 				<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 				<?php $headingTag = is_front_page() ? 'h1' : 'p'; ?>
-				<<?php echo $headingTag; ?> id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></<?php echo $headingTag; ?>>
+				<<?php echo $headingTag; ?> id="logo"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></<?php echo $headingTag; ?>>
 
 				<?php // if you'd like to use the site description you can un-comment it below ?>
 				<?php // bloginfo('description'); ?>

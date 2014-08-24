@@ -90,16 +90,44 @@ var timeToWaitForLast = 100;
  * images on mobile to save bandwidth. Once we hit an acceptable viewport
  * then we can swap out those images since they are located in a data attribute.
 */
-function loadGravatars() {
+function loadGravatars($) {
   // set the viewport using the function above
   viewport = updateViewportDimensions();
   // if the viewport is tablet or larger, we load in the gravatars
   if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+  $('.comment img[data-gravatar]').each(function(){
+    $(this).attr('src',$(this).attr('data-gravatar'));
   });
 	}
 } // end function
+function adjustSliderSize(slider,$) {
+	var sliderPanel = slider.find('.SLIDER_PANEL');
+	sliderPanel.height(sliderPanel.width() * 3 / 4);
+	slider.animate({'opacity':1},500);
+}
+function changeSlide(slider,direction,$) {
+	var thisSlide = slider.find('.SLIDER_PANEL > li.active');
+	var prevSlide = thisSlide.prev().length > 0 ? thisSlide.prev() : slider.find('.SLIDER_PANEL > li:last-child');
+	var nextSlide = thisSlide.next().length > 0 ? thisSlide.next() : slider.find('.SLIDER_PANEL > li:first-child');
+	thisSlide.removeClass('active');
+	if (direction =="next") {
+		nextSlide.addClass('active');
+	} else {
+		prevSlide.addClass('active');
+	}
+}
+function slider(slider,$) {
+	adjustSliderSize(slider,$);
+	var autoSlide = setInterval(function() {
+		changeSlide(slider,'next',$);
+	}, 7000);
+	slider.find('.PREV,.NEXT').click(function(e) {
+		e.preventDefault();
+		clearInterval(autoSlide);
+		var direction = $(this).hasClass('NEXT') ? 'next' : 'prev';
+		changeSlide(slider,direction,$);
+	});
+}
 
 
 /*
@@ -111,7 +139,7 @@ jQuery(document).ready(function($) {
 	* Let's fire off the gravatar function
 	* You can remove this if you don't need it
 	*/
-	loadGravatars();
+	loadGravatars($);
 	
 	$('.NAV_SHOW').click(function(e) {
 		e.preventDefault();
@@ -121,6 +149,17 @@ jQuery(document).ready(function($) {
 			$('#main_nav').toggleClass('trans-complete');
 		}, 500);
 	});
-
+	
+	if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
+	
+	if( is_home ) {
+		slider($('.HOME_SLIDER'),$);
+		$(window).resize(function () {
+			waitForFinalEvent( function() {
+				adjustSliderSize($('.HOME_SLIDER'),$);
+			}, timeToWaitForLast, "your-function-identifier-string");
+		});
+	}
 
 }); /* end of as page load scripts */
+

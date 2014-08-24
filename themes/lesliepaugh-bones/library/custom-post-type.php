@@ -78,13 +78,13 @@ function home_slider_post_type() {
 		// let's now add all the options for this post type
 		array( 'labels' => array(
 			'name' => __( 'Home Slides', 'bonestheme' ), /* This is the Title of the Group */
-			'singular_name' => __( $psg_label, 'bonestheme' ), /* This is the individual type */
-			'all_items' => __( 'Slide', 'bonestheme' ), /* the all items menu item */
+			'singular_name' => __( 'Slide', 'bonestheme' ), /* This is the individual type */
 			'add_new' => __( 'Add New', 'bonestheme' ), /* The add new menu item */
 			'add_new_item' => __( 'Add New Slide', 'bonestheme' ), /* Add New Display Title */
 			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
 			'edit_item' => __( 'Edit Slide', 'bonestheme' ), /* Edit Display Title */
 			'new_item' => __( 'New  Slide', 'bonestheme' ), /* New Display Title */
+			'all_items' => __( 'All Slides', 'bonestheme' ), /* the all items menu item */
 			'view_item' => __( 'View Slide', 'bonestheme' ), /* View Display Title */
 			'search_items' => __( 'Search Slides', 'bonestheme' ), /* Search Custom Type Title */ 
 			'not_found' =>  __( 'No Slides found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
@@ -125,17 +125,17 @@ add_action( 'init', 'home_slider_post_type');
 	
 function portfolio_register_taxonomies () {
 	$labels = array(
-		'name'                		  => _x( 'Portfolio Categories', 'taxonomy general name', wpGrade_txtd ),
-		'singular_name'      	  => _x( 'Portfolio Category', 'taxonomy singular name', wpGrade_txtd ),
-		'search_items'   	      => __( 'Search Portfolio Category', wpGrade_txtd ),
-		'all_items'             	 => __( 'All Portfolio Categories', wpGrade_txtd ),
-		'parent_item'             => __( 'Parent Portfolio Category' , wpGrade_txtd),
-		'parent_item_colon'   => __( 'Parent Portfolio Category: ', wpGrade_txtd ),
-		'edit_item'           		  => __( 'Edit Portfolio Category' , wpGrade_txtd),
-		'update_item'  	  	  => __( 'Update Portfolio Category' , wpGrade_txtd),
-		'add_new_item'         => __( 'Add New Portfolio Category' , wpGrade_txtd),
-		'new_item_name'      => __( 'New Portfolio Category Name' , wpGrade_txtd),
-		'menu_name'         	  => __( 'Portfolio Categories' , wpGrade_txtd)
+		'name'                		  => _x( 'Portfolio Categories', 'taxonomy general name', 'bonestheme' ),
+		'singular_name'      	  => _x( 'Portfolio Category', 'taxonomy singular name', 'bonestheme' ),
+		'search_items'   	      => __( 'Search Portfolio Category', 'bonestheme' ),
+		'all_items'             	 => __( 'All Portfolio Categories', 'bonestheme' ),
+		'parent_item'             => __( 'Parent Portfolio Category' , 'bonestheme'),
+		'parent_item_colon'   => __( 'Parent Portfolio Category: ', 'bonestheme' ),
+		'edit_item'           		  => __( 'Edit Portfolio Category' , 'bonestheme'),
+		'update_item'  	  	  => __( 'Update Portfolio Category' , 'bonestheme'),
+		'add_new_item'         => __( 'Add New Portfolio Category' , 'bonestheme'),
+		'new_item_name'      => __( 'New Portfolio Category Name' , 'bonestheme'),
+		'menu_name'         	  => __( 'Portfolio Categories' , 'bonestheme')
 	);
 
 	$args = array(

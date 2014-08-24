@@ -209,6 +209,6 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
-
+require_once( 'cmb-functions.php' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

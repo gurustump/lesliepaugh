@@ -51,7 +51,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 768px;
 }
 
 /*********************
@@ -60,34 +60,80 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+#logo {
+	float:left;
+}
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
-.nav {
-	border: 0;
-	ul {
-		background:$black;
-		margin-top:0;
+#main_nav {
+	position:static;
+	width:auto;
+	.nav-show {
+		display:none;
 	}
-	li {
-		float: left;
-		position: relative;
-
-		a {
-			border-bottom: 0;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+	.top-nav {
+		transform:none;
+		opacity:1;
+		background:none;
+		@include box-shadow(none);
+		width:100%;
+		text-align:center;
+		padding-top:39px;
+		li {
+			display:inline-block;
+			position: relative;
+			a {
+				background:none;
+				border:none;
+				@include box-shadow(none);
+				font-size:24px;
+				text-transform:uppercase;
+				font-weight:300;
+				@include transition(color .5s, background-color .5s);
+				&:hover {
+					color:$text-color;
+				}
+			}
+			ul.sub-menu, ul.children {
+				position:absolute;
+				opacity:0;
+				z-index: 8999;
+				visibility:hidden;
+				@include transition(opacity .5s, transform .5s);
+				text-align:left;
+				li {
+					display:block;
+					background:rgba(0,0,0,.5);
+					a {
+						border-top:1px solid rgba(255,255,255,.1);
+						padding-left:20px;
+						display: block;
+						background:none;
+						&:hover {
+							color:$link-hover;
+							background-color:rgba(0,0,0,.3);
+						}
+					}
+					&:first-child a {
+						border-top:0;
+					}
+				}
+			}
+			/* showing sub-menus */
+			&:hover > ul {
+				top: auto;
+				opacity:1;
+				visibility:visible;
 			}
 		}
+	}
+}
+.nav {
+	li {
+
 
 		&:first-child {}
 		&:last-child {}
@@ -95,63 +141,6 @@ NAVIGATION STYLES
 		/*
 		plan your menus and drop-downs wisely.
 		*/
-		ul.sub-menu,
-		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
-			position: absolute;
-			visibility: hidden;
-			z-index: 8999;
-
-			li {
-
-				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
-					}
-				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {
-					top:0;
-					left:100%;
-				}
-			}
-
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}
-		}
-
-		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
-			visibility:visible;
-		}
 
 	} /* end .menu ul li */
 
@@ -163,6 +152,36 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+.slider {
+	max-width:1028px; /* 260px wider than .slider-panel to permit 130px on each side for prev/next buttons */
+	margin:0 auto;
+	.slider-controls {
+		& > a {
+			width:130px;
+			& > span {
+				width:30px;
+				height:91px;
+				position:absolute;
+				top:50%;
+				margin-top:-46px;
+				background:url(../images/sprite.png) no-repeat;
+			}
+			&.next > span {
+				right:20px;
+			}
+			&.prev > span {
+				background-position:0 -100px;
+				left:20px;
+			}
+		}
+	}
+	.slider-panel {
+		position:relative;
+		width:768px;
+		margin:0 auto;
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES

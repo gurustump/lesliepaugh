@@ -34,7 +34,22 @@ html {
 		background-image:url(../images/backgrounds/grey-2560.jpg);
 	}
 }
-
+header {
+	max-width:1088px;
+	position:relative;
+	margin:0 auto;
+}
 .wrap {
   width: 1040px;
+}
+#logo {
+	position:absolute;
+	z-index:2;
+	left:4px;
+	top:32px;
+}
+#main_nav {
+	.top-nav {
+		padding-top:10px;
+	}
 }
