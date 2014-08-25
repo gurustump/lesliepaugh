@@ -10,7 +10,7 @@ on larger screens.
 ******************************************************************/
 
 .wrap {
-	width:1240px;
+	width:1200px;
 }
 header {
 	max-width:1498px;
@@ -22,5 +22,15 @@ header {
 	max-width:1150px;
 	.slider-panel {
 		width:890px;
+	}
+}
+body.home {
+	.projects-list {
+		& > li {
+			a {
+				padding-left:40px;
+				padding-right:40px;
+			}
+		}
 	}
 }

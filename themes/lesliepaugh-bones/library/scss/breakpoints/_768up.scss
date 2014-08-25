@@ -51,7 +51,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 768px;
+	width:768px;
 }
 
 /*********************
@@ -167,12 +167,22 @@ NAVIGATION STYLES
 				margin-top:-46px;
 				background:url(../images/sprite.png) no-repeat;
 			}
-			&.next > span {
-				right:20px;
+			&.next {
+				& > span {
+					right:20px;
+				}
+				&:hover span {
+					background-position:0 -200px;
+				}
 			}
-			&.prev > span {
-				background-position:0 -100px;
-				left:20px;
+			&.prev {
+				& > span {
+					background-position:0 -100px;
+					left:20px;
+				}
+				&:hover span {
+					background-position:0 -300px;
+				}
 			}
 		}
 	}
@@ -180,6 +190,17 @@ NAVIGATION STYLES
 		position:relative;
 		width:768px;
 		margin:0 auto;
+	}
+}
+body.home {
+	.projects-list {
+		margin-bottom:20px;
+		& > li {
+			a {
+				padding-left:30px;
+				padding-right:30px;
+			}
+		}
 	}
 }
 

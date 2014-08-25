@@ -78,6 +78,32 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
             ),
 		),
 	);
+	
+	/**
+	 * Metabox for Projects / Portfolio items
+	 */
+	
+	$meta_boxes['portfolio_features'] = array(
+		'id'						=> 'portfolio_features',
+		'title'					=> __('Project Settings','cmb2'),
+		'object_types'		=> array( 'portfolio' ), // Post type
+		'context'				=> 'normal',
+		'priority'				=> 'high',
+		'show_names'		=> true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name'	=> __('Location','cmb2'),
+				'id'		=> $prefix . 'portfolio_location',
+				'type'	=> 'text',
+			),
+			array(
+				'name'	=> __( 'Featured Project', 'cmb2'),
+				'desc' 	=> __('Items checked as featured will be displayed first in the homepage portfolio section (ordered by date descending)', 'cmb2'),
+				'id'   		=> $prefix . 'portfolio_featured',
+				'type' 	=> 'checkbox',
+			)
+		)
+	);
 
 	/**
 	 * Metabox to be displayed on a single page ID

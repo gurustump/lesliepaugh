@@ -143,7 +143,8 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color:$link-color;
+	@include transition(color .5s);
 
 	/* on hover */
 	&:hover, &:focus {
@@ -170,7 +171,7 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1,h2,h3,h4, h5,h6 {
+h1,h2,h3,h4, h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	text-rendering: optimizelegibility;
 	font-weight:400;
 	margin:0;
@@ -179,33 +180,33 @@ h1,h2,h3,h4, h5,h6 {
 	}
 }
 
-h1 {
+h1,.h1 {
 	font-size:40px;
 	line-height: 1.333em;
 	margin-bottom:20px;
 	@include box-sizing;
 }
-h2 {
+h2,.h2 {
 	font-size:28px;
 	line-height: 1.4em;
 	margin-bottom:12px;
 }
-h3 {
+h3,.h3 {
 	font-size:18px;
 	margin-bottom:12px;
 }
-h4{
+h4,.h4 {
 	font-size:16px;
 	font-weight:700;
 	margin-bottom:12px;
 }
-h5 {
+h5,.h5 {
 	font-size:14px;
 	line-height:2em;
 	text-transform:uppercase;
 	letter-spacing:2px;
 }
-h6 {
+h6,.h6 {
 	font-weight:700;
 }
 
@@ -222,6 +223,10 @@ HEADER STYLES
 	background-repeat:no-repeat;
 	text-indent:-9999px;
 	margin:0;
+	@include transition(background-color .5s);
+	&:hover {
+		background-color:rgba(0,0,0,.3) !important;
+	}
 	> a {
 		display:block;
 		height:100%;
@@ -254,7 +259,7 @@ and more scalable.
 		width:50px;
 		height:44px;
 		text-indent:-9999px;
-		background:url(../images/sprite.png) no-repeat 0 -200px;
+		background:url(../images/sprite.png) no-repeat 0 -400px;
 		&:focus {
 			outline:none;
 		}
@@ -301,7 +306,7 @@ and more scalable.
 	&.active {
 		height:100%;
 		.nav-show {
-			background-position:0 -300px;
+			background-position:0 -500px;
 		}
 		.top-nav {
 			opacity:1;
@@ -360,6 +365,32 @@ POSTS & CONTENT STYLES
 			}
 			&.active {
 				opacity:1;
+			}
+		}
+	}
+}
+body.home {
+	.projects-list {
+		text-align:center;
+		& > li {
+			display:inline-block;
+			a {
+				text-decoration:none;
+				padding:10px 20px;
+				display:block;
+			}
+			span {
+				display:block;
+				margin-bottom:0;
+			}
+			.h2 {
+				font-size:18px;
+				text-transform:uppercase;
+				height:25px;
+			}
+			.h3 {
+				font-size:14px;
+				height:21px;
 			}
 		}
 	}
