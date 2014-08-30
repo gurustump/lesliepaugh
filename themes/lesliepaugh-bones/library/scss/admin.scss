@@ -10,3 +10,26 @@ is empty, but you can just start dropping your styles here to
 start customizing. All admin functions are located in lib/admin/
 
 ******************************************************************/
+
+.cmb2_wrap {
+	.cmb-nested.repeatable-group {
+		.cmb-group-title {
+			background:#ddd;
+			padding-bottom:0;
+			.cmb-th {
+				float:none;
+				width:auto;
+				h4 {
+					font-weight:bold;
+					border:0;
+					margin:0;
+				}
+			}
+		}
+			.cmb-td {
+				.cmb-td {
+					padding-bottom:0;
+				}
+			}
+	}
+}

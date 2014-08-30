@@ -153,9 +153,11 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
-.slider {
+.slider-container {
 	max-width:1028px; /* 260px wider than .slider-panel to permit 130px on each side for prev/next buttons */
 	margin:0 auto;
+}
+.slider {
 	.slider-controls {
 		& > a {
 			width:130px;

@@ -98,11 +98,60 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 			),
 			array(
 				'name'	=> __( 'Featured Project', 'cmb2'),
-				'desc' 	=> __('Items checked as featured will be displayed first in the homepage portfolio section (ordered by date descending)', 'cmb2'),
+				'desc' 	=> __('Items checked as featured will be displayed first in the homepage portfolio sub-navigation (ordered by date descending)', 'cmb2'),
 				'id'   		=> $prefix . 'portfolio_featured',
 				'type' 	=> 'checkbox',
-			)
+			),
+			array(
+				'name'	=> __('Order','cmb2'),
+				'id'		=> $prefix . 'portfolio_order',
+				'desc'	=> 'Enter a number. Controls the order that featured Projects will appear on the home page Project sub-navigation',
+				'type'	=> 'text',
+			),
 		)
+	);
+	
+	$meta_boxes['project_gallery_group'] = array(
+		'id'           => $prefix . 'project_gallery_group',
+		'title'        => __( 'Gallery Images', 'cmb2' ),
+		'object_types' => array( 'portfolio', ),
+		'fields'       => array(
+			array(
+				'id'          => $prefix . 'project_gallery_images',
+				'type'        => 'group',
+				'desc' => __( "Select each image you wish to appear in the slider on the Project's home page", "cmb2" ),
+				'options'     => array(
+					'group_title'   => __( 'Image {#}', 'cmb2' ), // {#} gets replaced by row number
+					'add_button'    => __( 'Add Another Image', 'cmb2' ),
+					'remove_button' => __( 'Remove Image', 'cmb2' ),
+					'sortable'      => true, // beta
+				),
+				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+				'fields'      => array(
+					array(
+						'name' => 'Image File',
+						'id'   => 'image',
+						'type' => 'file',
+					),
+					array(
+						'name' => 'Image Title',
+						'id'   => 'image_title',
+						'type' => 'text',
+					),
+					array(
+						'name' => 'Image Caption',
+						'id'   => 'image_caption',
+						'type' => 'textarea_small',
+					),
+					array(
+						'name' => 'Featured',
+						'id' => 'image_featured',
+						'description' => 'Featured on Home Page Slider (after a Project has been selected)',
+						'type' => 'checkbox',
+					),
+				),
+			),
+		),
 	);
 
 	/**
