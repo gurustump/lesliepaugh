@@ -209,6 +209,14 @@ function bones_fonts() {
 
 add_action('wp_print_styles', 'bones_fonts');
 
+function custom_body_classes($class_names)  {
+	if ( is_page() ) {
+		$class_names[] =  'page-' . strtolower(get_the_title());
+	}
+	return $class_names;
+}
+add_filter('body_class','custom_body_classes');
+
 require_once( 'cmb-functions.php' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
