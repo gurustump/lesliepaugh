@@ -22,10 +22,10 @@ function bones_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
-function portfolio_post_type() { 
+function project_post_type() { 
 	$psg_label = 'Project';
 	// creating (registering) the custom type 
-	register_post_type( 'portfolio', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
 			'name' => __( $psg_label.'s', 'bonestheme' ), /* This is the Title of the Group */
@@ -43,7 +43,7 @@ function portfolio_post_type() {
 			'parent_item_colon' => '',
 			'menu_name' => __(  $psg_label.'s', 'bonestheme' )
 			), /* end of labels */
-			'description' => __( 'Portfolio items that will appear as projects', 'bonestheme' ), /* Custom Type Description */
+			'description' => __( 'Project items that will appear as projects', 'bonestheme' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -52,9 +52,9 @@ function portfolio_post_type() {
 			'query_var' => true,
 			'menu_position' => null, /* this is what order you want it to appear in on the left hand side menu */ 
 			/*'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',*/ /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'portfolio-project' ), /* you can specify its url slug */
-			'has_archive' => 'portfolio-archive', /* you can rename the slug here */
-			'capability_type' => 'post',
+			//'rewrite'	=> array( 'slug' => 'project' ), /* you can specify its url slug */
+			'has_archive' => 'project-archive', /* you can rename the slug here */
+			'capability_type' => 'page',
 			/*'hierarchical' => false,*/
 			/* the next one is important, it tells what's enabled in the post editor */
 			/*'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')*/
@@ -63,14 +63,14 @@ function portfolio_post_type() {
 	); /* end of register post type */
 	
 	/* this adds your post categories to your custom post type */
-    register_taxonomy_for_object_type( 'portfolio_categories', 'portfolio' );
+    register_taxonomy_for_object_type( 'project_categories', 'project' );
 	/* this adds your post tags to your custom post type */
-	register_taxonomy_for_object_type( "post_tag", 'portfolio' );
+	register_taxonomy_for_object_type( "post_tag", 'project' );
 	
 }
 
 // adding the function to the Wordpress init
-add_action( 'init', 'portfolio_post_type');
+add_action( 'init', 'project_post_type');
 
 function home_slider_post_type() {
 	// creating (registering) the custom type 
@@ -123,19 +123,19 @@ add_action( 'init', 'home_slider_post_type');
 	http://codex.wordpress.org/Function_Reference/register_taxonomy
 	*/
 	
-function portfolio_register_taxonomies () {
+function project_register_taxonomies () {
 	$labels = array(
-		'name'                		  => _x( 'Portfolio Categories', 'taxonomy general name', 'bonestheme' ),
-		'singular_name'      	  => _x( 'Portfolio Category', 'taxonomy singular name', 'bonestheme' ),
-		'search_items'   	      => __( 'Search Portfolio Category', 'bonestheme' ),
-		'all_items'             	 => __( 'All Portfolio Categories', 'bonestheme' ),
-		'parent_item'             => __( 'Parent Portfolio Category' , 'bonestheme'),
-		'parent_item_colon'   => __( 'Parent Portfolio Category: ', 'bonestheme' ),
-		'edit_item'           		  => __( 'Edit Portfolio Category' , 'bonestheme'),
-		'update_item'  	  	  => __( 'Update Portfolio Category' , 'bonestheme'),
-		'add_new_item'         => __( 'Add New Portfolio Category' , 'bonestheme'),
-		'new_item_name'      => __( 'New Portfolio Category Name' , 'bonestheme'),
-		'menu_name'         	  => __( 'Portfolio Categories' , 'bonestheme')
+		'name'                		  => _x( 'Project Categories', 'taxonomy general name', 'bonestheme' ),
+		'singular_name'      	  => _x( 'Project Category', 'taxonomy singular name', 'bonestheme' ),
+		'search_items'   	      => __( 'Search Project Category', 'bonestheme' ),
+		'all_items'             	 => __( 'All Project Categories', 'bonestheme' ),
+		'parent_item'             => __( 'Parent Project Category' , 'bonestheme'),
+		'parent_item_colon'   => __( 'Parent Project Category: ', 'bonestheme' ),
+		'edit_item'           		  => __( 'Edit Project Category' , 'bonestheme'),
+		'update_item'  	  	  => __( 'Update Project Category' , 'bonestheme'),
+		'add_new_item'         => __( 'Add New Project Category' , 'bonestheme'),
+		'new_item_name'      => __( 'New Project Category Name' , 'bonestheme'),
+		'menu_name'         	  => __( 'Project Categories' , 'bonestheme')
 	);
 
 	$args = array(
@@ -144,18 +144,18 @@ function portfolio_register_taxonomies () {
 		'show_ui'                       => true,
 		'show_admin_column'   => true,
 		'query_var'                    => true,
-		'rewrite'                         => array('slug' => 'portfolio_categories')
+		'rewrite'                         => array('slug' => 'project_categories')
 	);
 
-	register_taxonomy( 'portfolio_cat', 'portfolio', $args );
+	register_taxonomy( 'project_cat', 'project', $args );
 
 }
 
-add_action( 'init', 'portfolio_register_taxonomies', 2);
+add_action( 'init', 'project_register_taxonomies', 2);
 	// now let's add custom categories (these act like categories)
 	/*
-	register_taxonomy( 'portfolio_cat', 
-		array('portfolio'), // if you change the name of register_post_type( 'custom_type', then you have to change this
+	register_taxonomy( 'project_cat', 
+		array('project'), // if you change the name of register_post_type( 'custom_type', then you have to change this
 		array('hierarchical' => true,     // if this is true, it acts like categories
 			'labels' => array(
 				'name' => __( 'Custom Categories', 'bonestheme' ), // name of the custom taxonomy
@@ -178,7 +178,7 @@ add_action( 'init', 'portfolio_register_taxonomies', 2);
 	*/
 	// now let's add custom tags (these act like categories)
 	/*
-	register_taxonomy( 'portfolio_tag', 
+	register_taxonomy( 'project_tag', 
 		array('porfolio'), // if you change the name of register_post_type( 'custom_type', then you have to change this 
 		array('hierarchical' => false,    // if this is false, it acts like tags 
 			'labels' => array(

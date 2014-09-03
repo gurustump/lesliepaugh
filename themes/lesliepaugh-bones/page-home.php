@@ -34,17 +34,17 @@
 					</li>
 					<?php
 					$projects = get_posts(array(
-						'post_type' => 'portfolio',
+						'post_type' => 'project',
 						'numberposts' => -1,
 						'meta_query' => array(
 							'relation' => 'AND',
 							array(
-								'key' => '_senna_portfolio_featured',
+								'key' => '_senna_project_featured',
 								'value' => 'on',
 								'compare' => '='
 							)
 						),
-						'meta_key' => '_senna_portfolio_order',
+						'meta_key' => '_senna_project_order',
 						'orderby' => 'meta_value_num',
 						'order' => 'ASC' 
 					));
@@ -60,12 +60,11 @@
 							$projectImages = get_post_meta($project->ID, '_senna_project_gallery_images',true);
 							 /*?><li style="opacity:1;text-align:left;"><pre><?php print_r($projectImages) ?></pre></li><?php */
 							if ( isset($projectImages[0] ) ) { foreach($projectImages as $imgKey => $image) { ?>
+								<?php if ($image[image_featured] == 'on') { ?>
 								<li <?php echo $imgKey == 0 ? 'class="active"' : ''; ?>>
 									<img src="<?php echo $image[image]; ?>" alt="<?php echo $image[image_title]; ?>" />
 								</li>
-								<?php /*<li style="opacity:1;text-align:left;position:static;">
-									<pre><?php print_r($image); ?></pre>
-								</li> */ ?>
+								<?php } ?>
 							<?php } } ?>
 							</ul>
 						</div>
@@ -78,7 +77,7 @@
 						if ( isset($projects[0]) ) {  ?>
 						<ul class="projects-list PROJECTS_LIST">
 							<?php foreach($projects as $key => $project) { 
-							$location = get_post_meta($project->ID, '_senna_portfolio_location', true); ?>
+							$location = get_post_meta($project->ID, '_senna_project_location', true); ?>
 							<li>
 								<a id="subnav_<?php echo $project->ID; ?>" href="<?php echo get_permalink($project->ID); ?>">
 									<span class="h2"><?php echo $project->post_title; ?></span>

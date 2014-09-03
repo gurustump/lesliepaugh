@@ -156,9 +156,10 @@ jQuery(document).ready(function($) {
 		$('#container').removeClass('nav-active');
 	});
 	
-	if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
+	if ( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
+	if ( typeof is_project === "undefined" ) var is_project = $('body').hasClass('single-project');
 	
-	if( is_home ) {
+	if ( is_home ) {
 		slider($('.HOME_SLIDER'),$);
 		$('.PROJECTS > a').click(function(e) {
 			e.preventDefault();
@@ -179,6 +180,10 @@ jQuery(document).ready(function($) {
 				adjustSliderSize($('body').data('activeSlider'));
 			}, timeToWaitForLast, "your-function-identifier-string");
 		});
+	}
+	
+	if (is_project) {
+		slider($('.PROJECT_SLIDER'),$);
 	}
 
 }); /* end of as page load scripts */

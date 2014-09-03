@@ -80,31 +80,31 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 	);
 	
 	/**
-	 * Metabox for Projects / Portfolio items
+	 * Metabox for Projects / Project items
 	 */
 	
-	$meta_boxes['portfolio_features'] = array(
-		'id'						=> 'portfolio_features',
+	$meta_boxes['project_features'] = array(
+		'id'						=> 'project_features',
 		'title'					=> __('Project Settings','cmb2'),
-		'object_types'		=> array( 'portfolio' ), // Post type
+		'object_types'		=> array( 'project' ), // Post type
 		'context'				=> 'normal',
 		'priority'				=> 'high',
 		'show_names'		=> true, // Show field names on the left
 		'fields' => array(
 			array(
 				'name'	=> __('Location','cmb2'),
-				'id'		=> $prefix . 'portfolio_location',
+				'id'		=> $prefix . 'project_location',
 				'type'	=> 'text',
 			),
 			array(
 				'name'	=> __( 'Featured Project', 'cmb2'),
-				'desc' 	=> __('Items checked as featured will be displayed first in the homepage portfolio sub-navigation (ordered by date descending)', 'cmb2'),
-				'id'   		=> $prefix . 'portfolio_featured',
+				'desc' 	=> __('Items checked as featured will be displayed first in the homepage project sub-navigation (ordered by date descending)', 'cmb2'),
+				'id'   		=> $prefix . 'project_featured',
 				'type' 	=> 'checkbox',
 			),
 			array(
 				'name'	=> __('Order','cmb2'),
-				'id'		=> $prefix . 'portfolio_order',
+				'id'		=> $prefix . 'project_order',
 				'desc'	=> 'Enter a number. Controls the order that featured Projects will appear on the home page Project sub-navigation',
 				'type'	=> 'text',
 			),
@@ -114,7 +114,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes['project_gallery_group'] = array(
 		'id'           => $prefix . 'project_gallery_group',
 		'title'        => __( 'Gallery Images', 'cmb2' ),
-		'object_types' => array( 'portfolio', ),
+		'object_types' => array( 'project', ),
 		'fields'       => array(
 			array(
 				'id'          => $prefix . 'project_gallery_images',

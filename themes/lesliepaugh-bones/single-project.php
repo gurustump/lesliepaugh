@@ -16,41 +16,33 @@
 <?php get_header(); ?>
 
 			<div id="content">
-
+				<div class="slider-container">
+					<div class="slider project-slider PROJECT_SLIDER">
+						<div class="slider-controls">
+							<a href="#" class="prev PREV"><span>Previous</span></a>
+							<a href="#" class="next NEXT"><span>Next</span></a>
+						</div>
+						<ul class="slider-panel SLIDER_PANEL">
+						<?php 
+						$projectImages = get_post_meta(get_the_ID(), '_senna_project_gallery_images',true);
+						 /*?><li style="opacity:1;text-align:left;"><pre><?php print_r($projectImages) ?></pre></li><?php */
+						if ( isset($projectImages[0] ) ) { foreach($projectImages as $imgKey => $image) { ?>
+							<li <?php echo $imgKey == 0 ? 'class="active"' : ''; ?>>
+								<img src="<?php echo $image[image]; ?>" alt="<?php echo $image[image_title]; ?>" />
+							</li>
+						<?php } } ?>
+						</ul>
+					</div>
+				</div>
 				<div id="inner-content" class="wrap cf">
-
 						<div id="main" role="main">
-
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<h1 class="page-title"><?php the_title(); ?></h1>
-							<div class="slider project-slider PROJECT_SLIDER">
-								<div class="slider-controls">
-									<a href="#" class="prev PREV"><span>Previous</span></a>
-									<a href="#" class="next NEXT"><span>Next</span></a>
-								</div>
-								<ul class="slider-panel SLIDER_PANEL">
-								<?php
-								$projectSlides = get_posts(array( 'post_type' => 'portfolio', 'numberposts' => -1, 'orderby' => 'menu_order', 'order' => 'ASC' ));
-								if ( isset($projectSlides[0]) ) { 
-									foreach($projectSlides as $key => $slide) { 
-									$image = get_post_meta($slide->ID, '_senna_homepage_slide_image', true); ?>
-									<li <?php echo $key == 0 ? 'class="active"' : ''; ?>>
-										<img src="<?php echo $image; ?>" alt="<?php echo $slide->post_name; ?>" />
-									</li>
-									<?php }
-								} ?>
-								</ul>
-							</div>
 							<section class="entry-content cf wrap" itemprop="articleBody">
 								<?php the_content(); ?>
 							</section>
 							<?php endwhile; endif; ?>
-
 						</div>
-
 				</div>
-
 			</div>
-
-
 <?php get_footer(); ?>
