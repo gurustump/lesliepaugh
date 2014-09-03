@@ -42,6 +42,10 @@ header {
 .wrap {
   width:1040px;
 }
+.wrapper {
+	width:768px;
+	margin:0 auto;
+}
 #logo {
 	position:absolute;
 	z-index:2;
@@ -51,5 +55,10 @@ header {
 #main_nav {
 	.top-nav {
 		padding-top:10px;
+	}
+}
+body.page {
+	.hentry {
+		padding:20px 20%;
 	}
 }

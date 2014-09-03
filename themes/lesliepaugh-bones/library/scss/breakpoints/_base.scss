@@ -230,6 +230,7 @@ HEADER STYLES
 	> a {
 		display:block;
 		height:100%;
+		outline:none;
 	}
 }
 
@@ -716,6 +717,19 @@ PAGE NAVI STYLES
 	}
 
 } /* end .wp-prev-next */
+
+/******************************************************************
+CONTACT FORM STYLES
+******************************************************************/
+.wpcf7-form {
+	fieldset {
+		margin-bottom:10px;
+		p {
+			margin-bottom:0;
+		}
+	}
+}
+
 
 /******************************************************************
 COMMENT STYLES

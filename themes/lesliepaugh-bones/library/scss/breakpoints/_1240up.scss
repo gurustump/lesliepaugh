@@ -12,6 +12,9 @@ on larger screens.
 .wrap {
 	width:1200px;
 }
+.wrapper {
+	width:890px;
+}
 header {
 	max-width:1498px;
 }
@@ -35,4 +38,6 @@ body.home {
 			}
 		}
 	}
+}
+body.page {
 }
