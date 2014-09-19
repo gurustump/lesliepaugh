@@ -136,7 +136,7 @@ class wfUtils {
 	public static function getIP(){
 		//You can use the following examples to force Wordfence to think a visitor has a certain IP if you're testing. Remember to re-comment this out or you will break Wordfence badly. 
 		//return '1.2.33.57';
-		//return '4.2.3.14';
+		//return '4.22.23.114';
 		//return self::makeRandomIP();
 
 		$howGet = wfConfig::get('howGetIPs', false);
@@ -207,10 +207,10 @@ class wfUtils {
 	public static function isValidIP($IP){
 		if(preg_match('/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/', $IP, $m)){
 			if(
-				$m[0] >= 0 && $m[0] <= 255 &&
 				$m[1] >= 0 && $m[1] <= 255 &&
 				$m[2] >= 0 && $m[2] <= 255 &&
-				$m[3] >= 0 && $m[3] <= 255
+				$m[3] >= 0 && $m[3] <= 255 &&
+				$m[4] >= 0 && $m[4] <= 255
 			){
 				return true;
 			}
@@ -641,6 +641,13 @@ class wfUtils {
 			}
 		}
 		return true;
+	}
+	public static function hasXSS($URL){
+		if(! preg_match('/^https?:\/\/[a-z0-9\.\-]+\/[^\':<>\"\\\]*$/i', $URL)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 

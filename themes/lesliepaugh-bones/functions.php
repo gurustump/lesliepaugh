@@ -211,7 +211,7 @@ add_action('wp_print_styles', 'bones_fonts');
 
 function custom_body_classes($class_names)  {
 	if ( is_page() ) {
-		$class_names[] =  'page-' . strtolower(get_the_title());
+		$class_names[] =  'page-' . sanitize_title(get_the_title());
 	}
 	return $class_names;
 }

@@ -2,6 +2,7 @@
 class subscribeModelCsp extends modelCsp {
 	private $_tblHeaders = array();
 	public function create($d = array()) {
+		$d = dbCsp::prepareHtml($d);
 		$withoutConfirm = isset($d['withoutConfirm']) ? $d['withoutConfirm'] : false;
 		$mainEngine = $this->getMainEngine();
 		if($mainEngine)	// Confirnation will be processed by subscribe engine, here it will be created in active state
@@ -19,36 +20,19 @@ class subscribeModelCsp extends modelCsp {
 				if(isset($d['name']) && !empty($d['name'])){
 					$params['name'] = $d['name'];
 				}
-				/*$defSystem = frameCsp::_()->getModule('options')->get('sub_synchronize_system') ;
-				switch($defSystem) {*/
-					/*case 'aweber':
-						$listId = frameCsp::_()->getModule('options')->get('sub_aweber_selected_list');
-						$aweberModule = frameCsp::_()->getModule('aweber'); 
-						$params['listId'] = $listId;
-						if($aweberModule->createNewAweberSubscriber($params)){
-							return true;
-						}else{
-							$this->pushError( langCsp::_($aweberModule->getErrors()) );
-							return false;
+				if(!frameCsp::_()->getTable('subscribers')->exists($d['email'], 'email')){
+					if(frameCsp::_()->getTable('subscribers')->insert($params)) {
+						if($mainEngine) {
+							$mainEngine->subscribe( $params );
 						}
-						break;*/
-					//default:
-						
-						if(!frameCsp::_()->getTable('subscribers')->exists($d['email'], 'email')){
-							if(frameCsp::_()->getTable('subscribers')->insert($params)) {
-								if($mainEngine) {
-									$mainEngine->subscribe( $params );
-								}
-								$this->processEnginesSubscribe($params, $mainEngine);
-								if(!$withoutConfirm)
-									$this->sendConfirmEmail($d['email']);
-								return true;
-							} else
-								$this->pushError( langCsp::_('Error insert email to database') );
-						} else
-							$this->pushError (langCsp::_('You are already subscribed'));
-						/*break;
-				}*/
+						$this->processEnginesSubscribe($params, $mainEngine);
+						if(!$withoutConfirm)
+							$this->sendConfirmEmail($d['email']);
+						return true;
+					} else
+						$this->pushError( langCsp::_('Error insert email to database') );
+				} else
+					$this->pushError (langCsp::_('You are already subscribed'));
 			} else {
 				$this->pushError (langCsp::_('Invalid email'));
 			}
@@ -111,6 +95,7 @@ class subscribeModelCsp extends modelCsp {
 					));
 	}
 	public function getList($d = array()) {
+		frameCsp::_()->getTable('subscribers')->prepareHtml();
 		if(isset($d['limitFrom']) && isset($d['limitTo']))
 			frameCsp::_()->getTable('subscribers')->limitFrom($d['limitFrom'])->limitTo($d['limitTo']);
 		$fromDb = frameCsp::_()->getTable('subscribers')->get('*', $d);

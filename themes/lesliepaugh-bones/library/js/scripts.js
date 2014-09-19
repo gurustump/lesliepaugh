@@ -102,7 +102,8 @@ function loadGravatars($) {
 } // end function
 function adjustSliderSize(slider,$) {
 	var sliderPanel = slider.find('.SLIDER_PANEL');
-	sliderPanel.add('.SLIDER_CONTAINER').height(sliderPanel.width() * 3 / 4);
+	console.log(sliderPanel.width())
+	sliderPanel.add('.SLIDER_CONTAINER').height(sliderPanel.width() * 2 / 3);
 	slider.animate({'opacity':1},500);
 }
 function changeSlide(slider,direction,$) {
@@ -128,6 +129,22 @@ function slider(slider,$) {
 		clearInterval(autoSlide);
 		var direction = $(this).hasClass('NEXT') ? 'next' : 'prev';
 		changeSlide(slider,direction,$);
+	});
+	$(window).resize(function () {
+		waitForFinalEvent( function() {
+			adjustSliderSize($('body').data('activeSlider'));
+		}, timeToWaitForLast, "slider-panel-resize");
+	});
+}
+
+function projectMenu($) {
+	$('.PROJECTS > a').click(function(e) {
+		e.preventDefault();
+		var projectsList = $('.PROJECTS_LIST');
+		projectsList.toggleClass('active');
+		if ($(window).height() < projectsList.offset().top + projectsList.outerHeight()) {
+			$('body,html').animate({scrollTop:projectsList.offset().top + projectsList.outerHeight() - $(window).height()},300)
+		}
 	});
 }
 
@@ -161,25 +178,13 @@ jQuery(document).ready(function($) {
 	
 	if ( is_home ) {
 		slider($('.HOME_SLIDER'),$);
-		$('.PROJECTS > a').click(function(e) {
-			e.preventDefault();
-			var projectsList = $('.PROJECTS_LIST');
-			projectsList.toggleClass('active');
-			if ($(window).height() < projectsList.offset().top + projectsList.outerHeight()) {
-				$('body,html').animate({scrollTop:projectsList.offset().top + projectsList.outerHeight() - $(window).height()},300)
-			}
-		});
-		$('.PROJECTS_LIST a').click(function(e) {
+		projectMenu($);
+		/*$('.PROJECTS_LIST a').click(function(e) {
 			e.preventDefault();
 			$('body').data('activeSlider').animate({'opacity':0},500);
 			clearInterval(autoSlide)
 			slider($('.'+$(this).attr('id').replace('subnav_','PROJECT_SLIDER_')),$);
-		});
-		$(window).resize(function () {
-			waitForFinalEvent( function() {
-				adjustSliderSize($('body').data('activeSlider'));
-			}, timeToWaitForLast, "your-function-identifier-string");
-		});
+		});*/
 	}
 	
 	if (is_project) {

@@ -46,7 +46,7 @@
     
     
     define('CSP_PLUGIN_INSTALLED', true);
-    define('CSP_VERSION', '0.5.0');
+    define('CSP_VERSION', '0.5.3');
     define('CSP_USER', 'user');
     
     
@@ -60,8 +60,7 @@
 	define('CSP_ERRORS', 'cspErrors');
 	
 	define('CSP_THEME_MODULES', 'theme_modules');
-	
-	
+
 	define('CSP_ADMIN',	'admin');
 	define('CSP_LOGGED','logged');
 	define('CSP_GUEST',	'guest');

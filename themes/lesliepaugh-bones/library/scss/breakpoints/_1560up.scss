@@ -9,27 +9,24 @@ on larger screens.
 
 ******************************************************************/
 
-header {
-	max-width:1808px;
+html {
+	background-size:cover;
 }
 .wrapper {
 	width:1200px;
 }
 .slider-container {
-	max-width:1460px;
+	max-width:1200px;
 }
 .slider {
 	.slider-panel {
-		width:1200px;
 	}
 }
-body.home {
-	.projects-list {
-		& > li {
-			a {
-				padding-left:60px;
-				padding-right:60px;
-			}
+.projects-list {
+	& > li {
+		a {
+			padding-left:60px;
+			padding-right:60px;
 		}
 	}
 }

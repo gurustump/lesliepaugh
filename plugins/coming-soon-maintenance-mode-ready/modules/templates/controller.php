@@ -2,4 +2,3 @@
 class templatesController extends controllerCsp {
 
 }
-?>

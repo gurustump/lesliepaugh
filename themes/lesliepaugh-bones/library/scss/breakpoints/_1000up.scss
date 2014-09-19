@@ -1,0 +1,69 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet landscape
+
+******************************************************************/
+
+#logo {
+	height:105px;
+	width:105px;
+}
+#main_nav {
+	height:139px;
+	.top-nav {
+		padding-top:87px;
+	}
+}
+.slider-container {
+	padding:0 125px;
+}
+.slider {
+	.slider-controls {
+		& > a {
+			width:125px;
+			& > span {
+				width:30px;
+				height:91px;
+				margin-top:-46px;
+				background-size:auto;
+			}
+			&.next {
+				& > span {
+					right:47px;
+					background-position:0 0;
+				}
+				&:hover span {
+					background-position:0 -200px;
+				}
+			}
+			&.prev {
+				& > span {
+					background-position:0 -100px;
+					left:47px;
+				}
+				&:hover span {
+					background-position:0 -300px;
+				}
+			}
+		}
+	}
+}
+.projects-list {
+	& > li {
+		a {
+			padding-left:30px;
+			padding-right:30px;
+		}
+		.h2 {
+			font-size:18px;
+			height:25px;
+		}
+		.h3 {
+			font-size:14px;
+			height:21px;
+		}
+	
+	}
+}

@@ -12,9 +12,8 @@ be seen on the Desktop.
 /*********************
 GENERAL STYLES
 *********************/
-
+/*
 html {
-	background-repeat:repeat-x;
 	&.lp-color-1 {
 		background-image:url(../images/backgrounds/blue-2560.jpg);
 	}
@@ -33,29 +32,10 @@ html {
 	&.lp-color-6 {
 		background-image:url(../images/backgrounds/grey-2560.jpg);
 	}
-}
-header {
-	max-width:1088px;
-	position:relative;
-	margin:0 auto;
-}
-.wrap {
-  width:1040px;
-}
+}*/
 .wrapper {
 	width:768px;
 	margin:0 auto;
-}
-#logo {
-	position:absolute;
-	z-index:2;
-	left:4px;
-	top:32px;
-}
-#main_nav {
-	.top-nav {
-		padding-top:10px;
-	}
 }
 body.page {
 	.hentry {

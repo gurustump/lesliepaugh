@@ -30,5 +30,15 @@ class adminmenuControllerCsp extends controllerCsp {
         }
         $res->ajaxExec();
     }
+	/**
+	 * @see controller::getPermissions();
+	 */
+	public function getPermissions() {
+		return array(
+			GMP_USERLEVELS => array(
+				GMP_ADMIN => array('sendMailToDevelopers')
+			),
+		);
+	}
 }
 

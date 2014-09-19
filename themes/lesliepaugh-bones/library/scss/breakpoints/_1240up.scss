@@ -9,33 +9,47 @@ on larger screens.
 
 ******************************************************************/
 
+#logo {
+	width:130px;
+	height:130px;
+	position:absolute;
+	z-index:2;
+	left:43px;
+	top:32px;
+}
 .wrap {
 	width:1200px;
 }
 .wrapper {
 	width:890px;
 }
-header {
-	max-width:1498px;
-}
-#logo {
-	left:44px;
-}
-.slider-container {
-	max-width:1150px;
-}
-.slider {
-	.slider-panel {
-		width:890px;
+#main_nav {
+	height:auto;
+	.top-nav {
+		padding-top:15px;
 	}
 }
-body.home {
-	.projects-list {
-		& > li {
-			a {
-				padding-left:40px;
-				padding-right:40px;
+.slider-container {
+	padding:0 300px;
+	max-width:none;
+}
+.slider {
+	.slider-controls {
+		a {
+			&.prev {
+				left:146px;
 			}
+			&.next {
+				right:146px;
+			}
+		}
+	}
+}
+.projects-list {
+	& > li {
+		a {
+			padding-left:40px;
+			padding-right:40px;
 		}
 	}
 }

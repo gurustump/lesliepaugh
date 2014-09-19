@@ -112,6 +112,7 @@ class frameCsp {
         
         add_action('init', array($this, 'addScripts'));
         add_action('init', array($this, 'addStyles'));
+		add_action('init', array($this, 'loadLangs'));
 
         register_activation_hook(  CSP_DIR. DS. CSP_MAIN_FILE, array('utilsCsp', 'activatePlugin')  ); //See classes/install.php file
         register_deactivation_hook(CSP_DIR. DS. CSP_MAIN_FILE, array('utilsCsp', 'deactivatePlugin'));
@@ -120,6 +121,9 @@ class frameCsp {
 
         //$operationTime = microtime(true) - $startTime;
     }
+	public function loadLangs() {
+		load_plugin_textdomain(CSP_CODE, false, CSP_LANG_DIR);
+	}
     /**
      * Check permissions for action in controller by $code and made corresponding action
      * @param string $code Code of controller that need to be checked

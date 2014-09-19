@@ -112,10 +112,19 @@ class dbCsp {
                 $d[ $i ] = self::prepareHtml( $el );
             }
         } else {
-            $d = htmlspecialchars($d);
+            $d = wp_filter_nohtml_kses($d);
         }
         return $d;
     }
+	static public function prepareHtmlOut($data) {
+		if(is_array($data)) {
+			foreach($data as $k => $v) {
+				$data[ $k ] = self::prepareHtmlOut( $v );
+			}
+			return $data;
+		} else
+			return esc_html($data);
+	}
 	static public function escape($data) {
 		global $wpdb;
 		return $wpdb->_escape($data);

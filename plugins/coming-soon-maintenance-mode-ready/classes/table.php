@@ -44,6 +44,8 @@ abstract class tableCsp {
 	protected $_limitFrom = '';
 	protected $_limitTo = '';
 	
+	protected $_prepareHtml = false;
+	
     static public function getInstance($table = '') {
         static $instances = array();
         if(!$table) $table = $this->_table;
@@ -239,7 +241,15 @@ abstract class tableCsp {
             $this->_limitFrom = '';
 			$this->_limitTo = '';
 		}
-        return dbCsp::get($query, $return);
+		$data = dbCsp::get($query, $return);
+		if($this->_prepareHtml) {
+			$data = dbCsp::prepareHtmlOut($data);
+		}
+		// Will be nulled in any case for future requests
+		// as we don't want to use it in all requests
+		$this->_prepareHtml = false;
+		
+        return $data;
     }
     public function store($data, $method = 'INSERT', $where = '') {
 		$this->_clearErrors();
@@ -471,5 +481,7 @@ abstract class tableCsp {
     public function adaptHtml($val) {
         return htmlspecialchars($val);
     }
+	public function prepareHtml() {
+		$this->_prepareHtml = true;
+	}
 }
-?>

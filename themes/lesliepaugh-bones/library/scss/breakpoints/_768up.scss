@@ -16,26 +16,16 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
-
 html {
-	background-repeat:repeat-x;
-	&.lp-color-1 {
-		background-image:url(../images/backgrounds/blue-1030.jpg);
-	}
-	&.lp-color-2 {
-		background-image:url(../images/backgrounds/orange-1030.jpg);
-	}
-	&.lp-color-3 {
-		background-image:url(../images/backgrounds/green-1030.jpg);
-	}
-	&.lp-color-4 {
-		background-image:url(../images/backgrounds/pink-1030.jpg);
-	}
 	&.lp-color-5 {
-		background-image:url(../images/backgrounds/yellow-1030.jpg);
+		#logo, .nav-show {
+			background-color:rgba(0,0,0,.1);
+		}
 	}
 	&.lp-color-6 {
-		background-image:url(../images/backgrounds/grey-1030.jpg);
+		#logo, .nav-show {
+			background-color:rgba(0,0,0,.15); 
+		}
 	}
 }
 body {}
@@ -49,10 +39,10 @@ body {}
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-
+/*
 .wrap {
-	width:768px;
-}
+	width:768px; 
+}*/
 
 /*********************
 HEADER STYLES
@@ -61,7 +51,18 @@ HEADER STYLES
 .header {}
 
 #logo {
-	float:left;
+	position:absolute;
+	left:15px;
+	top:15px;
+	background-image:url(../images/logo.png);
+	background-position:0 0;
+	background-size:cover;
+	height:80px;
+	width:80px;
+	margin:0;
+	&:hover {
+		background-color:rgba(0,0,0,.3) !important;
+	}
 }
 
 /*********************
@@ -71,6 +72,7 @@ NAVIGATION STYLES
 #main_nav {
 	position:static;
 	width:auto;
+	height:104px;
 	.nav-show {
 		display:none;
 	}
@@ -80,8 +82,9 @@ NAVIGATION STYLES
 		background:none;
 		@include box-shadow(none);
 		width:100%;
+		height:auto;
 		text-align:center;
-		padding-top:39px;
+		padding-top:52px;
 		li {
 			display:inline-block;
 			position: relative;
@@ -89,7 +92,7 @@ NAVIGATION STYLES
 				background:none;
 				border:none;
 				@include box-shadow(none);
-				font-size:24px;
+				font-size:20px;
 				text-transform:uppercase;
 				font-weight:300;
 				@include transition(color .5s, background-color .5s);
@@ -157,51 +160,41 @@ NAVIGATION STYLES
 	max-width:1028px; /* 260px wider than .slider-panel to permit 130px on each side for prev/next buttons */
 	margin:0 auto;
 }
+.slider-container {
+	padding:0 95px;
+}
 .slider {
 	.slider-controls {
 		& > a {
-			width:130px;
-			& > span {
-				width:30px;
-				height:91px;
-				position:absolute;
-				top:50%;
-				margin-top:-46px;
-				background:url(../images/sprite.png) no-repeat;
+			width:95px;
+			&.prev > span {
+				left:38px;
 			}
-			&.next {
-				& > span {
-					right:20px;
-				}
-				&:hover span {
-					background-position:0 -200px;
-				}
-			}
-			&.prev {
-				& > span {
-					background-position:0 -100px;
-					left:20px;
-				}
-				&:hover span {
-					background-position:0 -300px;
-				}
+			&.next > span {
+				right:29px;
 			}
 		}
 	}
 	.slider-panel {
 		position:relative;
-		width:768px;
 		margin:0 auto;
 	}
 }
-body.home {
-	.projects-list {
-		margin-bottom:20px;
-		& > li {
-			a {
-				padding-left:30px;
-				padding-right:30px;
-			}
+.projects-list {
+	margin-bottom:20px;
+	padding:0 95px;
+	& > li {
+		a {
+			padding-left:20px;
+			padding-right:20px;
+		}
+		.h2 {
+			font-size:15px;
+			height:21px;
+		}
+		.h3 {
+			font-size:12px;
+			height:18px;
 		}
 	}
 }

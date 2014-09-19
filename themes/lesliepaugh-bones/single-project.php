@@ -14,7 +14,6 @@
 ?>
 
 <?php get_header(); ?>
-
 			<div id="content">
 				<div class="slider-container">
 					<div class="slider project-slider PROJECT_SLIDER">
@@ -29,6 +28,9 @@
 						if ( isset($projectImages[0] ) ) { foreach($projectImages as $imgKey => $image) { ?>
 							<li <?php echo $imgKey == 0 ? 'class="active"' : ''; ?>>
 								<img src="<?php echo $image[image]; ?>" alt="<?php echo $image[image_title]; ?>" />
+								<div class="caption">
+									<?php echo $image[image_caption]; ?>
+								</div>
 							</li>
 						<?php } } ?>
 						</ul>
@@ -36,12 +38,41 @@
 				</div>
 				<div id="inner-content" class="wrap cf">
 						<div id="main" role="main">
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php
+							$projects = get_posts(array(
+								'post_type' => 'project',
+								'numberposts' => -1,
+								'meta_query' => array(
+									'relation' => 'AND',
+									array(
+										'key' => '_senna_project_featured',
+										'value' => 'on',
+										'compare' => '='
+									)
+								),
+								'meta_key' => '_senna_project_order',
+								'orderby' => 'meta_value_num',
+								'order' => 'ASC' 
+							));
+							if ( isset($projects[0]) ) {  ?>
+							<ul class="projects-list PROJECTS_LIST">
+								<?php foreach($projects as $key => $project) { 
+								$location = get_post_meta($project->ID, '_senna_project_location', true); ?>
+								<li<?php if (get_the_ID() == $project->ID) { echo ' class="current"'; } ?>>
+									<a id="subnav_<?php echo $project->ID; ?>" href="<?php echo get_permalink($project->ID); ?>">
+										<span class="h2"><?php echo $project->post_title; ?></span>
+										<span class="h3"><?php echo $location; ?></span>
+									</a>
+								</li>
+								<?php } ?>
+							</ul>
+							<?php } ?>
+							<?php /* if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<h1 class="page-title"><?php the_title(); ?></h1>
 							<section class="entry-content cf wrap" itemprop="articleBody">
 								<?php the_content(); ?>
 							</section>
-							<?php endwhile; endif; ?>
+							<?php endwhile; endif; */ ?>
 						</div>
 				</div>
 			</div>

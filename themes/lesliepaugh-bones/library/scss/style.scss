@@ -107,6 +107,16 @@ mobile to normal.
 } // end of media query
 
 /*********************
+TABLET & SMALLER LAPTOPS landscape
+*********************/
+@media only screen and (min-width: 1000px) {
+
+	// styles in 1000up.scss
+	@import "breakpoints/1000up";
+
+} // end of media query
+
+/*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
