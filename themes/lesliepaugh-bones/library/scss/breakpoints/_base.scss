@@ -399,6 +399,7 @@ POSTS & CONTENT STYLES
 				right:0;
 				text-align:center;
 				@include transition(opacity 0.5s);
+				display:none;
 			}
 			&.active {
 				opacity:1;
