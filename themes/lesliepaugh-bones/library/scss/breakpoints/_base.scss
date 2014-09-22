@@ -310,10 +310,10 @@ and more scalable.
 			@include transform(translateX(0));
 		}
 	}
-	&.trans-complete {
+	/*&.trans-complete {
 		height:100%;
 		z-index:2;
-	}
+	}*/
 } /* end .nav */
 
 
