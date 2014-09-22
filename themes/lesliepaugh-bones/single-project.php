@@ -15,7 +15,7 @@
 
 <?php get_header(); ?>
 			<div id="content">
-				<div class="slider-container">
+				<div class="slider-container SLIDER_CONTAINER">
 					<div class="slider project-slider PROJECT_SLIDER">
 						<div class="slider-controls">
 							<a href="#" class="prev PREV"><span>Previous</span></a>

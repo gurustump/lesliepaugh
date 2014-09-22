@@ -102,7 +102,6 @@ function loadGravatars($) {
 } // end function
 function adjustSliderSize(slider,$) {
 	var sliderPanel = slider.find('.SLIDER_PANEL');
-	console.log(sliderPanel.width())
 	sliderPanel.add('.SLIDER_CONTAINER').height(sliderPanel.width() * 2 / 3);
 	slider.animate({'opacity':1},500);
 }
