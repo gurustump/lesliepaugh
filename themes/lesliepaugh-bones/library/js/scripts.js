@@ -147,6 +147,10 @@ function projectMenu($) {
 	});
 }
 
+function resizeContactForm($) {
+	$('.contact-container').height($(window).height() - ($('.header').outerHeight() * 2) -50)
+}
+
 
 /*
  * Put all your regular jQuery in here.
@@ -177,6 +181,7 @@ jQuery(document).ready(function($) {
 	
 	if ( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
 	if ( typeof is_project === "undefined" ) var is_project = $('body').hasClass('single-project');
+	if ( typeof is_contact === "undefined" ) var is_contact = $('body').hasClass('page-contact');
 	
 	if ( is_home ) {
 		slider($('.HOME_SLIDER'),$);
@@ -191,6 +196,20 @@ jQuery(document).ready(function($) {
 	
 	if (is_project) {
 		slider($('.PROJECT_SLIDER'),$);
+	}
+	
+	if (is_contact) {
+		resizeContactForm($);
+		$(window).resize(function () {
+			waitForFinalEvent( function() {
+				resizeContactForm($);
+			}, timeToWaitForLast, "contact-page-resize");
+		});
+		$('.EMAIL_FORM').click(function(e) {
+			e.preventDefault();
+			$('.wpcf7').toggleClass('active');
+			$('.contact-links').toggleClass('inactive')
+		})
 	}
 
 }); /* end of as page load scripts */

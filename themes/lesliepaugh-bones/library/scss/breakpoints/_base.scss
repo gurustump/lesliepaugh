@@ -117,6 +117,49 @@ body.page-template {}                 /* custom page template page */
 body.logged-in {}                     /* if user is logged in */
 body.paged {}                         /* paged items like search results or archives */
 	body.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+	
+body.page-contact {
+	.article-header, .article-footer {
+		display:none;
+	}
+	.contact-container {
+		text-align:center;
+		border:0;
+		border-collapse:collapse;
+		.contact-links {
+			font-size:24px;
+			line-height:2em;
+			@include transition(all .5s);
+			&.inactive {
+				font-size:16px;
+				margin-bottom:12px;
+				line-height:1.4em;
+			}
+			.blank:after {
+				content:"\2022";
+			}
+			a {
+				text-decoration:none;
+			}
+		}
+		td {
+			vertical-align:middle;
+			& > p {
+				margin:0;
+			}
+		}
+		.wpcf7 {
+			text-align:left;
+			opacity:0;
+			height:0;
+			@include transition(all .5s);
+			&.active {
+				opacity:1;
+				height:auto;
+			}
+		}
+	}
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -137,11 +180,12 @@ LINK STYLES
 *********************/
 
 a, a:visited {
+	outline:none !important;
 	color:$link-color;
 	@include transition(color .5s);
 
 	/* on hover */
-	&:hover, &:focus {
+	&:hover {
 		color: $link-hover;
 	}
 
@@ -450,12 +494,14 @@ POSTS & CONTENT STYLES
 
 .hentry {
 	background-color: $white;
-	border-radius: 3px;
 	margin-bottom: 1.5em;
-	border: 1px solid $border-color;
+	border: 1px solid rgba(0,0,0,.1);
 
 	header {
-		padding: 1.5em;
+		padding:1.5em 1.5em 0;
+		h1 {
+			font-size:28px;
+		}
 	}
 
 	footer {
@@ -532,7 +578,6 @@ POSTS & CONTENT STYLES
 
 	table {
 		width: 100%;
-		border: 1px solid $gray;
 		margin-bottom: 1.5em;
 
 		caption {
@@ -545,11 +590,10 @@ POSTS & CONTENT STYLES
 	}
 
 	tr {
-		border-bottom: 1px solid $gray;
 
-		&:nth-child(even) {
+		/*&:nth-child(even) {
 			background-color: $light-gray;
-		}
+		}*/
 	}
 
 	td {
@@ -770,6 +814,10 @@ body.page-contact {
 		p {
 			margin-bottom:0;
 		}
+	}
+	input[type=text], input[type=email], textarea {
+		max-width:100%;
+		@include box-sizing;
 	}
 }
 

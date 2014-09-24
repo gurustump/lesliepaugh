@@ -28,7 +28,14 @@ html {
 		}
 	}
 }
-body {}
+body {
+	&.page-about, &.page-contact {
+		.wrapper {
+			width:600px;
+			margin:0 auto;
+		}
+	}
+}
 .responsive-mobile {
 	display:none;
 }
@@ -36,13 +43,14 @@ body {}
 	display:block;
 }
 
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 /*
 .wrap {
 	width:768px; 
-}*/
+}
 
 /*********************
 HEADER STYLES
@@ -198,6 +206,17 @@ NAVIGATION STYLES
 		}
 	}
 }
+.hentry {
+	header {
+		padding: 1.5em;
+		h1 {
+			font-size:40px;
+		}
+	}
+	footer {
+		padding: 1.5em;
+	}
+} /* end .hentry */
 
 /*********************
 SIDEBARS & ASIDES
