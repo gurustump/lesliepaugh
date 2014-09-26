@@ -27,6 +27,12 @@ on larger screens.
 	height:auto;
 	.top-nav {
 		padding-top:15px;
+		& > li {
+			& > a {
+				padding-left:80px;
+				padding-right:80px;
+			}
+		}
 	}
 }
 .slider-container {
