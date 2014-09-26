@@ -31,7 +31,7 @@
 						</ul>
 					</div>
 				</div>
-				<div id="inner-content" class="wrap">
+				<div id="inner-content">
 					<div id="main" role="main">
 						<?php
 						$projects = get_posts(array(

@@ -320,6 +320,7 @@ and more scalable.
 		@include transition(opacity .5s, transform .5s);
 		li {
 			a {
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
 				outline:none;
 				white-space:nowrap;
 				display:block;
@@ -339,6 +340,11 @@ and more scalable.
 						background:#292929;
 						padding-left:40px;
 					}
+				}
+			}
+			&.current_page_item {
+				a {
+					color:$text-color;
 				}
 			}
 		}
@@ -383,6 +389,7 @@ POSTS & CONTENT STYLES
 	.slider-controls {
 		height:100%;
 		a {
+			-webkit-tap-highlight-color:rgba(0,0,0,0);
 			width:50%;
 			height:100%;
 			position:absolute;
@@ -460,8 +467,9 @@ POSTS & CONTENT STYLES
 	& > li {
 		display:inline-block;
 		a {
+			-webkit-tap-highlight-color:rgba(0,0,0,0);
 			text-decoration:none;
-			padding:10px 20px;
+			padding:6px 15px;
 			display:block;
 			outline:none;
 		}
@@ -470,13 +478,13 @@ POSTS & CONTENT STYLES
 			margin-bottom:0;
 		}
 		.h2 {
-			font-size:18px;
+			font-size:16px;
 			text-transform:uppercase;
-			height:25px;
+			height:22px;
 		}
 		.h3 {
-			font-size:14px;
-			height:21px;
+			font-size:12px;
+			height:18px;
 		}
 		&.current {
 			a {
