@@ -37,6 +37,28 @@ html {
 	width:768px;
 	margin:0 auto;
 }
+#main_nav {
+	height:auto;
+	.top-nav {
+		padding-top:15px;
+	}
+}
+.slider-container {
+	padding:0 225px;
+	max-width:none;
+}
+.slider {
+	.slider-controls {
+		a {
+			&.prev {
+				left:71px;
+			}
+			&.next {
+				right:71px;
+			}
+		}
+	}
+}
 body.page {
 	/*.hentry {
 		padding:20px;
