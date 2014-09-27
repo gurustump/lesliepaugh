@@ -51,9 +51,15 @@ html {
 		a {
 			&.prev {
 				left:71px;
+				&:hover span {
+					background-position:0 -300px;
+				}
 			}
 			&.next {
 				right:71px;
+				&:hover span {
+					background-position:0 -200px;
+				}
 			}
 		}
 	}

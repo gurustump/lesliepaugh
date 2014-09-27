@@ -48,17 +48,11 @@ body {
 					right:47px;
 					background-position:0 0;
 				}
-				&:hover span {
-					background-position:0 -200px;
-				}
 			}
 			&.prev {
 				& > span {
 					background-position:0 -100px;
 					left:47px;
-				}
-				&:hover span {
-					background-position:0 -300px;
 				}
 			}
 		}
