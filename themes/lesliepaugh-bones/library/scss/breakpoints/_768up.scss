@@ -28,14 +28,6 @@ html {
 		}
 	}
 }
-body {
-	&.page-about, &.page-contact {
-		.wrapper {
-			width:600px;
-			margin:0 auto;
-		}
-	}
-}
 .responsive-mobile {
 	display:none;
 }
@@ -50,6 +42,9 @@ LAYOUT & GRID STYLES
 /*
 .wrap {
 	width:768px; 
+}*/
+.wrapper {
+	padding:0 95px;
 }
 
 /*********************
@@ -169,8 +164,6 @@ NAVIGATION STYLES
 .slider-container {
 	max-width:1028px; /* 260px wider than .slider-panel to permit 130px on each side for prev/next buttons */
 	margin:0 auto;
-}
-.slider-container {
 	padding:0 95px;
 }
 .slider {

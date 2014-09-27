@@ -6,6 +6,20 @@ Stylesheet: Tablet landscape
 
 ******************************************************************/
 
+body {
+	&.page-about, &.page-contact {
+		#main {
+			.entry-content {
+				padding-left:100px;
+				padding-right:100px;
+			}
+		}
+	}
+}
+.wrapper {
+	padding:0 125px;
+}
+
 #logo {
 	height:105px;
 	width:105px;

@@ -160,6 +160,16 @@ body.page-contact {
 		}
 	}
 }
+body {
+	&.page-about, &.page-contact {
+		#main {
+			.entry-content {
+				max-width:600px;
+				margin:0 auto;
+			}
+		}
+	}
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -173,6 +183,10 @@ LAYOUT & GRID STYLES
 }
 .wrap {
 	margin: 0 auto;
+}
+.wrapper {
+	margin: 0 auto;
+	padding:0 30px;
 }
 
 /*********************
