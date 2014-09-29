@@ -357,7 +357,7 @@ and more scalable.
 					}
 				}
 			}
-			&.current_page_item {
+			&.current_page_item, &.current-menu-item {
 				a {
 					color:$text-color;
 				}
