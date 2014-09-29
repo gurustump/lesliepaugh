@@ -151,6 +151,29 @@ function resizeContactForm($) {
 	$('.contact-container').height($(window).height() - ($('.header').outerHeight() * 2) -50)
 }
 
+function setGalleryOvSize($,ov) {
+	//var ov = ov ? ov : $('#gallery_item_ov')
+	var win = $(window)
+	var ratio = ov.data('width') / ov.data('height')
+	var border = win.width() > 480 ? 15 : 0
+	var margin = win.width() > 480 ? 100 : 0
+	var width, height
+	if (win.width() - margin < ov.data('width') || win.height() - margin < ov.data('height')) {
+		if (ratio >= win.width() / win.height()) {
+			width = win.width()-margin
+			height = (win.width()-margin) / ratio
+		} else {
+			width = (win.height()-margin) * ratio
+			height = win.height()-margin
+		}
+	} else {
+		width = ov.data('width')
+		height = ov.data('height')
+	}
+	ov.width(width).height(height).closest('.gallery-item-ov-wrap').css('margin','-'+((height/2)+border)+'px 0 0 -'+((width/2)+border)+'px')
+	ov.find('img').width(width).height(height)
+}
+
 
 /*
  * Put all your regular jQuery in here.
@@ -211,6 +234,31 @@ jQuery(document).ready(function($) {
 			$('.contact-links').toggleClass('inactive')
 		})
 	}
+	
+	$('.VID_OV').dialog({
+		autoOpen:false,
+		dialogClass:'vid-ov-wrap',
+		modal:true,
+		hide:130,
+		show:250,
+		open: function(e,ui) {
+			thisDialog = $(this);
+			thisDialog.addClass('OPEN')
+			//setGalleryOvSize($, thisDialog);
+			$('.ui-widget-overlay').click(function() {
+				thisDialog.dialog('close')
+			});
+		},
+		close: function(e,ui) {
+			$(this).removeClass('OPEN')
+		},
+		width:'auto'
+	});
+	
+	$('.TRIGGER_VID_OV').click(function(e) {
+		e.preventDefault();
+		$($(this).attr('href')).dialog('open');
+	});
 
 }); /* end of as page load scripts */
 

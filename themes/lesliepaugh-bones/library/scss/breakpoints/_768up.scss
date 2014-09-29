@@ -213,6 +213,21 @@ NAVIGATION STYLES
 	}
 } /* end .hentry */
 
+/******************************************************************
+OV STYLES
+******************************************************************/
+
+.vid-ov-wrap {
+	.ui-dialog-titlebar {
+		.ui-dialog-titlebar-close {
+			.ui-icon {
+				background-size:auto;
+				background-position:-6px -502px;
+			}
+		}
+	}
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/

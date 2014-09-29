@@ -22,9 +22,20 @@
 						));
 						if ( isset($homeSlides[0]) ) { 
 							foreach($homeSlides as $key => $slide) { 
-							$image = get_post_meta($slide->ID, '_senna_homepage_slide_image', true); ?>
+							$image = get_post_meta($slide->ID, '_senna_homepage_slide_image', true); 
+							$video = get_post_meta($slide->ID, '_senna_homepage_slide_embed', true); ?>
 							<li <?php echo $key == 0 ? 'class="active"' : ''; ?>>
+								<?php if (!empty($video)) { ?>
+								<a href="#video_<?php echo $key; ?>" class="TRIGGER_VID_OV">
+									<span class="ic-vid">Play</span>
+								<?php } ?>
 								<img src="<?php echo $image; ?>" alt="<?php echo $slide->post_name; ?>" />
+								<?php if (!empty($video)) { ?>
+								</a>
+								<div class="vid-ov VID_OV" id="video_<?php echo $key; ?>">
+									<?php echo apply_filters('the_content','[embed width="1920" height="1080"]'.$video.'[/embed]'); ?>
+								</div>
+								<?php } ?>
 							</li>
 							<?php }
 						} ?>

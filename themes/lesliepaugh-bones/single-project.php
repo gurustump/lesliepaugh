@@ -27,10 +27,23 @@
 						 /*?><li style="opacity:1;text-align:left;"><pre><?php print_r($projectImages) ?></pre></li><?php */
 						if ( isset($projectImages[0] ) ) { foreach($projectImages as $imgKey => $image) { ?>
 							<li <?php echo $imgKey == 0 ? 'class="active"' : ''; ?>>
+							
+								<?php if (!empty($image[image_video]) && !empty($image[image_embed])) { ?>
+								<a href="#video_<?php echo $imgKey; ?>" class="TRIGGER_VID_OV">
+									<span class="ic-vid">Play</span>
+								<?php } ?>
 								<img src="<?php echo $image[image]; ?>" alt="<?php echo $image[image_title]; ?>" />
+								<?php if (!empty($image[image_video]) && !empty($image[image_embed])) { ?>
+								</a>
+								<div class="vid-ov VID_OV" id="video_<?php echo $imgKey; ?>">
+									<?php echo apply_filters('the_content','[embed width="1920" height="1080"]'.$image[image_embed].'[/embed]'); ?>
+								</div>
+								<?php } ?>
+								<?php /*
 								<div class="caption">
 									<?php echo $image[image_caption]; ?>
 								</div>
+								*/ ?>
 							</li>
 						<?php } } ?>
 						</ul>

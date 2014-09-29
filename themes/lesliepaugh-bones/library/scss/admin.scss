@@ -26,10 +26,13 @@ start customizing. All admin functions are located in lib/admin/
 				}
 			}
 		}
+		.cmb-td {
 			.cmb-td {
-				.cmb-td {
-					padding-bottom:0;
-				}
+				padding-bottom:0;
 			}
+		}
+		.cmb-type-oembed {
+			display:none;
+		}
 	}
 }

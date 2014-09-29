@@ -76,6 +76,12 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
                 'id'   => $prefix . 'homepage_slide_link',
                 'type' => 'text',
             ),
+			array(
+				'name' => __( 'oEmbed', 'cmb2' ),
+				'desc' => __( 'Enter a Vimeo URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds" target="_blank">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
+				'id'   => $prefix . 'homepage_slide_embed',
+				'type' => 'oembed',
+			),
 		),
 	);
 	
@@ -143,11 +149,23 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 						'id'   => 'image_caption',
 						'type' => 'textarea_small',
 					),
-					array(
+					/*array(
 						'name' => 'Featured',
 						'id' => 'image_featured',
 						'description' => 'Featured on Home Page Slider (after a Project has been selected)',
 						'type' => 'checkbox',
+					),*/
+					array(
+						'name' => 'Video',
+						'id' => 'image_video',
+						'description' => 'Include a video with this Image',
+						'type' => 'checkbox',
+					),
+					array(
+						'name' => __( 'Video URL', 'cmb2' ),
+						'desc' => __( 'Enter a Vimeo URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds" target="_blank">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
+						'id'   => 'image_embed',
+						'type' => 'oembed',
 					),
 				),
 			),

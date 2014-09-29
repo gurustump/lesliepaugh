@@ -145,9 +145,10 @@ function bones_custom_admin_footer() {
 add_filter( 'admin_footer_text', 'bones_custom_admin_footer' );
 
 // Custom Admin css
-function load_admin_css() {
+function load_admin_scripts() {
+	wp_enqueue_script( 'admin_js', get_stylesheet_directory_uri() . '/library/js/admin.js', array( 'jquery' ), '', true );
 	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/library/css/admin.css', false);
 }
-add_action( 'admin_enqueue_scripts', 'load_admin_css' );
+add_action( 'admin_enqueue_scripts', 'load_admin_scripts' );
 
 ?>
