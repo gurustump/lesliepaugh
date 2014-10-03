@@ -15,6 +15,16 @@ html {
 .wrapper {
 	max-width:1200px;
 }
+#main_nav {
+	.top-nav {
+		& > li {
+			& > a {
+				padding-left:70px;
+				padding-right:70px;
+			}
+		}
+	}
+}
 .slider-container {
 	max-width:1200px;
 }
