@@ -187,17 +187,15 @@ NAVIGATION STYLES
 	margin-bottom:20px;
 	padding:0 95px;
 	& > li {
+		float:left;
+		width:33.33%;
 		a {
-			padding-left:20px;
-			padding-right:20px;
+			padding-left:0;
+			padding-right:0;
 		}
 		.h2 {
 			font-size:15px;
 			height:21px;
-		}
-		.h3 {
-			font-size:12px;
-			height:18px;
 		}
 	}
 }

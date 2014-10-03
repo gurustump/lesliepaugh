@@ -36,7 +36,8 @@
 								<?php if (!empty($image[image_video]) && !empty($image[image_embed])) { ?>
 								</a>
 								<div class="vid-ov VID_OV" id="video_<?php echo $imgKey; ?>">
-									<?php echo apply_filters('the_content','[embed width="1920" height="1080"]'.$image[image_embed].'[/embed]'); ?>
+									<input class="VIDSRC" type="hidden" value='<?php echo $image[image_embed]; ?>' />
+									<div class="vid-container VID_CONTAINER"></div>
 								</div>
 								<?php } ?>
 								<?php /*

@@ -2,29 +2,16 @@
 Site Name: 
 Author: 
 
-Stylesheet: Super Large Monitor Stylesheet
+Stylesheet: Large Monitor Stylesheet
 
 You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
 
-html {
-	background-size:cover;
-}
-.wrapper {
-	max-width:1200px;
-}
-.slider-container {
-	max-width:1200px;
-}
-.slider {
-	.slider-panel {
-	}
-}
 .projects-list {
 	& > li {
-		width:20%;
+		width:25%;
 		a {
 		}
 	}

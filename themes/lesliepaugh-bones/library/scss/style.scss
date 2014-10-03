@@ -129,6 +129,13 @@ you can add resource intensive styles.
 
 } // end of media query
 
+@media only screen and (min-width: 1120px) {
+
+	// styles in 1030up.scss
+	@import "breakpoints/1120up";
+
+} // end of media query
+
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -137,6 +144,13 @@ This is for the larger monitors and possibly full screen viewers.
 
 	// styles in 1240up.scss
 	@import "breakpoints/1240up";
+
+} // end of media query
+
+@media only screen and (min-width: 1300px) {
+
+	// styles in 1240up.scss
+	@import "breakpoints/1300up";
 
 } // end of media query
 

@@ -49,9 +49,9 @@
 									?>
 								</section> <?php // end article section ?>
 
-								<footer class="article-footer cf">
+								<?php /*<footer class="article-footer cf">
 
-								</footer>
+								</footer>*/ ?>
 
 								<?php /* comments_template(); */ ?>
 

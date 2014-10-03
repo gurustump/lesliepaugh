@@ -33,7 +33,8 @@
 								<?php if (!empty($video)) { ?>
 								</a>
 								<div class="vid-ov VID_OV" id="video_<?php echo $key; ?>">
-									<?php echo apply_filters('the_content','[embed width="1920" height="1080"]'.$video.'[/embed]'); ?>
+									<input class="VIDSRC" type="hidden" value='<?php echo $video; ?>' />
+									<div class="vid-container VID_CONTAINER"></div>
 								</div>
 								<?php } ?>
 							</li>

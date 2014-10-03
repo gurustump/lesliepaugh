@@ -56,6 +56,10 @@ $prefixes:      ("-webkit-", "-moz-", "-ms-", "-o-", "" );
 	}
 }
 
+@mixin clearfixer() {
+	content:".";height:0;display:block;visibility:hidden;clear:both;
+}
+
 /*********************
 CSS3 GRADIENTS
 Be careful with these since they can

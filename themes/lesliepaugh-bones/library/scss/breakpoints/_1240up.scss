@@ -51,9 +51,8 @@ on larger screens.
 .projects-list {
 	padding:0 300px;
 	& > li {
+		width:33.3%;
 		a {
-			padding-left:40px;
-			padding-right:40px;
 		}
 	}
 }

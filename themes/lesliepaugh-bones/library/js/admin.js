@@ -7,9 +7,9 @@
 function projectVideoVisibility($) {
 	$('#_senna_project_gallery_images_repeat .cmb2_option').each(function() {
 		if ($(this).prop('checked')) {
-			$(this).closest('.cmb-nested').find('.cmb-type-oembed').slideDown();
+			$(this).closest('.cmb-nested').find('.cmb-type-textarea_code').slideDown();
 		} else {
-			$(this).closest('.cmb-nested').find('.cmb-type-oembed').slideUp();
+			$(this).closest('.cmb-nested').find('.cmb-type-textarea_code').slideUp();
 		}
 	})
 }

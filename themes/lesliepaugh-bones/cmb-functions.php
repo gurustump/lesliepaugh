@@ -77,10 +77,10 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
                 'type' => 'text',
             ),
 			array(
-				'name' => __( 'oEmbed', 'cmb2' ),
-				'desc' => __( 'Enter a Vimeo URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds" target="_blank">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
+				'name' => __( 'Video Embed', 'cmb2' ),
+				'desc' => __( 'Enter the embed code for your video.', 'cmb2' ),
 				'id'   => $prefix . 'homepage_slide_embed',
-				'type' => 'oembed',
+				'type' => 'textarea_code',
 			),
 		),
 	);
@@ -163,9 +163,9 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 					),
 					array(
 						'name' => __( 'Video URL', 'cmb2' ),
-						'desc' => __( 'Enter a Vimeo URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds" target="_blank">http://codex.wordpress.org/Embeds</a>.', 'cmb2' ),
+						'desc' => __( 'Enter the embed code for your video.', 'cmb2' ),
 						'id'   => 'image_embed',
-						'type' => 'oembed',
+						'type' => 'textarea_code',
 					),
 				),
 			),

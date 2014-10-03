@@ -221,15 +221,16 @@ jQuery(document).ready(function($) {
 		open: function(e,ui) {
 			thisDialog = $(this);
 			thisDialog.addClass('OPEN');
-			if (thisDialog.data('contents')) {
-				thisDialog.html(thisDialog.data('contents'));
+			console.log(thisDialog.find('input.VIDSRC').val());
+			if (thisDialog.find('input.VIDSRC').val() != '') {
+				thisDialog.find('.VID_CONTAINER').html(thisDialog.find('input.VIDSRC').val());
 			}
 			$('.ui-widget-overlay').click(function() {
 				thisDialog.dialog('close');
 			});
 		},
 		close: function(e,ui) {
-			$(this).removeClass('OPEN').data('contents',$(this).html()).empty();
+			$(this).removeClass('OPEN').find('.VID_CONTAINER').empty();
 		},
 		width:'auto'
 	});
