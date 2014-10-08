@@ -27,12 +27,11 @@
 						 /*?><li style="opacity:1;text-align:left;"><pre><?php print_r($projectImages) ?></pre></li><?php */
 						if ( isset($projectImages[0] ) ) { foreach($projectImages as $imgKey => $image) { ?>
 							<li <?php echo $imgKey == 0 ? 'class="active"' : ''; ?>>
-							
 								<?php if (!empty($image[image_video]) && !empty($image[image_embed])) { ?>
 								<a href="#video_<?php echo $imgKey; ?>" class="TRIGGER_VID_OV">
 									<span class="ic-vid">Play</span>
 								<?php } ?>
-								<img src="<?php echo $image[image]; ?>" alt="<?php echo $image[image_title]; ?>" />
+								<img src="<?php echo wp_get_attachment_image_src($image[image_id],'large')[0]; ?>" alt="<?php echo $image[image_title]; ?>" />
 								<?php if (!empty($image[image_video]) && !empty($image[image_embed])) { ?>
 								</a>
 								<div class="vid-ov VID_OV" id="video_<?php echo $imgKey; ?>">

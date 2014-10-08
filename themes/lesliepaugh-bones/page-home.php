@@ -22,7 +22,8 @@
 						));
 						if ( isset($homeSlides[0]) ) { 
 							foreach($homeSlides as $key => $slide) { 
-							$image = get_post_meta($slide->ID, '_senna_homepage_slide_image', true); 
+							// $image = get_post_meta($slide->ID, '_senna_homepage_slide_image', true); 
+							$image = wp_get_attachment_image_src(get_post_meta($slide->ID,'_senna_homepage_slide_image_id',true),'large')[0];
 							$video = get_post_meta($slide->ID, '_senna_homepage_slide_embed', true); ?>
 							<li <?php echo $key == 0 ? 'class="active"' : ''; ?>>
 								<?php if (!empty($video)) { ?>
